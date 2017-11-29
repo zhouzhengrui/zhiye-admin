@@ -1,9 +1,3 @@
-/**
- * zhiye-admin
- * @author  Rui
- * @version 0.1.0
- * @date    2017-11-29 17:24:24
- */
 // jQuery ready
 jQuery(document).ready(function($) {
 

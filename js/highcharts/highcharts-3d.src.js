@@ -1,10 +1,4 @@
 /**
- * zhiye-admin
- * @author  Rui
- * @version 0.1.0
- * @date    2017-11-29 17:24:24
- */
-/**
  * @license Highcharts JS v5.0.14 (2017-07-28)
  *
  * 3D features for Highcharts JS

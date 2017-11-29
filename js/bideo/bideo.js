@@ -1,10 +1,4 @@
 /**
- * zhiye-admin
- * @author  Rui
- * @version 0.1.0
- * @date    2017-11-29 17:24:24
- */
-/**
  * Full Background Video
  *
  * More info on Audio/Video Media Events/Attributes/Methods

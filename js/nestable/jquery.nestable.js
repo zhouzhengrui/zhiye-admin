@@ -1,9 +1,3 @@
-/**
- * zhiye-admin
- * @author  Rui
- * @version 0.1.0
- * @date    2017-11-29 17:24:24
- */
 /*!
  * Nestable jQuery Plugin - Copyright (c) 2012 David Bushell - http://dbushell.com/
  * Dual-licensed under the BSD or MIT licenses

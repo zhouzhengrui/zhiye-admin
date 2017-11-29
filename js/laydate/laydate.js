@@ -1,9 +1,3 @@
-/**
- * zhiye-admin
- * @author  Rui
- * @version 0.1.0
- * @date    2017-11-29 17:24:24
- */
 /*! laydate-v5.0.8 日期与时间组件 MIT License  http://www.layui.com/laydate/  By 贤心 */ ;
 ! function() {
     "use strict";
@@ -317,14 +311,14 @@
                     }),
                     i = [function() {
                         var e = w.elem("i", {
-                            "class": "layui-icon laydate-icon laydate-prev-y"
+                            "class": "layui-icon laydate-icon laydate-prev-y icon-prev-y"
                         });
-                        return e.innerHTML = "&#xe65a;", e
+                        return e.innerHTML = "", e
                     }(), function() {
                         var e = w.elem("i", {
-                            "class": "layui-icon laydate-icon laydate-prev-m"
+                            "class": "layui-icon laydate-icon laydate-prev-m icon-back"
                         });
-                        return e.innerHTML = "&#xe603;", e
+                        return e.innerHTML = "", e
                     }(), function() {
                         var e = w.elem("div", {
                                 "class": "laydate-set-ym"
@@ -334,14 +328,14 @@
                         return e.appendChild(t), e.appendChild(n), e
                     }(), function() {
                         var e = w.elem("i", {
-                            "class": "layui-icon laydate-icon laydate-next-m"
+                            "class": "layui-icon laydate-icon laydate-next-m icon-go"
                         });
-                        return e.innerHTML = "&#xe602;", e
+                        return e.innerHTML = "", e
                     }(), function() {
                         var e = w.elem("i", {
-                            "class": "layui-icon laydate-icon laydate-next-y"
+                            "class": "layui-icon laydate-icon laydate-next-y icon-next-y"
                         });
-                        return e.innerHTML = "&#xe65b;", e
+                        return e.innerHTML = "", e
                     }()],
                     d = w.elem("div", {
                         "class": "layui-laydate-content"
