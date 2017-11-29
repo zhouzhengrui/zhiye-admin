@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tree View</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS start -->
+    <link rel="stylesheet" href="icofont/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- CSS over -->
+    <!-- JS start -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- JS over -->
+</head>
+
+
+<body>
+    <!-- header start -->
+    <header>
+        <!-- brand start -->
+        <div class="brand">
+            <h4 class="title">马鞍山市志业软件科技有限公司</h4>
+            <p>后台管理系统</p>
+        </div>
+        <!-- brand start -->
+        <!-- bar start -->
+        <div class="header-bar">
+            <!-- item start -->
+            <div class="item dropdown header-list">
+                <button type="button" data-toggle="dropdown">
+                    <span>消息通知</span>
+                    <span class="badge">3</span>
+                </button>
+                <div class="dropdown-menu">
+                    <h6 class="dropdown-header">你有3条未读消息</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot blue"></div>
+                        <p><b>站内通知: </b>新版后台管理系统即将上线</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot green"></div>
+                        <p><b>系统信息: </b>提交的信息审核通过</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot red"></div>
+                        <p><b>系统信息: </b>提交的信息未通过审核</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="#"><i class="icon-gear"></i>查看更多</a>
+                </div>
+            </div>
+            <!-- item over -->
+            <!-- item start -->
+            <div class="item"><a href="#">技术支持</a></div>
+            <!-- item over -->
+            <!-- user start -->
+            <div class="item dropdown header-user">
+                <button type="button" data-toggle="dropdown">
+                    <span class="user-name">zhouzhengrui</span>
+                    <span class="user-position">前端攻城师</span>
+                    <div class="avatar">
+                        <img src="img/avatar.jpg" alt="">
+                    </div>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="item" href="#"><i class="icon-pen"></i>编辑账号信息</a>
+                    <a class="item" href="#"><i class="icon-lock"></i>修改密码</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="page-login.html"><i class="icon-gear"></i>退出</a>
+                </div>
+            </div>
+            <!-- user over -->
+            <!-- fullscreen start -->
+            <div class="item MT-hidden">
+                <button type="button" id="fullscreen-view"><i class="icon-enlarge"></i></button>
+                <button type="button" id="fullscreen-exit"><i class="icon-narrow"></i></button>
+            </div>
+            <!-- fullscreen over -->
+            <!-- sidebar switch start -->
+            <div class="item MT-hidden">
+                <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar"><i class="icon-dot-array-y"></i></button>
+            </div>
+            <!-- sidebar switch over -->
+            <!-- sidebar start -->
+            <div class="modal fade" id="modal-sidebar">
+                <div class="modal-dialog modal-stick-right">
+                    <div class="modal-content">
+                        <h1>右侧边栏</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar over -->
+        </div>
+        <!-- bar over -->
+        <!-- MT bar start -->
+        <div class="MT-header-bar">
+            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target=".header-bar">
+                <i class="icon-user"></i>
+            </button>
+            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target="aside">
+                <i class="icon-list"></i>
+            </button>
+        </div>
+        <!-- MT bar over -->
+    </header>
+    <!-- header over -->
+
+    <!-- aside start -->
+    <aside>
+        <!-- user start -->
+        <div class="side-user">
+            <div class="avatar">
+                <img src="img/avatar.jpg" alt="">
+            </div>
+            <div class="info dropdown">
+                <button type="button" class="user-name dropdown-toggle" data-toggle="dropdown">
+                    <span>zhouzhengrui</span>
+                </button>
+                <span class="user-position">前端攻城师</span>
+                <div class="dropdown-menu dropdown-menu-middle">
+                    <a class="item" href="#">编辑账号信息</a>
+                    <a class="item" href="#">修改密码</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="page-login.html">退出</a>
+                </div>
+            </div>
+        </div>
+        <!-- user over -->
+        <!-- nav start -->
+        <div class="side-nav">
+            <nav class="nav">
+                <!-- item start -->
+                <div class="item">
+                    <a class="active" href="index.html" data-pjax><i class="icon-home"></i><span>首页</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-window"></i><span>演示模板 - 电子商务</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="demo-eCommerce.html" data-pjax>首页</a></div>
+                        <div class="item"><a href="#" data-pjax>订单管理</a></div>
+                        <div class="item"><a href="#" data-pjax>商品管理</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">页面布局</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a href="layout-templet.html" data-pjax><i class="icon-gear"></i><span>初始模板</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>主体布局</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="layout-grid.html" data-pjax>网格系统</a></div>
+                        <div class="item"><a href="layout-card.html" data-pjax>卡片</a></div>
+                        <div class="item"><a href="layout-tab.html" data-pjax>选项卡</a></div>
+                        <div class="item"><a href="layout-collapse.html" data-pjax>折叠面板</a></div>
+                        <div class="item"><a href="layout-responsive.html" data-pjax>响应式工具</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">组件</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a href="#" data-pjax><i class="icon-gear"></i><span>UI元素</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="ui-button.html" data-pjax>按钮</a></div>
+                        <div class="item"><a href="ui-label.html" data-pjax>标签</a></div>
+                        <div class="item"><a href="ui-icofont.html" data-pjax>字体图标</a></div>
+                        <div class="item"><a href="ui-color.html" data-pjax>颜色</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="list.html" data-pjax><i class="icon-gear"></i><span>列表</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="table.html" data-pjax><i class="icon-gear"></i><span>表格</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>表单</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="form-layout.html" data-pjax>表单布局</a></div>
+                        <div class="item"><a href="form-input.html" data-pjax>输入框</a></div>
+                        <div class="item"><a href="form-select.html" data-pjax>下拉列表</a></div>
+                        <div class="item"><a href="form-radiocheckbox.html" data-pjax>单选多选框</a></div>
+                        <div class="item"><a href="form-upload.html" data-pjax>文件上传</a></div>
+                        <div class="item"><a href="form-validate.html" data-pjax>表单验证</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>树</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="tree-ztree.html" data-pjax>zTree</a></div>
+                        <div class="item"><a href="tree-treeview.html" data-pjax>Tree View</a></div>
+                        <div class="item"><a href="tree-nestable.html" data-pjax>Nestable</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="modal.html" data-pjax><i class="icon-gear"></i><span>模态框</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="chart.html" data-pjax><i class="icon-gear"></i><span>数据图</span></a>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">其他</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>单页</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="page-login.html">登录</a></div>
+                        <div class="item"><a href="page-404.html">404</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+            </nav>
+        </div>
+        <!-- nav over -->
+        <!-- dashboard start -->
+        <div class="side-dashboard MT-hidden">
+            <h6 class="side-title">仪表面板</h6>
+            <div class="inner">
+                <div class="info">
+                    <p>进度条</p>
+                    <p>60%</p>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="info">
+                    <p>里程碑</p>
+                    <p>30%</p>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 30%;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- dashboard over -->
+    </aside>
+    <!-- aside over -->
+
+    <!-- main start -->
+    <main>
+        <!-- banner start -->
+        <div class="banner">
+            <div class="banner-title">
+                <h2>Tree View</h2>
+                <p><code>.treeview</code> / 将它放在卡片的主容器<code>.card-body</code>里面</p>
+                <ul class="explain">
+                    <li>详细说明查看Tree View<a href="https://github.com/jonmiles/bootstrap-treeview" target="_blank"> API</a>, <a href="http://jonmiles.github.io/bootstrap-treeview/" target="_blank">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- banner over -->
+        <!-- container start -->
+        <div class="container-fluid">
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-lg-4">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">基本样式</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- treeview start -->
+                            <div class="treeview" id="treeview-1"></div>
+                            <!-- treeview over -->
+                        </div>
+                    </section>
+                </div>
+                <!-- column over -->
+                <!-- column-code start -->
+                <div class="col-lg-8">
+                    <section class="code-group">
+                        <h6 class="code-title">基本样式</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                <!-- treeview start -->
+                                <div class="treeview" id="treeview"></div>
+                                <!-- treeview over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                // treeview
+                                var defaultData = [{
+                                    text: '父节点 1',
+                                    nodes: [{
+                                        text: '子节点 1',
+                                        nodes: [{
+                                            text: '叶子节点 1'
+                                        }, {
+                                            text: '叶子节点 2'
+                                        }]
+                                    }, {
+                                        text: '子节点 2'
+                                    }]
+                                }, {
+                                    text: '父节点 2'
+                                }, {
+                                    text: '父节点 3'
+                                }];
+                                $.getScript("js/treeview/bootstrap-treeview.min.js", function() {
+                                    $('#treeview').treeview({
+                                        data: defaultData
+                                    });
+                                });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column-code over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-lg-4">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">功能增强</h3>
+                            <div class="card-header-action">
+                                <button id="expand-all" type="button">展开</button>
+                                <button id="collapse-all" type="button">收缩</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- tree start -->
+                            <fieldset class="form-group treeview-search">
+                                <input class="input" id="treeview-search-input" type="text" placeholder="搜索关键字">
+                            </fieldset>
+                            <div class="treeview" id="treeview-2"></div>
+                            <!-- tree over -->
+                        </div>
+                    </section>
+                </div>
+                <!-- column over -->
+                <!-- column start -->
+                <div class="col-lg-8">
+                    <section class="code-group">
+                        <h6 class="code-title">功能增强</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                <!-- tree start -->
+                                <fieldset class="form-group treeview-search">
+                                    <input class="input" id="treeview-search-input" type="text" placeholder="搜索关键字">
+                                </fieldset>
+                                <div class="treeview" id="treeview"></div>
+                                <!-- tree over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                <div class="card-header-action">
+                                    <button id="expand-all" type="button">展开</button>
+                                    <button id="collapse-all" type="button">收缩</button>
+                                </div>
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                // treeview
+                                var treeviewData = [{
+                                    text: '父节点 1',
+                                    tags: ['2'],
+                                    nodes: [{
+                                        text: '子节点 1',
+                                        tags: ['2'],
+                                        nodes: [{
+                                            text: '叶子节点 1'
+                                        }, {
+                                            text: '叶子节点 2'
+                                        }]
+                                    }, {
+                                        text: '子节点 2'
+                                    }]
+                                }, {
+                                    text: '父节点 2'
+                                }, {
+                                    text: '父节点 3'
+                                }];
+                                $.getScript("js/treeview/bootstrap-treeview.min.js", function() {
+                                    var $treeview = $('#treeview').treeview({
+                                        data: treeviewData,
+                                        showTags: true,
+                                        levels: 1,
+                                        multiSelect: true
+                                    });
+                                    var search = function() {
+                                        var pattern = $('#treeview-search-input').val();
+                                        var options = {};
+                                        var results = $treeview.treeview('search', [pattern, options]);
+                                    }
+                                    $('#treeview-search-input').on('keyup', search);
+                                    $('#expand-all').on('click', function() {
+                                        $treeview.treeview('expandAll');
+                                    });
+                                    $('#collapse-all').on('click', function() {
+                                        $treeview.treeview('collapseAll');
+                                    });
+                                });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+        </div>
+        <!-- container over -->
+        <!-- page script start -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                // treeview data
+                var treeviewData1 = [{
+                    text: '父节点 1',
+                    nodes: [{
+                        text: '子节点 1',
+                        nodes: [{
+                            text: '叶子节点 1'
+                        }, {
+                            text: '叶子节点 2'
+                        }]
+                    }, {
+                        text: '子节点 2'
+                    }]
+                }, {
+                    text: '父节点 2'
+                }, {
+                    text: '父节点 3'
+                }, {
+                    text: '父节点 4'
+                }, {
+                    text: '父节点 5'
+                }];
+                var treeviewData2 = [{
+                    text: '父节点 1',
+                    tags: ['2'],
+                    nodes: [{
+                        text: '子节点 1',
+                        tags: ['2'],
+                        nodes: [{
+                            text: '叶子节点 1'
+                        }, {
+                            text: '叶子节点 2'
+                        }]
+                    }, {
+                        text: '子节点 2'
+                    }]
+                }, {
+                    text: '父节点 2'
+                }, {
+                    text: '父节点 3'
+                }, {
+                    text: '父节点 4'
+                }, {
+                    text: '父节点 5'
+                }];
+                $.getScript("js/treeview/bootstrap-treeview.min.js", function() {
+                    // treeview-1
+                    $('#treeview-1').treeview({
+                        data: treeviewData1
+                    });
+                    // treeview-2
+                    var $treeview2 = $('#treeview-2').treeview({
+                        data: treeviewData2,
+                        showTags: true,
+                        levels: 1,
+                        multiSelect: true
+                    });
+                    var search = function() {
+                        var pattern = $('#treeview-search-input').val();
+                        var options = {};
+                        var results = $treeview2.treeview('search', [pattern, options]);
+                    }
+                    $('#expand-all').on('click', function() {
+                        $treeview2.treeview('expandAll');
+                    });
+                    $('#collapse-all').on('click', function() {
+                        $treeview2.treeview('collapseAll');
+                    });
+                    $('#treeview-search-input').on('keyup', search);
+                });
+                // 代码块
+                $.when(
+                    $.getScript('js/clipboard/clipboard.min.js'),
+                    $.getScript('js/prism/prism.js'),
+                    $.getScript('js/prism/prism-copy.js')
+                ).then(function() {
+                    Prism.highlightAll();
+                });
+            });
+        </script>
+        <!-- page script over -->
+        <!-- copyright start -->
+        <div class="copyright">
+            <p>Powered by <a href="http://www.maszy.cn" target="_blank">© ZhiYe Software Technology Co.,Ltd</a></p>
+        </div>
+        <!-- copyright over -->
+
+    </main>
+    <!-- main over -->
+</body>
+
+</html>

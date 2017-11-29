@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>列表</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS start -->
+    <link rel="stylesheet" href="icofont/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- CSS over -->
+    <!-- JS start -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- JS over -->
+</head>
+
+
+<body>
+    <!-- header start -->
+    <header>
+        <!-- brand start -->
+        <div class="brand">
+            <h4 class="title">马鞍山市志业软件科技有限公司</h4>
+            <p>后台管理系统</p>
+        </div>
+        <!-- brand start -->
+        <!-- bar start -->
+        <div class="header-bar">
+            <!-- item start -->
+            <div class="item dropdown header-list">
+                <button type="button" data-toggle="dropdown">
+                    <span>消息通知</span>
+                    <span class="badge">3</span>
+                </button>
+                <div class="dropdown-menu">
+                    <h6 class="dropdown-header">你有3条未读消息</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot blue"></div>
+                        <p><b>站内通知: </b>新版后台管理系统即将上线</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot green"></div>
+                        <p><b>系统信息: </b>提交的信息审核通过</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot red"></div>
+                        <p><b>系统信息: </b>提交的信息未通过审核</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="#"><i class="icon-gear"></i>查看更多</a>
+                </div>
+            </div>
+            <!-- item over -->
+            <!-- item start -->
+            <div class="item"><a href="#">技术支持</a></div>
+            <!-- item over -->
+            <!-- user start -->
+            <div class="item dropdown header-user">
+                <button type="button" data-toggle="dropdown">
+                    <span class="user-name">zhouzhengrui</span>
+                    <span class="user-position">前端攻城师</span>
+                    <div class="avatar">
+                        <img src="img/avatar.jpg" alt="">
+                    </div>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="item" href="#"><i class="icon-pen"></i>编辑账号信息</a>
+                    <a class="item" href="#"><i class="icon-lock"></i>修改密码</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="page-login.html"><i class="icon-gear"></i>退出</a>
+                </div>
+            </div>
+            <!-- user over -->
+            <!-- fullscreen start -->
+            <div class="item MT-hidden">
+                <button type="button" id="fullscreen-view"><i class="icon-enlarge"></i></button>
+                <button type="button" id="fullscreen-exit"><i class="icon-narrow"></i></button>
+            </div>
+            <!-- fullscreen over -->
+            <!-- sidebar switch start -->
+            <div class="item MT-hidden">
+                <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar"><i class="icon-dot-array-y"></i></button>
+            </div>
+            <!-- sidebar switch over -->
+            <!-- sidebar start -->
+            <div class="modal fade" id="modal-sidebar">
+                <div class="modal-dialog modal-stick-right">
+                    <div class="modal-content">
+                        <h1>右侧边栏</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar over -->
+        </div>
+        <!-- bar over -->
+        <!-- MT bar start -->
+        <div class="MT-header-bar">
+            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target=".header-bar">
+                <i class="icon-user"></i>
+            </button>
+            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target="aside">
+                <i class="icon-list"></i>
+            </button>
+        </div>
+        <!-- MT bar over -->
+    </header>
+    <!-- header over -->
+
+    <!-- aside start -->
+    <aside>
+        <!-- user start -->
+        <div class="side-user">
+            <div class="avatar">
+                <img src="img/avatar.jpg" alt="">
+            </div>
+            <div class="info dropdown">
+                <button type="button" class="user-name dropdown-toggle" data-toggle="dropdown">
+                    <span>zhouzhengrui</span>
+                </button>
+                <span class="user-position">前端攻城师</span>
+                <div class="dropdown-menu dropdown-menu-middle">
+                    <a class="item" href="#">编辑账号信息</a>
+                    <a class="item" href="#">修改密码</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="page-login.html">退出</a>
+                </div>
+            </div>
+        </div>
+        <!-- user over -->
+        <!-- nav start -->
+        <div class="side-nav">
+            <nav class="nav">
+                <!-- item start -->
+                <div class="item">
+                    <a class="active" href="index.html" data-pjax><i class="icon-home"></i><span>首页</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-window"></i><span>演示模板 - 电子商务</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="demo-eCommerce.html" data-pjax>首页</a></div>
+                        <div class="item"><a href="#" data-pjax>订单管理</a></div>
+                        <div class="item"><a href="#" data-pjax>商品管理</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">页面布局</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a href="layout-templet.html" data-pjax><i class="icon-gear"></i><span>初始模板</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>主体布局</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="layout-grid.html" data-pjax>网格系统</a></div>
+                        <div class="item"><a href="layout-card.html" data-pjax>卡片</a></div>
+                        <div class="item"><a href="layout-tab.html" data-pjax>选项卡</a></div>
+                        <div class="item"><a href="layout-collapse.html" data-pjax>折叠面板</a></div>
+                        <div class="item"><a href="layout-responsive.html" data-pjax>响应式工具</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">组件</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a href="#" data-pjax><i class="icon-gear"></i><span>UI元素</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="ui-button.html" data-pjax>按钮</a></div>
+                        <div class="item"><a href="ui-label.html" data-pjax>标签</a></div>
+                        <div class="item"><a href="ui-icofont.html" data-pjax>字体图标</a></div>
+                        <div class="item"><a href="ui-color.html" data-pjax>颜色</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="list.html" data-pjax><i class="icon-gear"></i><span>列表</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="table.html" data-pjax><i class="icon-gear"></i><span>表格</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>表单</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="form-layout.html" data-pjax>表单布局</a></div>
+                        <div class="item"><a href="form-input.html" data-pjax>输入框</a></div>
+                        <div class="item"><a href="form-select.html" data-pjax>下拉列表</a></div>
+                        <div class="item"><a href="form-radiocheckbox.html" data-pjax>单选多选框</a></div>
+                        <div class="item"><a href="form-upload.html" data-pjax>文件上传</a></div>
+                        <div class="item"><a href="form-validate.html" data-pjax>表单验证</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>树</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="tree-ztree.html" data-pjax>zTree</a></div>
+                        <div class="item"><a href="tree-treeview.html" data-pjax>Tree View</a></div>
+                        <div class="item"><a href="tree-nestable.html" data-pjax>Nestable</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="modal.html" data-pjax><i class="icon-gear"></i><span>模态框</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="chart.html" data-pjax><i class="icon-gear"></i><span>数据图</span></a>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">其他</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>单页</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="page-login.html">登录</a></div>
+                        <div class="item"><a href="page-404.html">404</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+            </nav>
+        </div>
+        <!-- nav over -->
+        <!-- dashboard start -->
+        <div class="side-dashboard MT-hidden">
+            <h6 class="side-title">仪表面板</h6>
+            <div class="inner">
+                <div class="info">
+                    <p>进度条</p>
+                    <p>60%</p>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="info">
+                    <p>里程碑</p>
+                    <p>30%</p>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 30%;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- dashboard over -->
+    </aside>
+    <!-- aside over -->
+
+    <!-- main start -->
+    <main>
+        <!-- banner start -->
+        <div class="banner">
+            <div class="banner-title">
+                <h2>列表</h2>
+                <p><code>.list</code> / 适合单条信息字段较少, 有链接的时候使用, 将它放在卡片的主容器<code>.card-body</code>里面</p>
+            </div>
+        </div>
+        <!-- banner over -->
+        <!-- container start -->
+        <div class="container-fluid">
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">单列图文混排列表<small>卡片不宜太宽, 以<code>.item</code>为一组进行循环</small></h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- list start -->
+                            <div class="list">
+                                <!-- item start -->
+                                <a class="item" href="#">
+                                    <div class="avatar">
+                                        <img src="img/avatar-zhouzhengrui.jpg" alt="">
+                                    </div>
+                                    <div class="item-body">
+                                        <h5>周正锐</h5>
+                                        <p class="gray">zhouzhengrui@maszy.cn</p>
+                                    </div>
+                                    <div class="label-group">
+                                        <span class="label label-blue">前端攻城师</span>
+                                    </div>
+                                </a>
+                                <!-- item over -->
+                                <!-- item start -->
+                                <a class="item" href="#">
+                                    <div class="avatar">
+                                        <img src="img/avatar-shulei.jpg" alt="">
+                                    </div>
+                                    <div class="item-body">
+                                        <h5>束磊</h5>
+                                        <p class="gray">shulei@maszy.cn</p>
+                                    </div>
+                                    <div class="label-group">
+                                        <span class="label label-green">CEO</span>
+                                    </div>
+                                </a>
+                                <!-- item over -->
+                                <!-- item start -->
+                                <a class="item" href="#">
+                                    <div class="avatar">
+                                        <img src="img/avatar-jinjing.jpg" alt="">
+                                    </div>
+                                    <div class="item-body">
+                                        <h5>金晶</h5>
+                                        <p class="gray">jinjing@maszy.cn</p>
+                                    </div>
+                                    <div class="label-group">
+                                        <span class="label label-purple">销售总监</span>
+                                    </div>
+                                </a>
+                                <!-- item over -->
+                                <!-- item start -->
+                                <a class="item" href="#">
+                                    <div class="avatar">
+                                        <img src="img/avatar-wupeijun.jpg" alt="">
+                                    </div>
+                                    <div class="item-body">
+                                        <h5>武佩俊</h5>
+                                        <p class="gray">wupeijun@maszy.cn</p>
+                                    </div>
+                                    <div class="label-group">
+                                        <span class="label label-cyan">项目经理</span>
+                                    </div>
+                                </a>
+                                <!-- item over -->
+                                <!-- item start -->
+                                <a class="item" href="#">
+                                    <div class="avatar">
+                                        <img src="img/avatar.jpg" alt="">
+                                    </div>
+                                    <div class="item-body">
+                                        <h5>Administrator</h5>
+                                        <p class="gray">administrator@maszy.cn</p>
+                                    </div>
+                                    <span class="label label-gray">管理员</span>
+                                </a>
+                                <!-- item over -->
+                            </div>
+                            <!-- list over -->
+                        </div>
+                    </section>
+                    <ul class="explain">
+                        <li><code>&lt;a&gt&lt;/a&gt;</code>内部不可以再使用<code>&lt;a&gt;</code>标签, 将<code>a.item</code>替换为<code>div.item</code>可取消链接</li>
+                        <li><code>div.avatar</code>改为<code>div.image</code>, 可将图片显示为方形, 建议头像图片使用圆形, 产品图片等使用方形</li>
+                    </ul>
+                </div>
+                <!-- column over -->
+                <!-- column-code start -->
+                <div class="col-lg-6">
+                    <section class="code-group">
+                        <h6 class="code-title">单列图文混排列表</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                <!-- list start -->
+                                <div class="list">
+                                    <!-- item start -->
+                                    <a class="item" href="#">
+                                        <div class="avatar">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="item-body">
+                                            <h5>标题</h5>
+                                            <p class="gray">信息</p>
+                                        </div>
+                                        <div class="label-group">
+                                            <span class="label label-blue">标签</span>
+                                        </div>
+                                    </a>
+                                    <!-- item over -->
+                                </div>
+                                <!-- list over -->
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column-code over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-12">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">多列图文混排列表<small>需嵌套网格系统, 以<code>.col-*</code>为一组进行循环</small></h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- list start -->
+                            <div class="list">
+                                <!-- row start -->
+                                <div class="row">
+                                    <!-- column start -->
+                                    <div class="col-lg-6">
+                                        <!-- item start -->
+                                        <a class="item" href="#">
+                                            <div class="avatar">
+                                                <img src="img/avatar-zhouzhengrui.jpg" alt="">
+                                            </div>
+                                            <div class="item-body">
+                                                <h5>周正锐</h5>
+                                                <p class="gray">zhouzhengrui@maszy.cn</p>
+                                            </div>
+                                            <div class="label-group">
+                                                <span class="label label-blue">前端攻城师</span>
+                                            </div>
+                                        </a>
+                                        <!-- item over -->
+                                    </div>
+                                    <!-- column over -->
+                                    <!-- column start -->
+                                    <div class="col-lg-6">
+                                        <!-- item start -->
+                                        <a class="item" href="#">
+                                            <div class="avatar">
+                                                <img src="img/avatar-shulei.jpg" alt="">
+                                            </div>
+                                            <div class="item-body">
+                                                <h5>束磊</h5>
+                                                <p class="gray">shulei@maszy.cn</p>
+                                            </div>
+                                            <div class="label-group">
+                                                <span class="label label-green">CEO</span>
+                                            </div>
+                                        </a>
+                                        <!-- item over -->
+                                    </div>
+                                    <!-- column over -->
+                                    <!-- column start -->
+                                    <div class="col-lg-6">
+                                        <!-- item start -->
+                                        <a class="item" href="#">
+                                            <div class="avatar">
+                                                <img src="img/avatar-jinjing.jpg" alt="">
+                                            </div>
+                                            <div class="item-body">
+                                                <h5>金晶</h5>
+                                                <p class="gray">jinjing@maszy.cn</p>
+                                            </div>
+                                            <div class="label-group">
+                                                <span class="label label-purple">销售总监</span>
+                                            </div>
+                                        </a>
+                                        <!-- item over -->
+                                    </div>
+                                    <!-- column over -->
+                                    <!-- column start -->
+                                    <div class="col-lg-6">
+                                        <!-- item start -->
+                                        <a class="item" href="#">
+                                            <div class="avatar">
+                                                <img src="img/avatar-wupeijun.jpg" alt="">
+                                            </div>
+                                            <div class="item-body">
+                                                <h5>武佩俊</h5>
+                                                <p class="gray">wupeijun@maszy.cn</p>
+                                            </div>
+                                            <div class="label-group">
+                                                <span class="label label-cyan">项目经理</span>
+                                            </div>
+                                        </a>
+                                        <!-- item over -->
+                                    </div>
+                                    <!-- column over -->
+                                    <!-- column start -->
+                                    <div class="col-lg-6">
+                                        <!-- item start -->
+                                        <a class="item" href="#">
+                                            <div class="avatar">
+                                                <img src="img/avatar.jpg" alt="">
+                                            </div>
+                                            <div class="item-body">
+                                                <h5>Administrator</h5>
+                                                <p class="gray">administrator@maszy.cn</p>
+                                            </div>
+                                            <span class="label label-gray">管理员</span>
+                                        </a>
+                                        <!-- item over -->
+                                    </div>
+                                    <!-- column over -->
+                                </div>
+                                <!-- row over -->
+                            </div>
+                            <!-- list over -->
+                        </div>
+                    </section>
+                </div>
+                <!-- column over -->
+                <!-- column-code start -->
+                <div class="col-12">
+                    <section class="code-group">
+                        <h6 class="code-title">多列图文混排列表</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                <!-- list start -->
+                                <div class="list">
+                                    <!-- row start -->
+                                    <div class="row">
+                                        <!-- column start -->
+                                        <div class="col-lg-6">
+                                            <!-- item start -->
+                                            <a class="item" href="#">
+                                                <div class="avatar">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <div class="item-body">
+                                                    <h5>标题</h5>
+                                                    <p class="gray">信息</p>
+                                                </div>
+                                                <div class="label-group">
+                                                    <span class="label label-blue">标签</span>
+                                                </div>
+                                            </a>
+                                            <!-- item over -->
+                                        </div>
+                                        <!-- column over -->
+                                    </div>
+                                    <!-- row over -->
+                                </div>
+                                <!-- list over -->
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column-code over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">时间轴</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- timeline start -->
+                            <div class="list-timeline">
+                                <h4 class="title">时间轴</h4>
+                                <div class="item">
+                                    <a class="info" href="#">依据时间顺序，把一方面或多方面的事件串联起来</a>
+                                    <p class="tag">附加信息</p>
+                                </div>
+                                <h4 class="title">分组标题</h4>
+                                <div class="item">
+                                    <a class="info" href="#">时间轴样式适合展示新闻列表、事件记录、任务提示等</a>
+                                    <p class="tag"><span>多个短标签使用span包裹</span><span>日期</span><span>作者</span></p>
+                                </div>
+                                <div class="item">
+                                    <p class="info">可按需添加或移除.title、.tag和超链接</p>
+                                </div>
+                            </div>
+                            <!-- timeline over -->
+                        </div>
+                    </section>
+                </div>
+                <!-- column over -->
+                <!-- column-code start -->
+                <div class="col-lg-6">
+                    <section class="code-group">
+                        <h6 class="code-title">时间轴</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                <!-- timeline start -->
+                                <div class="list-timeline">
+                                    <h4 class="title">分段标题</h4>
+                                    <div class="item">
+                                        <a class="info" href="#">链接</a>
+                                        <p class="tag">附加信息</p>
+                                    </div>
+                                    <h4 class="title">分段标题</h4>
+                                    <div class="item">
+                                        <a class="info" href="#">链接</a>
+                                        <p class="tag"><span>短标签</span><span>短标签</span></p>
+                                    </div>
+                                    <div class="item">
+                                        <p class="info">信息</p>
+                                    </div>
+                                </div>
+                                <!-- timeline over -->
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column-code over -->
+            </div>
+            <!-- row over -->
+        </div>
+        <!-- container over -->
+        <!-- page script start -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                // 代码块
+                $.when(
+                    $.getScript('js/clipboard/clipboard.min.js'),
+                    $.getScript('js/prism/prism.js'),
+                    $.getScript('js/prism/prism-copy.js')
+                ).then(function() {
+                    Prism.highlightAll();
+                });
+            });
+        </script>
+        <!-- page script over -->
+        <!-- copyright start -->
+        <div class="copyright">
+            <p>Powered by <a href="http://www.maszy.cn" target="_blank">© ZhiYe Software Technology Co.,Ltd</a></p>
+        </div>
+        <!-- copyright over -->
+
+    </main>
+    <!-- main over -->
+</body>
+
+</html>
