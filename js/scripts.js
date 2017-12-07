@@ -69,6 +69,12 @@ jQuery(document).ready(function($) {
         $(this).addClass("active");
     })
 
+    // main滚动事件
+    $('main').scroll(function(){
+        $('[action="date"]').blur();
+        $('.layui-laydate').remove();
+    });
+
     // highcharts 全局设置
     Highcharts.setOptions({
         colors: [

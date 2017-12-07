@@ -1,13 +1,18 @@
-/*! laydate-v5.0.8 日期与时间组件 MIT License  http://www.layui.com/laydate/  By 贤心 */ ;
+/*! laydate-v5.0.9 日期与时间组件 MIT License  http://www.layui.com/laydate/  By 贤心 */ ;
 ! function() {
     "use strict";
     var e = window.layui && layui.define,
         t = {
             getPath: function() {
-                var e = document.scripts,
-                    t = e[e.length - 1],
-                    n = t.src;
-                if (!t.getAttribute("merge")) return n.substring(0, n.lastIndexOf("/") + 1)
+                var e = document.currentScript ? document.currentScript.src : function() {
+                    for (var e, t = document.scripts, n = t.length - 1, a = n; a > 0; a--)
+                        if ("interactive" === t[a].readyState) {
+                            e = t[a].src;
+                            break
+                        }
+                    return e || t[n].src
+                }();
+                return e.substring(0, e.lastIndexOf("/") + 1)
             }(),
             getStyle: function(e, t) {
                 var n = e.currentStyle ? e.currentStyle : window.getComputedStyle(e, null);
@@ -28,13 +33,13 @@
             }
         },
         n = {
-            v: "5.0.8",
+            v: "5.0.9",
             config: {},
             index: window.laydate && window.laydate.v ? 1e5 : 0,
             path: t.getPath,
             set: function(e) {
-                var n = this;
-                return n.config = t.extend({}, n.config, e), n
+                var t = this;
+                return t.config = w.extend({}, t.config, e), t
             },
             ready: function(a) {
                 var i = "laydate",
@@ -637,7 +642,7 @@
             /yyyy|y/.test(t) ? r[e] = w.digit(i.year, t.length) : /MM|M/.test(t) ? r[e] = w.digit(i.month + 1, t.length) : /dd|d/.test(t) ? r[e] = w.digit(i.date, t.length) : /HH|H/.test(t) ? r[e] = w.digit(i.hours, t.length) : /mm|m/.test(t) ? r[e] = w.digit(i.minutes, t.length) : /ss|s/.test(t) && (r[e] = w.digit(i.seconds, t.length))
         }), a.range && !e ? r.join("") + " " + a.range + " " + n.parse(1) : r.join("")
     }, T.prototype.newDate = function(e) {
-        return new Date(e.year || 1, e.month || 0, e.date || 1, e.hours || 0, e.minutes || 0, e.seconds || 0)
+        return e = e || {}, new Date(e.year || 1, e.month || 0, e.date || 1, e.hours || 0, e.minutes || 0, e.seconds || 0)
     }, T.prototype.setValue = function(e) {
         var t = this,
             n = t.config,

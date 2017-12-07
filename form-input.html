@@ -15,6 +15,7 @@
     <!-- JS start -->
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/laydate/laydate.js"></script>
     <script src="js/scripts.js"></script>
     <!-- JS over -->
 </head>
@@ -433,22 +434,22 @@
                                 <fieldset class="form-group">
                                     <legend class="label">日期选择</legend>
                                     <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date-1">
                                         <span class="addon"><i class="icon-calendar"></i></span>
-                                        <input type="text" class="input" id="date-1">
                                     </label>
                                 </fieldset>
                                 <fieldset class="form-group">
                                     <legend class="label">时间选择</legend>
                                     <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date-2">
                                         <span class="addon"><i class="icon-calendar"></i></span>
-                                        <input type="text" class="input" id="date-2">
                                     </label>
                                 </fieldset>
                                 <fieldset class="form-group">
                                     <legend class="label">范围选择</legend>
                                     <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date-3">
                                         <span class="addon"><i class="icon-calendar"></i></span>
-                                        <input type="text" class="input" id="date-3">
                                     </label>
                                 </fieldset>
                             </form>
@@ -456,7 +457,7 @@
                         </div>
                     </section>
                     <ul class="explain">
-                        <li>需另载入<code>js/laydate/laydate.js</code></li>
+                        <li>需在<code>&lt;head&gt;&lt;/head&gt;</code>内载入<code>&lt;script src="js/laydate/laydate.js"&gt;&lt;/script&gt;</code></li>
                     </ul>
                 </div>
                 <!-- column over -->
@@ -470,8 +471,8 @@
                                 <fieldset class="form-group">
                                     <legend class="label">标题</legend>
                                     <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date">
                                         <span class="addon"><i class="icon-calendar"></i></span>
-                                        <input type="text" class="input" id="date">
                                     </label>
                                 </fieldset>
                                 </script>
@@ -496,8 +497,8 @@
                                 <fieldset class="form-group">
                                     <legend class="label">标题</legend>
                                     <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date">
                                         <span class="addon"><i class="icon-calendar"></i></span>
-                                        <input type="text" class="input" id="date">
                                     </label>
                                 </fieldset>
                                 </script>
@@ -523,8 +524,8 @@
                                 <fieldset class="form-group">
                                     <legend class="label">标题</legend>
                                     <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date">
                                         <span class="addon"><i class="icon-calendar"></i></span>
-                                        <input type="text" class="input" id="date">
                                     </label>
                                 </fieldset>
                                 </script>
@@ -667,7 +668,6 @@
         </div>
         <!-- container over -->
         <!-- page script start -->
-        <script src="js/laydate/laydate.js"></script>
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // laydate
