@@ -1,6 +1,7 @@
 // pjax
 $(document).pjax("[data-pjax]", "main", {
-    fragment: "main"
+    fragment: "main",
+    timeout: "5000"
     // fx: 'fade',
 });
 // nprogress开始
