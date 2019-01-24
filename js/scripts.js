@@ -1,26 +1,27 @@
+// pjax
+$(document).pjax("[data-pjax]", "main", {
+    fragment: "main"
+    // fx: 'fade',
+});
+// nprogress开始
+NProgress.configure({
+    showSpinner: false,
+    speed: 300
+});
+// pjax nprogress
+$(document).on("pjax:start", function() {
+    NProgress.start();
+    // $("main").removeClass("main-fadein");
+});
 // jQuery ready
 jQuery(document).ready(function($) {
 
-    // pjax
-    $(document).pjax("[data-pjax]", "main", {
-        fragment: "main"
-    });
-
-    // nprogress开始
-    NProgress.configure({
-        showSpinner: false,
-        speed: 300
-    });
-    // NProgress.start();
-
-    // pjax nprogress
-    $(document).on("pjax:start", function() {
-        NProgress.start();
-        $("main").removeClass("main-fadein");
-    });
     $(document).on("pjax:end", function() {
-        NProgress.done();
-        $("main").addClass("main-fadein");
+        setTimeout(function () {
+            NProgress.done();
+        }, 300);
+
+        // $("main").addClass("main-fadein");
         $("main").scrollTop(0);
         $("body.modal-open").removeClass();
         $(".modal-backdrop").remove();
