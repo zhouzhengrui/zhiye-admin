@@ -8,16 +8,12 @@
     <meta name="format-detection" content="telephone=no">
     <title>选项卡</title>
     <link rel="icon" href="favicon.ico">
-    <!-- CSS start -->
+    <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
+    <!-- CSS global -->
     <link rel="stylesheet" href="css/style.min.css">
-    <!-- CSS over -->
-    <!-- JS start -->
+    <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/laydate/laydate.js"></script>
-    <script src="js/scripts.js"></script>
-    <!-- JS over -->
 </head>
 
 
@@ -62,10 +58,10 @@
             </div>
             <!-- item over -->
             <!-- item start -->
-            <div class="item"><a href="#">技术支持</a></div>
+            <div class="item"><a href="http://www.maszy.cn/index.php?m=content&c=index&a=lists&catid=5" target="_blank">技术支持</a></div>
             <!-- item over -->
             <!-- user start -->
-            <div class="item dropdown header-user">
+            <div class="item dropdown header-user" hidden>
                 <button type="button" data-toggle="dropdown">
                     <span class="user-name">zhouzhengrui</span>
                     <span class="user-position">前端攻城师</span>
@@ -92,15 +88,6 @@
                 <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar"><i class="icon-dot-array-y"></i></button>
             </div>
             <!-- sidebar switch over -->
-            <!-- sidebar start -->
-            <div class="modal fade" id="modal-sidebar">
-                <div class="modal-dialog modal-stick-right">
-                    <div class="modal-content">
-                        <h1>右侧边栏</h1>
-                    </div>
-                </div>
-            </div>
-            <!-- sidebar over -->
         </div>
         <!-- bar over -->
         <!-- MT bar start -->
@@ -113,6 +100,145 @@
             </button>
         </div>
         <!-- MT bar over -->
+        <!-- sidebar start -->
+        <div class="modal fade modal-sidebar" id="modal-sidebar">
+            <div class="modal-dialog modal-stick-right">
+                <div class="modal-content">
+                    <!-- card start -->
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">右侧边栏</h3>
+                            <div class="card-header-action">
+                                <button type="button" data-dismiss="modal"><i class="icon-cancel"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <p>固定在右侧的一个额外区域，可用来放一些全局的设置或信息，按实际需求使用</p>
+                            <p>内容的布局与卡片的用法相同</p>
+                            <p>内容高度超出时会自动生成美化后的滚动条</p>
+                        </div>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form class="form">
+                                <fieldset class="form-group">
+                                    <legend class="label">效果演示</legend>
+                                    <div class="radiocheckbox-switch-item">
+                                        <label class="radiocheckbox-switch">
+                                            <input class="radiocheckbox" type="checkbox" id="demo-side-user-switch" checked>
+                                            <span class="radiocheckbox-replace">
+                                                <span class="slipper"></span>
+                                            </span>
+                                        </label>
+                                        <p class="radiocheckbox-switch-explain">左侧用户面板</p>
+                                    </div>
+                                    <div class="radiocheckbox-switch-item">
+                                        <label class="radiocheckbox-switch">
+                                            <input class="radiocheckbox" type="checkbox" id="demo-side-dashboard-switch">
+                                            <span class="radiocheckbox-replace">
+                                                <span class="slipper"></span>
+                                            </span>
+                                        </label>
+                                        <p class="radiocheckbox-switch-explain">左侧仪表面板</p>
+                                    </div>
+                                    <div class="radiocheckbox-switch-item">
+                                        <label class="radiocheckbox-switch">
+                                            <input class="radiocheckbox" type="checkbox" id="demo-header-user-switch">
+                                            <span class="radiocheckbox-replace">
+                                                <span class="slipper"></span>
+                                            </span>
+                                        </label>
+                                        <p class="radiocheckbox-switch-explain">顶部用户面板</p>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <!-- form over -->
+                        </div>
+                    </section>
+                    <!-- card over -->
+                    <!-- card start -->
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">待办事项</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- timeline start -->
+                            <div class="list-timeline">
+                                <h4 class="title">今天</h4>
+                                <div class="item">
+                                    <a class="info" href="#">近期的项目验收</a>
+                                    <p class="tag">12:00</p>
+                                </div>
+                                <h4 class="title">明天</h4>
+                                <div class="item">
+                                    <a class="info" href="#">陪马云喝茶，并谈一谈未来十年移动互联网的发展方向</a>
+                                    <p class="tag">14:00</p>
+                                </div>
+                                <div class="item">
+                                    <a class="info" href="#">陪马化腾喝茶</a>
+                                    <p class="tag">18:00</p>
+                                </div>
+                                <h4 class="title">后天</h4>
+                                <div class="item">
+                                    <a class="info" href="#">陪王健林喝茶</a>
+                                    <p class="tag">18:00</p>
+                                </div>
+                                <div class="item">
+                                    <a class="info" href="#">陪李嘉诚喝茶，并谈一谈未来十年移动互联网的发展方向</a>
+                                    <p class="tag">14:00</p>
+                                </div>
+                                <div class="item">
+                                    <a class="info" href="#">陪雷军喝茶</a>
+                                    <p class="tag">18:00</p>
+                                </div>
+                            </div>
+                            <!-- timeline over -->
+                        </div>
+                    </section>
+                    <!-- card over -->
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                // 窗口加载完成
+                $(window).on("load", function() {
+                    // 右侧边栏滚动条美化
+                    $(".modal-sidebar .modal-content").mCustomScrollbar({
+                        autoHideScrollbar: true,
+                        scrollInertia: 0,
+                        theme: "dark",
+                        mouseWheel:{
+                            scrollAmount: 40
+                        }
+                    });
+                });
+                // 左侧用户面板开关
+                $('#demo-side-user-switch').on('click', function () {
+                    if (this.checked) {
+                        $('.side-user').removeAttr('hidden');
+                    } else {
+                        $('.side-user').attr('hidden', true);
+                    }
+                });
+                // 左侧仪表面板开关
+                $('#demo-side-dashboard-switch').on('click', function () {
+                    if (this.checked) {
+                        $('.side-dashboard').removeAttr('hidden');
+                    } else {
+                        $('.side-dashboard').attr('hidden', true);
+                    }
+                });
+                // 顶部用户面板开关
+                $('#demo-header-user-switch').on('click', function () {
+                    if (this.checked) {
+                        $('.header-user').removeAttr('hidden');
+                    } else {
+                        $('.header-user').attr('hidden', true);
+                    }
+                });
+            });
+        </script>
+        <!-- sidebar over -->
     </header>
     <!-- header over -->
 
@@ -128,7 +254,7 @@
                     <span>zhouzhengrui</span>
                 </button>
                 <span class="user-position">前端攻城师</span>
-                <div class="dropdown-menu dropdown-menu-middle">
+                <div class="dropdown-menu">
                     <a class="item" href="#">编辑账号信息</a>
                     <a class="item" href="#">修改密码</a>
                     <div class="dropdown-divider"></div>
@@ -150,8 +276,8 @@
                     <a><i class="icon-window"></i><span>演示模板 - 电子商务</span></a>
                     <div class="nav-sub">
                         <div class="item"><a href="demo-eCommerce.html" data-pjax>首页</a></div>
-                        <div class="item"><a href="#" data-pjax>订单管理</a></div>
-                        <div class="item"><a href="#" data-pjax>商品管理</a></div>
+                        <!-- <div class="item"><a href="#" data-pjax>订单管理</a></div>
+                        <div class="item"><a href="#" data-pjax>商品管理</a></div> -->
                     </div>
                 </div>
                 <!-- item over -->
@@ -180,6 +306,8 @@
                     <div class="nav-sub">
                         <div class="item"><a href="ui-button.html" data-pjax>按钮</a></div>
                         <div class="item"><a href="ui-label.html" data-pjax>标签</a></div>
+                        <div class="item"><a href="ui-dropdown.html" data-pjax>下拉菜单</a></div>
+                        <div class="item"><a href="ui-tooltip.html" data-pjax>提示框</a></div>
                         <div class="item"><a href="ui-icofont.html" data-pjax>字体图标</a></div>
                         <div class="item"><a href="ui-color.html" data-pjax>颜色</a></div>
                     </div>
@@ -204,7 +332,17 @@
                         <div class="item"><a href="form-select.html" data-pjax>下拉列表</a></div>
                         <div class="item"><a href="form-radiocheckbox.html" data-pjax>单选多选框</a></div>
                         <div class="item"><a href="form-upload.html" data-pjax>文件上传</a></div>
+                        <div class="item"><a href="form-cropper.html" data-pjax>图片裁剪</a></div>
                         <div class="item"><a href="form-validate.html" data-pjax>表单验证</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>文本编辑器</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="editor-ueditor.html" data-pjax>UEditor</a></div>
+                        <div class="item"><a href="editor-editormd.html" data-pjax>Editor.md</a></div>
                     </div>
                 </div>
                 <!-- item over -->
@@ -242,7 +380,7 @@
         </div>
         <!-- nav over -->
         <!-- dashboard start -->
-        <div class="side-dashboard MT-hidden">
+        <div class="side-dashboard MT-hidden" hidden>
             <h6 class="side-title">仪表面板</h6>
             <div class="inner">
                 <div class="info">
@@ -445,6 +583,14 @@
 
     </main>
     <!-- main over -->
+    <!-- JS plugins -->
+    <script src="js/plugins.js"></script>
+    <!-- JS global -->
+    <script src="js/scripts.js"></script>
+    <!-- JS ueditor 按需载入 -->
+    <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
+    <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
+
 </body>
 
 </html>

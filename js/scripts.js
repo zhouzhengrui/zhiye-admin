@@ -1,27 +1,39 @@
 // pjax
 $(document).pjax("[data-pjax]", "main", {
     fragment: "main",
-    timeout: "5000"
-    // fx: 'fade',
+    timeout: "10000"
 });
 // nprogress开始
 NProgress.configure({
     showSpinner: false,
     speed: 300
 });
-// pjax nprogress
+// pjax start
 $(document).on("pjax:start", function() {
     NProgress.start();
-    // $("main").removeClass("main-fadein");
 });
-// jQuery ready
+// document ready
 jQuery(document).ready(function($) {
-
-    $(document).on("pjax:end", function() {
-        setTimeout(function () {
+    // 窗口加载完成
+    $(window).on("load", function() {
+        // 主导航滚动条
+        $(".side-nav").mCustomScrollbar({
+            autoHideScrollbar: true,
+            scrollInertia: 0,
+            mouseWheel:{
+                scrollAmount: 40
+            }
+        });
+    });
+    // pjax complete
+    $(document).on("pjax:complete", function() {
+        $("main").addClass("main-fadein");
+        setTimeout(function() {
             NProgress.done();
         }, 300);
-
+        // setTimeout(function() {
+        //     $("main").removeClass("main-fadein");
+        // }, 3000);
         // $("main").addClass("main-fadein");
         $("main").scrollTop(0);
         $("body.modal-open").removeClass();
@@ -71,48 +83,12 @@ jQuery(document).ready(function($) {
         $(this).addClass("active");
     })
 
-    // main滚动事件
-    $('main').scroll(function(){
+    // main滚动移除laydate弹出框
+    $('main').scroll(function() {
         $('[action="date"]').blur();
         $('.layui-laydate').remove();
     });
 
-    // highcharts 全局设置
-    Highcharts.setOptions({
-        colors: [
-            '#23b7e5', '#27c24c', '#7266ba', '#18C29C', '#f05050', '#E67E22', '#eac459', '#ff5b77'
-        ],
-        xAxis: {
-            gridLineWidth: -1,
-        },
-        credits: {
-            enabled: false // 取消版权
-        },
-        tooltip: {
-            useHTML: true // 使用html结构
-        },
-        navigation: {
-            buttonOptions: {
-                enabled: false, // 禁用导航按钮
-                height: 32,
-                width: 32,
-                symbolSize: 14,
-                symbolX: 16,
-                symbolY: 16,
-                x: 8,
-                y: -10
-            }
-        },
-        lang: {
-            contextButtonTitle: "导出图表",
-            printChart: "打印图表",
-            downloadJPEG: "下载JPEG图片",
-            downloadPDF: "下载PDF文档",
-            downloadPNG: "下载PNG图片",
-            downloadSVG: "下载SVG矢量图",
-            exportButtonTitle: "导出图片"
-        }
-    });
 
     // 页面全屏按钮
     var viewFullScreen = document.getElementById("fullscreen-view");
@@ -208,87 +184,63 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // 窗口加载完成
-    $(window).on("load", function() {
-        // nprogress完成
-        // NProgress.done();
-        // 主导航滚动条
-        $(".side-nav").mCustomScrollbar({
-            autoHideScrollbar: true,
-            scrollInertia: 300
-        });
-
-    });
-
 });
-
-// toast
-function toast(message, duration, position, align) {
+// Highcharts全局初始设置
+Highcharts.setOptions({
+    colors: [
+        '#23b7e5', '#27c24c', '#7266ba', '#18C29C', '#f05050', '#E67E22', '#eac459', '#ff5b77'
+    ],
+    xAxis: {
+        gridLineWidth: -1,
+    },
+    credits: {
+        enabled: false // 取消版权
+    },
+    tooltip: {
+        useHTML: true // 使用html结构
+    },
+    navigation: {
+        buttonOptions: {
+            enabled: false, // 禁用导航按钮
+            height: 32,
+            width: 32,
+            symbolSize: 14,
+            symbolX: 16,
+            symbolY: 16,
+            x: 8,
+            y: -10
+        }
+    },
+    lang: {
+        contextButtonTitle: "导出图表",
+        printChart: "打印图表",
+        downloadJPEG: "下载JPEG图片",
+        downloadPDF: "下载PDF文档",
+        downloadPNG: "下载PNG图片",
+        downloadSVG: "下载SVG矢量图",
+        exportButtonTitle: "导出图片"
+    }
+});
+// Toast
+function toast(message, duration, position) {
     if (typeof(position) != "undefined" && position != "") {
         position = "toast-" + position;
     } else {
         position = "";
     }
-    if (typeof(align) != "undefined" && align != "") {
-        align = "align-" + align;
-    } else {
-        align = "";
-    }
     duration = duration || 3000;
     duration = isNaN(duration) ? 3000 : duration;
     var m = document.createElement('div');
-    m.setAttribute("class", "toast " + position + " " + align);
+    m.setAttribute("class", "toast " + position);
     m.innerHTML = message;
-    document.body.appendChild(m);
+    body=document.querySelector("main").appendChild(m);
     setTimeout(function() {
-        m.setAttribute("class", "toast show " + position + " " + align);
+        m.setAttribute("class", "toast show " + position);
         setTimeout(function() {
-            m.setAttribute("class", "toast  " + position + " " + align);
+            m.setAttribute("class", "toast  " + position);
             setTimeout(function() {
-                document.body.removeChild(m);
+                body=document.querySelector("main").removeChild(m);
             }, 300);
         }, duration);
     }, 100);
 }
-
-// jQuery
-jQuery(document).ready(function($) {
-
-    // button
-    $('.button').on('tap', function() {
-        $(this).removeClass('active').addClass('active');
-        var set = setTimeout(function() {
-            $('.button').removeClass('active');
-        }, 100)
-    });
-
-    // button wave
-    $('.button-wave').on("tap", function() {
-        $(this).removeClass('wave').addClass('wave');
-        var set = setTimeout(function() {
-            $('.button-wave').removeClass('wave');
-        }, 500)
-    });
-
-    // label
-    $('.label-cancel').on('tap', function() {
-        $(this).removeClass('active').addClass('active');
-        var set = setTimeout(function() {
-            $('.label-cancel').removeClass('active');
-        }, 100)
-    });
-
-    // image lazyload
-    // $('img.lazyload').lazyload({
-    //     container: $('.scroller'),
-    //     threshold: 200,
-    //     effect: 'fadeIn'
-    // });
-
-    // radio
-    $('label.item').on('tap', function() {
-        $(this).siblings(':radio').prop('checked', false);
-        $(this).find(':radio').prop('checked', true);
-    });
-
-});

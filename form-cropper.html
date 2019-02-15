@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>图片裁剪</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS icofont -->
+    <link rel="stylesheet" href="icofont/style.css">
+    <!-- CSS global -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- jQuery -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+
+
+<body>
+    <!-- header start -->
+    <header>
+        <!-- brand start -->
+        <div class="brand">
+            <h4 class="title">马鞍山市志业软件科技有限公司</h4>
+            <p>后台管理系统</p>
+        </div>
+        <!-- brand start -->
+        <!-- bar start -->
+        <div class="header-bar">
+            <!-- item start -->
+            <div class="item dropdown header-list">
+                <button type="button" data-toggle="dropdown">
+                    <span>消息通知</span>
+                    <span class="badge">3</span>
+                </button>
+                <div class="dropdown-menu">
+                    <h6 class="dropdown-header">你有3条未读消息</h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot blue"></div>
+                        <p><b>站内通知: </b>新版后台管理系统即将上线</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot green"></div>
+                        <p><b>系统信息: </b>提交的信息审核通过</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <a class="item header-list-item" href="#">
+                        <div class="dot red"></div>
+                        <p><b>系统信息: </b>提交的信息未通过审核</p>
+                        <span>2017年9月1日 12:00</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="#"><i class="icon-gear"></i>查看更多</a>
+                </div>
+            </div>
+            <!-- item over -->
+            <!-- item start -->
+            <div class="item"><a href="http://www.maszy.cn/index.php?m=content&c=index&a=lists&catid=5" target="_blank">技术支持</a></div>
+            <!-- item over -->
+            <!-- user start -->
+            <div class="item dropdown header-user" hidden>
+                <button type="button" data-toggle="dropdown">
+                    <span class="user-name">zhouzhengrui</span>
+                    <span class="user-position">前端攻城师</span>
+                    <div class="avatar">
+                        <img src="img/avatar.jpg" alt="">
+                    </div>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="item" href="#"><i class="icon-pen"></i>编辑账号信息</a>
+                    <a class="item" href="#"><i class="icon-lock"></i>修改密码</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="page-login.html"><i class="icon-gear"></i>退出</a>
+                </div>
+            </div>
+            <!-- user over -->
+            <!-- fullscreen start -->
+            <div class="item MT-hidden">
+                <button type="button" id="fullscreen-view"><i class="icon-enlarge"></i></button>
+                <button type="button" id="fullscreen-exit"><i class="icon-narrow"></i></button>
+            </div>
+            <!-- fullscreen over -->
+            <!-- sidebar switch start -->
+            <div class="item MT-hidden">
+                <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar"><i class="icon-dot-array-y"></i></button>
+            </div>
+            <!-- sidebar switch over -->
+        </div>
+        <!-- bar over -->
+        <!-- MT bar start -->
+        <div class="MT-header-bar">
+            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target=".header-bar">
+                <i class="icon-user"></i>
+            </button>
+            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target="aside">
+                <i class="icon-list"></i>
+            </button>
+        </div>
+        <!-- MT bar over -->
+        <!-- sidebar start -->
+        <div class="modal fade modal-sidebar" id="modal-sidebar">
+            <div class="modal-dialog modal-stick-right">
+                <div class="modal-content">
+                    <!-- card start -->
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">右侧边栏</h3>
+                            <div class="card-header-action">
+                                <button type="button" data-dismiss="modal"><i class="icon-cancel"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <p>固定在右侧的一个额外区域，可用来放一些全局的设置或信息，按实际需求使用</p>
+                            <p>内容的布局与卡片的用法相同</p>
+                            <p>内容高度超出时会自动生成美化后的滚动条</p>
+                        </div>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form class="form">
+                                <fieldset class="form-group">
+                                    <legend class="label">效果演示</legend>
+                                    <div class="radiocheckbox-switch-item">
+                                        <label class="radiocheckbox-switch">
+                                            <input class="radiocheckbox" type="checkbox" id="demo-side-user-switch" checked>
+                                            <span class="radiocheckbox-replace">
+                                                <span class="slipper"></span>
+                                            </span>
+                                        </label>
+                                        <p class="radiocheckbox-switch-explain">左侧用户面板</p>
+                                    </div>
+                                    <div class="radiocheckbox-switch-item">
+                                        <label class="radiocheckbox-switch">
+                                            <input class="radiocheckbox" type="checkbox" id="demo-side-dashboard-switch">
+                                            <span class="radiocheckbox-replace">
+                                                <span class="slipper"></span>
+                                            </span>
+                                        </label>
+                                        <p class="radiocheckbox-switch-explain">左侧仪表面板</p>
+                                    </div>
+                                    <div class="radiocheckbox-switch-item">
+                                        <label class="radiocheckbox-switch">
+                                            <input class="radiocheckbox" type="checkbox" id="demo-header-user-switch">
+                                            <span class="radiocheckbox-replace">
+                                                <span class="slipper"></span>
+                                            </span>
+                                        </label>
+                                        <p class="radiocheckbox-switch-explain">顶部用户面板</p>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <!-- form over -->
+                        </div>
+                    </section>
+                    <!-- card over -->
+                    <!-- card start -->
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">待办事项</h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- timeline start -->
+                            <div class="list-timeline">
+                                <h4 class="title">今天</h4>
+                                <div class="item">
+                                    <a class="info" href="#">近期的项目验收</a>
+                                    <p class="tag">12:00</p>
+                                </div>
+                                <h4 class="title">明天</h4>
+                                <div class="item">
+                                    <a class="info" href="#">陪马云喝茶，并谈一谈未来十年移动互联网的发展方向</a>
+                                    <p class="tag">14:00</p>
+                                </div>
+                                <div class="item">
+                                    <a class="info" href="#">陪马化腾喝茶</a>
+                                    <p class="tag">18:00</p>
+                                </div>
+                                <h4 class="title">后天</h4>
+                                <div class="item">
+                                    <a class="info" href="#">陪王健林喝茶</a>
+                                    <p class="tag">18:00</p>
+                                </div>
+                                <div class="item">
+                                    <a class="info" href="#">陪李嘉诚喝茶，并谈一谈未来十年移动互联网的发展方向</a>
+                                    <p class="tag">14:00</p>
+                                </div>
+                                <div class="item">
+                                    <a class="info" href="#">陪雷军喝茶</a>
+                                    <p class="tag">18:00</p>
+                                </div>
+                            </div>
+                            <!-- timeline over -->
+                        </div>
+                    </section>
+                    <!-- card over -->
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                // 窗口加载完成
+                $(window).on("load", function() {
+                    // 右侧边栏滚动条美化
+                    $(".modal-sidebar .modal-content").mCustomScrollbar({
+                        autoHideScrollbar: true,
+                        scrollInertia: 0,
+                        theme: "dark",
+                        mouseWheel:{
+                            scrollAmount: 40
+                        }
+                    });
+                });
+                // 左侧用户面板开关
+                $('#demo-side-user-switch').on('click', function () {
+                    if (this.checked) {
+                        $('.side-user').removeAttr('hidden');
+                    } else {
+                        $('.side-user').attr('hidden', true);
+                    }
+                });
+                // 左侧仪表面板开关
+                $('#demo-side-dashboard-switch').on('click', function () {
+                    if (this.checked) {
+                        $('.side-dashboard').removeAttr('hidden');
+                    } else {
+                        $('.side-dashboard').attr('hidden', true);
+                    }
+                });
+                // 顶部用户面板开关
+                $('#demo-header-user-switch').on('click', function () {
+                    if (this.checked) {
+                        $('.header-user').removeAttr('hidden');
+                    } else {
+                        $('.header-user').attr('hidden', true);
+                    }
+                });
+            });
+        </script>
+        <!-- sidebar over -->
+    </header>
+    <!-- header over -->
+
+    <!-- aside start -->
+    <aside>
+        <!-- user start -->
+        <div class="side-user">
+            <div class="avatar">
+                <img src="img/avatar.jpg" alt="">
+            </div>
+            <div class="info dropdown">
+                <button type="button" class="user-name dropdown-toggle" data-toggle="dropdown">
+                    <span>zhouzhengrui</span>
+                </button>
+                <span class="user-position">前端攻城师</span>
+                <div class="dropdown-menu">
+                    <a class="item" href="#">编辑账号信息</a>
+                    <a class="item" href="#">修改密码</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="item" href="page-login.html">退出</a>
+                </div>
+            </div>
+        </div>
+        <!-- user over -->
+        <!-- nav start -->
+        <div class="side-nav">
+            <nav class="nav">
+                <!-- item start -->
+                <div class="item">
+                    <a class="active" href="index.html" data-pjax><i class="icon-home"></i><span>首页</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-window"></i><span>演示模板 - 电子商务</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="demo-eCommerce.html" data-pjax>首页</a></div>
+                        <!-- <div class="item"><a href="#" data-pjax>订单管理</a></div>
+                        <div class="item"><a href="#" data-pjax>商品管理</a></div> -->
+                    </div>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">页面布局</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a href="layout-templet.html" data-pjax><i class="icon-gear"></i><span>初始模板</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>主体布局</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="layout-grid.html" data-pjax>网格系统</a></div>
+                        <div class="item"><a href="layout-card.html" data-pjax>卡片</a></div>
+                        <div class="item"><a href="layout-tab.html" data-pjax>选项卡</a></div>
+                        <div class="item"><a href="layout-collapse.html" data-pjax>折叠面板</a></div>
+                        <div class="item"><a href="layout-responsive.html" data-pjax>响应式工具</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">组件</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a href="#" data-pjax><i class="icon-gear"></i><span>UI元素</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="ui-button.html" data-pjax>按钮</a></div>
+                        <div class="item"><a href="ui-label.html" data-pjax>标签</a></div>
+                        <div class="item"><a href="ui-dropdown.html" data-pjax>下拉菜单</a></div>
+                        <div class="item"><a href="ui-tooltip.html" data-pjax>提示框</a></div>
+                        <div class="item"><a href="ui-icofont.html" data-pjax>字体图标</a></div>
+                        <div class="item"><a href="ui-color.html" data-pjax>颜色</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="list.html" data-pjax><i class="icon-gear"></i><span>列表</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="table.html" data-pjax><i class="icon-gear"></i><span>表格</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>表单</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="form-layout.html" data-pjax>表单布局</a></div>
+                        <div class="item"><a href="form-input.html" data-pjax>输入框</a></div>
+                        <div class="item"><a href="form-select.html" data-pjax>下拉列表</a></div>
+                        <div class="item"><a href="form-radiocheckbox.html" data-pjax>单选多选框</a></div>
+                        <div class="item"><a href="form-upload.html" data-pjax>文件上传</a></div>
+                        <div class="item"><a href="form-cropper.html" data-pjax>图片裁剪</a></div>
+                        <div class="item"><a href="form-validate.html" data-pjax>表单验证</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>文本编辑器</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="editor-ueditor.html" data-pjax>UEditor</a></div>
+                        <div class="item"><a href="editor-editormd.html" data-pjax>Editor.md</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>树</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="tree-ztree.html" data-pjax>zTree</a></div>
+                        <div class="item"><a href="tree-treeview.html" data-pjax>Tree View</a></div>
+                        <div class="item"><a href="tree-nestable.html" data-pjax>Nestable</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="modal.html" data-pjax><i class="icon-gear"></i><span>模态框</span></a>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="chart.html" data-pjax><i class="icon-gear"></i><span>数据图</span></a>
+                </div>
+                <!-- item over -->
+                <h6 class="nav-title">其他</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>单页</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="page-login.html">登录</a></div>
+                        <div class="item"><a href="page-404.html">404</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+            </nav>
+        </div>
+        <!-- nav over -->
+        <!-- dashboard start -->
+        <div class="side-dashboard MT-hidden" hidden>
+            <h6 class="side-title">仪表面板</h6>
+            <div class="inner">
+                <div class="info">
+                    <p>进度条</p>
+                    <p>60%</p>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="info">
+                    <p>里程碑</p>
+                    <p>30%</p>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 30%;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- dashboard over -->
+    </aside>
+    <!-- aside over -->
+
+    <!-- main start -->
+    <main>
+        <!-- banner start -->
+        <div class="banner">
+            <div class="banner-title">
+                <h2>图片裁剪</h2>
+                <p><code>.cropper</code></p>
+            </div>
+        </div>
+        <!-- banner over -->
+        <!-- container start -->
+        <div class="container-fluid">
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">Cropper<small><a href="https://fengyuanchen.github.io/cropperjs/" target="_blank">官方网站</a></small></h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form class="form">
+                                <!-- cropper start -->
+                                <fieldset class="form-group">
+                                    <legend class="label">预览图</legend>
+                                    <div class="cropper">
+                                        <div class="cropper-preview">
+                                            <p class="cropper-preview-text" id="cropper-preview-text">点击这里添加图片</p>
+                                            <img id="cropper-preview" src="">
+                                        </div>
+                                        <div class="cropper-upload">
+                                            <input type="hidden" id="cropper-url" class="md-trigger" data-modal="modal-cropper">
+                                            <label class="cropper-input-label">
+                                                <input type="file" id="cropper-input" accept="image/*">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <!-- cropper over -->
+                            </form>
+                            <!-- form over -->
+                        </div>
+                    </section>
+                </div>
+                <!-- column over -->
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="code-group">
+                        <h6 class="code-title">Cropper</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- cropper start -->
+                                    <fieldset class="form-group">
+                                        <legend class="label">预览图</legend>
+                                        <div class="cropper">
+                                            <div class="cropper-preview">
+                                                <p class="cropper-preview-text" id="cropper-preview-text">点击这里添加图片</p>
+                                                <img id="cropper-preview" src="">
+                                            </div>
+                                            <div class="cropper-upload">
+                                                <input type="hidden" id="cropper-url" class="md-trigger" data-modal="modal-cropper">
+                                                <label class="cropper-input-label">
+                                                    <input type="file" id="cropper-input" accept="image/*">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <!-- cropper over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // 加载cropper
+                                    $.getScript("js/cropper/cropper.min.js", function() {
+                                        $cropperInput = $("#cropper-input"); // 选择文件框
+                                        $cropperModal = $('#modal-cropper'); // 裁剪模态框
+                                        $cropperImage = $('#modal-cropper-image'); // 裁剪区域的图片
+                                        $cropperSave = $('#cropper-save'); // 确定裁剪按钮
+                                        $cropperUrl = $("#cropper-url"); // 裁剪完成图片数据
+                                        $cropperPreview = $("#cropper-preview"); // 裁剪完成图片显示区域
+                                        // cropper设置
+                                        var cropperOptions = {
+                                            // 裁剪框比例, 要与画布尺寸成正比
+                                            aspectRatio: 1/1,
+                                            // 视图模式
+                                            viewMode: 1,
+                                            // 拖拽模式
+                                            dragMode: 'move',
+                                            // 网格
+                                            guides: true,
+                                            // 自动裁剪面积大小
+                                            autoCropArea: 1,
+                                            // 是否通过拖拽来移动剪裁框
+                                            cropBoxMovable: true,
+                                            // 是否通过拖动来调整剪裁框的大小
+                                            cropBoxResizable: true,
+                                        };
+                                        // 选择图片
+                                        $cropperInput.change(function() {
+                                            // 判断是否支持FileReader
+                                            if (window.FileReader) {
+                                                var reader = new FileReader();
+                                            } else {
+                                                alert("设备不支持图片预览功能");
+                                            }
+                                            // 获取图片
+                                            var file  = $cropperInput.prop('files')[0];
+                                            var imageType = /^image\//;
+                                            // 是否是图片
+                                            if (!imageType.test(file.type)) {
+                                                alert("请选择图片");
+                                                return;
+                                            }
+                                            // 选择图片后显示弹出框
+                                            $cropperModal.modal('show');
+                                            // 获得图片文件路径
+                                            var url = URL.createObjectURL(file);
+                                            $cropperImage.attr("src", url);
+                                            // 销毁
+                                            $cropperImage.cropper("destroy");
+                                            // cropper初始化
+                                            $cropperImage.on().cropper(cropperOptions);
+                                            // 清空选择文件框, 防止同文件重选无响应
+                                            $(this).val("");
+                                            return false;
+                                        });
+                                        // 裁剪保存
+                                        $cropperSave.click(function() {
+                                            // 生成画布
+                                            var result = $cropperImage.cropper("getCroppedCanvas", {
+                                                // 画布尺寸, 要与裁剪框比例相符
+                                                width: 300,
+                                                height: 300
+                                            });
+                                            // base64数据
+                                            var headimg_base64 = result.toDataURL('image/jpeg');
+                                            $cropperUrl.val(headimg_base64);
+                                            $('#cropper-preview-text').remove();
+                                            // 显示裁剪的图片
+                                            $cropperPreview.attr("src", headimg_base64);
+                                            // 关闭弹出框
+                                            $cropperModal.modal('hide');
+                                        });
+                                    });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+        </div>
+        <!-- container over -->
+        <!-- modal start -->
+        <div class="modal fade modal-cropper" id="modal-cropper" data-backdrop="static">
+            <div class="modal-dialog"">
+                <!-- card start -->
+                <section class="card">
+                    <div class="card-header">
+                        <h3 class="title">卡片标题<small>卡片副标题</small></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="cropper-wrapper">
+                            <img id="modal-cropper-image" src="">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="button-group">
+                            <button type="button" class="button" id="cropper-save">确定</button>
+                            <button type="button" class="button button-flat" data-dismiss="modal">取消</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- card over -->
+            </div>
+        </div>
+        <!-- modal over -->
+        <!-- page script start -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                // 加载cropper
+                $.getScript("js/cropper/cropper.min.js", function() {
+                    $cropperInput = $("#cropper-input"); // 选择文件框
+                    $cropperModal = $('#modal-cropper'); // 裁剪模态框
+                    $cropperImage = $('#modal-cropper-image'); // 裁剪区域的图片
+                    $cropperSave = $('#cropper-save'); // 确定裁剪按钮
+                    $cropperUrl = $("#cropper-url"); // 裁剪完成图片数据
+                    $cropperPreview = $("#cropper-preview"); // 裁剪完成图片显示区域
+                    // cropper设置
+                    var cropperOptions = {
+                        // 裁剪框比例, 要与画布尺寸成正比
+                        aspectRatio: 1/1,
+                        // 视图模式
+                        viewMode: 1,
+                        // 拖拽模式
+                        dragMode: 'move',
+                        // 网格
+                        guides: true,
+                        // 自动裁剪面积大小
+                        autoCropArea: 1,
+                        // 是否通过拖拽来移动剪裁框
+                        cropBoxMovable: true,
+                        // 是否通过拖动来调整剪裁框的大小
+                        cropBoxResizable: true,
+                    };
+                    // 选择图片
+                    $cropperInput.change(function() {
+                        // 判断是否支持FileReader
+                        if (window.FileReader) {
+                            var reader = new FileReader();
+                        } else {
+                            alert("设备不支持图片预览功能");
+                        }
+                        // 获取图片
+                        var file  = $cropperInput.prop('files')[0];
+                        var imageType = /^image\//;
+                        // 是否是图片
+                        if (!imageType.test(file.type)) {
+                            alert("请选择图片");
+                            return;
+                        }
+                        // 选择图片后显示弹出框
+                        $cropperModal.modal('show');
+                        // 获得图片文件路径
+                        var url = URL.createObjectURL(file);
+                        $cropperImage.attr("src", url);
+                        // 销毁
+                        $cropperImage.cropper("destroy");
+                        // cropper初始化
+                        $cropperImage.on().cropper(cropperOptions);
+                        // 清空选择文件框, 防止同文件重选无响应
+                        $(this).val("");
+                        return false;
+                    });
+                    // 裁剪保存
+                    $cropperSave.click(function() {
+                        // 生成画布
+                        var result = $cropperImage.cropper("getCroppedCanvas", {
+                            // 画布尺寸, 要与裁剪框比例相符
+                            width: 300,
+                            height: 300
+                        });
+                        // base64数据
+                        var headimg_base64 = result.toDataURL('image/jpeg');
+                        $cropperUrl.val(headimg_base64);
+                        $('#cropper-preview-text').remove();
+                        // 显示裁剪的图片
+                        $cropperPreview.attr("src", headimg_base64);
+                        // 关闭弹出框
+                        $cropperModal.modal('hide');
+                    });
+                });
+                // 代码块
+                $.when(
+                    $.getScript('js/clipboard/clipboard.min.js'),
+                    $.getScript('js/prism/prism.js'),
+                    $.getScript('js/prism/prism-copy.js')
+                ).then(function() {
+                    Prism.highlightAll();
+                });
+            });
+        </script>
+        <!-- page script over -->
+        <!-- copyright start -->
+        <div class="copyright">
+            <p>Powered by <a href="http://www.maszy.cn" target="_blank">© ZhiYe Software Technology Co.,Ltd</a></p>
+        </div>
+        <!-- copyright over -->
+
+    </main>
+    <!-- main over -->
+    <!-- JS plugins -->
+    <script src="js/plugins.js"></script>
+    <!-- JS global -->
+    <script src="js/scripts.js"></script>
+    <!-- JS ueditor 按需载入 -->
+    <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
+    <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
+
+</body>
+
+</html>
