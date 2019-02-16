@@ -16,7 +16,6 @@
     <script src="js/jquery-1.9.1.min.js"></script>
 </head>
 
-
 <body>
     <!-- header start -->
     <header>
@@ -421,7 +420,7 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">Tooltips<small>基于<a href="https://getbootstrap.com/docs/4.0/components/tooltips/">bootstrap v4.0 tooltips</a></small></h3>
+                            <h3 class="title">Tooltips<small>基于<a href="https://getbootstrap.com/docs/4.0/components/tooltips/" target="_blank">bootstrap v4.0 tooltips</a></small></h3>
                         </div>
                         <div class="card-body">
                             <!-- tooltip start -->
@@ -470,55 +469,64 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">Toast</h3>
+                            <h3 class="title">Toast<small><a href="https://github.com/CodeSeven/toastr" target="_blank">Toastr.js</a></small></h3>
                         </div>
                         <div class="card-body">
                             <!-- toast start -->
-                            <button type="button" class="button" id="toast-1">中部显示</button>
-                            <button type="button" class="button" id="toast-2">顶部显示</button>
+                            <button type="button" class="button" id="toast-1">信息提示</button>
+                            <button type="button" class="button" id="toast-2">警告提示</button>
+                            <button type="button" class="button" id="toast-3">正确提示</button>
+                            <button type="button" class="button" id="toast-4">错误提示</button>
+                            <button type="button" class="button" id="toast-5">其他功能</button>
                             <!-- toast over -->
                         </div>
                     </section>
-                    <ul class="explain">
-                        <li><code>toast('提示信息', 3000, 'top');</code>三个值依次为文字信息 / 显示时长 / 位置</li>
-                    </ul>
                 </div>
                 <!-- column over -->
                 <!-- column start -->
                 <div class="col-lg-6">
                     <section class="code-group">
-                        <h6 class="code-title">中部显示</h6>
+                        <h6 class="code-title">Toast</h6>
                         <pre>
-                            <code class="language-html">
+                            <code class="language-js">
                                 <script type="text/plain">
-                                    <button type="button" class="button" id="toast-1">中部显示</button>
+                                    // toast info
+                                    toastr.info('信息提示')
                                 </script>
                             </code>
                         </pre>
                         <pre>
                             <code class="language-js">
                                 <script type="text/plain">
-                                    $('#toast-1').on('click', function() {
-                                        toast('提示信息', 3000, 'center');
-                                    });
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">顶部显示</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <button type="button" class="button" id="toast-2">顶部显示</button>
+                                    // toast warning
+                                    toastr.warning('警告提示')
                                 </script>
                             </code>
                         </pre>
                         <pre>
                             <code class="language-js">
                                 <script type="text/plain">
-                                    $('#toast-2').on('click', function() {
-                                        toast('提示信息', 3000, 'top');
+                                    // toast success
+                                    toastr.success('正确提示')
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // toast error
+                                    toastr.error('错误提示')
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // toast 其他功能
+                                    toastr.info('提示信息', '提示标题', {
+                                        timeOut: 8000, // 持续时间
+                                        progressBar: true, // 进度条
+                                        closeButton: true // 关闭按钮
                                     });
                                 </script>
                             </code>
@@ -534,7 +542,7 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">Alerts<small>按情境使用相应的颜色</small></h3>
+                            <h3 class="title">Alerts<small>可以放在任意位置, 按情境使用相应的颜色</small></h3>
                         </div>
                         <div class="card-body">
                             <!-- alert start -->
@@ -545,28 +553,28 @@
                                 </button>
                             </div>
                             <div class="alert alert-red">
-                                <p><b>警告:</b> 红色提示信息</p>
+                                <p><b>警告: </b>红色提示信息</p>
                             </div>
                             <div class="alert alert-orange">
-                                <p><b>警告:</b> 橙色提示信息</p>
+                                <p><b>警告: </b>橙色提示信息</p>
                             </div>
                             <div class="alert alert-yellow">
-                                <p><b>警告:</b> 黄色提示信息</p>
+                                <p><b>警告: </b>黄色提示信息</p>
                             </div>
                             <div class="alert alert-green">
-                                <p><b>警告:</b> 绿色提示信息</p>
+                                <p><b>警告: </b>绿色提示信息</p>
                             </div>
                             <div class="alert alert-cyan">
-                                <p><b>警告:</b> 青色提示信息</p>
+                                <p><b>警告: </b>青色提示信息</p>
                             </div>
                             <div class="alert alert-blue">
-                                <p><b>警告:</b> 蓝色提示信息</p>
+                                <p><b>警告: </b>蓝色提示信息</p>
                             </div>
                             <div class="alert alert-purple">
-                                <p><b>警告:</b> 紫色提示信息</p>
+                                <p><b>警告: </b>紫色提示信息</p>
                             </div>
                             <div class="alert alert-pink">
-                                <p><b>警告:</b> 粉色提示信息</p>
+                                <p><b>警告: </b>粉色提示信息</p>
                             </div>
                             <!-- alert over -->
                         </div>
@@ -599,35 +607,35 @@
                                 <script type="text/plain">
                                     <!-- alert 红色 -->
                                     <div class="alert alert-red">
-                                        <p><b>警告:</b> 红色提示信息</p>
+                                        <p><b>警告: </b>红色提示信息</p>
                                     </div>
                                     <!-- alert 橙色 -->
                                     <div class="alert alert-orange">
-                                        <p><b>警告:</b> 橙色提示信息</p>
+                                        <p><b>警告: </b>橙色提示信息</p>
                                     </div>
                                     <!-- alert 黄色 -->
                                     <div class="alert alert-yellow">
-                                        <p><b>警告:</b> 黄色提示信息</p>
+                                        <p><b>警告: </b>黄色提示信息</p>
                                     </div>
                                     <!-- alert 绿色 -->
                                     <div class="alert alert-green">
-                                        <p><b>警告:</b> 绿色提示信息</p>
+                                        <p><b>警告: </b>绿色提示信息</p>
                                     </div>
                                     <!-- alert 青色 -->
                                     <div class="alert alert-cyan">
-                                        <p><b>警告:</b> 青色提示信息</p>
+                                        <p><b>警告: </b>青色提示信息</p>
                                     </div>
                                     <!-- alert 蓝色 -->
                                     <div class="alert alert-blue">
-                                        <p><b>警告:</b> 蓝色提示信息</p>
+                                        <p><b>警告: </b>蓝色提示信息</p>
                                     </div>
                                     <!-- alert 紫色 -->
                                     <div class="alert alert-purple">
-                                        <p><b>警告:</b> 紫色提示信息</p>
+                                        <p><b>警告: </b>紫色提示信息</p>
                                     </div>
                                     <!-- alert 粉色 -->
                                     <div class="alert alert-pink">
-                                        <p><b>警告:</b> 粉色提示信息</p>
+                                        <p><b>警告: </b>粉色提示信息</p>
                                     </div>
                                 </script>
                             </code>
@@ -643,10 +651,28 @@
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 $('#toast-1').on('click', function() {
-                    toast('提示信息', 3000, 'center');
+                    // toast info
+                    toastr.info('信息提示')
                 });
                 $('#toast-2').on('click', function() {
-                    toast('提示信息', 3000, 'top');
+                    // toast warning
+                    toastr.warning('警告提示')
+                });
+                $('#toast-3').on('click', function() {
+                    // toast success
+                    toastr.success('正确提示')
+                });
+                $('#toast-4').on('click', function() {
+                    // toast error
+                    toastr.error('错误提示')
+                });
+                $('#toast-5').on('click', function() {
+                    // toast 其他功能
+                    toastr.info('toast是非阻塞式的提示信息, 可以根据设置的时间自动消失', '信息提示', {
+                        timeOut: 8000, // 持续时间
+                        progressBar: true, // 进度条
+                        closeButton: true // 关闭按钮
+                    });
                 });
                 // 代码块
                 $.when(

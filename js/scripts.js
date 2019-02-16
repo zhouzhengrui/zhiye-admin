@@ -1,15 +1,16 @@
-// pjax
+// pjax设置
 $(document).pjax("[data-pjax]", "main", {
     fragment: "main",
     timeout: "10000"
 });
-// nprogress开始
+// nprogress设置
 NProgress.configure({
     showSpinner: false,
     speed: 300
 });
 // pjax start
 $(document).on("pjax:start", function() {
+    // nprogress start
     NProgress.start();
 });
 // document ready
@@ -27,17 +28,18 @@ jQuery(document).ready(function($) {
     });
     // pjax complete
     $(document).on("pjax:complete", function() {
-        $("main").addClass("main-fadein");
+        // nprogress over
         setTimeout(function() {
             NProgress.done();
         }, 300);
-        // setTimeout(function() {
-        //     $("main").removeClass("main-fadein");
-        // }, 3000);
-        // $("main").addClass("main-fadein");
+        // main淡入动画
+        $("main").addClass("main-fadein");
+        // main复位
         $("main").scrollTop(0);
+        // 已开启modal的页面复位
         $("body.modal-open").removeClass();
         $(".modal-backdrop").remove();
+
         // tooltip
         $('[action="tooltip"]').tooltip();
         // tab
@@ -60,6 +62,27 @@ jQuery(document).ready(function($) {
         Waves.attach('button.button, a.button');
     });
 
+    // tooltip
+    $('[action="tooltip"]').tooltip();
+    // tab
+    $('[action="tab-body"]').tabbedContent();
+    // 卡片全屏
+    $('[action="card-fullscreen"]').on("click", function() {
+        $(this).parent().parent().parent('.card').toggleClass('card-fullscreen');
+        $(this).children('.icon-enlarge').toggleClass('icon-narrow');
+        if ($(this).parent().parent().siblings().children().hasClass('highcharts')) {
+            $(this).parent().parent().parent('.card').toggleClass('card-chart-fullscreen');
+            $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
+        }
+    });
+    // 代码块
+    $('.code-group .code-title').on("click", function() {
+        $(this).siblings('pre').toggleClass('show');
+    });
+    // waves
+    Waves.init();
+    Waves.attach('button.button, a.button');
+
     // 有二级导航的条目添加箭头
     if ($("nav.nav > .item").find(".nav-sub").length > 0) {
         $(this).find(".nav-sub").siblings("a").append("<i class='icon-arrow-down'></i>");
@@ -68,6 +91,7 @@ jQuery(document).ready(function($) {
     var nav = $('nav.nav > .item > a');
     var subnav = $('nav.nav > .item > .nav-sub');
     nav.on('click', function() {
+        // 一级导航没有active时
         if ($(this).attr('class') != 'active') {
             subnav.slideUp(300);
             $(this).next().stop(true, true).slideToggle(300);
@@ -76,19 +100,23 @@ jQuery(document).ready(function($) {
             $(this).parent().siblings().children(".nav-sub").removeClass("active");
             $(this).siblings(".nav-sub").toggleClass("active");
         }
+        // 点击没有二级导航的一级导航时移除其他二级导航的active
+        if ($(this).next(".nav-sub").length == 0) {
+            $(this).parent().siblings().children(".nav-sub").children(".item").removeClass("active");
+        }
     });
     // 二级导航点击事件
     $(".nav-sub > .item").click(function() {
+        // 移除其他active, 并在此二级导航添加active
         $(".nav-sub > .item.active").removeClass("active");
         $(this).addClass("active");
-    })
+    });
 
     // main滚动移除laydate弹出框
     $('main').scroll(function() {
         $('[action="date"]').blur();
         $('.layui-laydate').remove();
     });
-
 
     // 页面全屏按钮
     var viewFullScreen = document.getElementById("fullscreen-view");
@@ -116,76 +144,50 @@ jQuery(document).ready(function($) {
             $('#fullscreen-view').show();
         });
     }
-
     // 右侧边栏按钮激活样式
     $("#modal-sidebar").on("show.bs.modal", function() {
         $("#modal-sidebar-button").addClass("active");
-    })
+    });
     $("#modal-sidebar").on("hide.bs.modal", function() {
         $("#modal-sidebar-button").removeClass("active")
-    })
-
-    // tooltip
-    $('[action="tooltip"]').tooltip();
-
-    // tab
-    $('[action="tab-body"]').tabbedContent();
-
-    // 卡片全屏
-    $('[action="card-fullscreen"]').on("click", function() {
-        $(this).parent().parent().parent('.card').toggleClass('card-fullscreen');
-        $(this).children('.icon-enlarge').toggleClass('icon-narrow');
-        if ($(this).parent().parent().siblings().children().hasClass('highcharts')) {
-            $(this).parent().parent().parent('.card').toggleClass('card-chart-fullscreen');
-            $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
-        }
     });
-
-    // 代码块
-    $('.code-group .code-title').on("click", function() {
-        $(this).siblings('pre').toggleClass('show');
-    });
-
-    // waves
-    Waves.init();
-    Waves.attach('button.button, a.button');
-
-    // validate
-    (function(factory) {
-        if (typeof define === "function" && define.amd) {
-            define(["jquery", "../jquery.validate"], factory);
-        } else {
-            factory(jQuery);
-        }
-    }(function($) {
-        $.extend($.validator.messages, {
-            required: "这是必填字段",
-            remote: "请修正此字段",
-            email: "请输入有效的电子邮件地址",
-            url: "请输入有效的网址",
-            date: "请输入有效的日期",
-            dateISO: "请输入有效的日期 (YYYY-MM-DD)",
-            number: "请输入有效的数字",
-            digits: "只能输入数字",
-            creditcard: "请输入有效的信用卡号码",
-            equalTo: "你的输入不相同",
-            extension: "请输入有效的后缀",
-            maxlength: $.validator.format("最多可以输入 {0} 个字符"),
-            minlength: $.validator.format("最少要输入 {0} 个字符"),
-            rangelength: $.validator.format("请输入长度在 {0} 到 {1} 之间的字符串"),
-            range: $.validator.format("请输入范围在 {0} 到 {1} 之间的数值"),
-            max: $.validator.format("请输入不大于 {0} 的数值"),
-            min: $.validator.format("请输入不小于 {0} 的数值")
-        });
-    }));
-    $.validator.setDefaults({
-        errorPlacement: function(error, element) {
-            error.appendTo(element.parents('.form-group').children('.label'));
-        }
-    });
-
 });
-// Highcharts全局初始设置
+// validate全局设置
+(function(factory) {
+    if (typeof define === "function" && define.amd) {
+        define(["jquery", "../jquery.validate"], factory);
+    } else {
+        factory(jQuery);
+    }
+}(function($) {
+    $.extend($.validator.messages, {
+        required: "这是必填字段",
+        remote: "请修正此字段",
+        email: "请输入有效的电子邮件地址",
+        url: "请输入有效的网址",
+        date: "请输入有效的日期",
+        dateISO: "请输入有效的日期 (YYYY-MM-DD)",
+        number: "请输入有效的数字",
+        digits: "只能输入数字",
+        creditcard: "请输入有效的信用卡号码",
+        equalTo: "你的输入不相同",
+        extension: "请输入有效的后缀",
+        maxlength: $.validator.format("最多可以输入 {0} 个字符"),
+        minlength: $.validator.format("最少要输入 {0} 个字符"),
+        rangelength: $.validator.format("请输入长度在 {0} 到 {1} 之间的字符串"),
+        range: $.validator.format("请输入范围在 {0} 到 {1} 之间的数值"),
+        max: $.validator.format("请输入不大于 {0} 的数值"),
+        min: $.validator.format("请输入不小于 {0} 的数值")
+    });
+}));
+// validate默认设置
+$.validator.setDefaults({
+    // 错误信息显示位置
+    errorPlacement: function(error, element) {
+        error.appendTo(element.parents('.form-group').children('.label'));
+    }
+});
+// Highcharts全局设置
 Highcharts.setOptions({
     colors: [
         '#23b7e5', '#27c24c', '#7266ba', '#18C29C', '#f05050', '#E67E22', '#eac459', '#ff5b77'
@@ -221,26 +223,3 @@ Highcharts.setOptions({
         exportButtonTitle: "导出图片"
     }
 });
-// Toast
-function toast(message, duration, position) {
-    if (typeof(position) != "undefined" && position != "") {
-        position = "toast-" + position;
-    } else {
-        position = "";
-    }
-    duration = duration || 3000;
-    duration = isNaN(duration) ? 3000 : duration;
-    var m = document.createElement('div');
-    m.setAttribute("class", "toast " + position);
-    m.innerHTML = message;
-    body=document.querySelector("main").appendChild(m);
-    setTimeout(function() {
-        m.setAttribute("class", "toast show " + position);
-        setTimeout(function() {
-            m.setAttribute("class", "toast  " + position);
-            setTimeout(function() {
-                body=document.querySelector("main").removeChild(m);
-            }, 300);
-        }, duration);
-    }, 100);
-}
