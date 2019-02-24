@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>文件上传</title>
+    <title>进度条</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -454,7 +454,7 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>文件上传</h2>
+                <h2>进度条<small><code>.progress</code></small></h2>
             </div>
         </div>
         <!-- banner over -->
@@ -466,135 +466,102 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">基本样式<small><code>input.file</code></small></h3>
+                            <h3 class="title">基本样式</h3>
                         </div>
                         <div class="card-body">
-                            <!-- form start -->
-                            <form class="form">
-                                <!-- file start -->
-                                <fieldset class="form-group">
-                                    <legend class="label">单文件上传</legend>
-                                    <div class="file-group">
-                                        <input class="file" type="file">
-                                        <button class="button" type="button">上传</button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span class="green">上传成功</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 100%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
-                                </fieldset>
-                                <!-- file over -->
-                                <!-- files start -->
-                                <fieldset class="form-group">
-                                    <legend class="label">多文件上传</legend>
-                                    <div class="file-group">
-                                        <input class="file" type="file" multiple>
-                                        <button class="button" type="button">上传</button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span>50%</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 50%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span class="red">上传失败</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 0%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
-                                </fieldset>
-                                <!-- files over -->
-                            </form>
-                            <!-- form over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>默认样式</h6>
+                                <p class="gray">30%</p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 30%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>大型进度条</h6>
+                                <p class="gray">60%</p>
+                            </div>
+                            <div class="progress progress-large">
+                                <div class="progress-bar" style="width: 60%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>条纹动画</h6>
+                                <p class="gray">90%</p>
+                            </div>
+                            <div class="progress progress-large">
+                                <div class="progress-bar" style="width: 90%;">
+                                    <div class="progress-bar-stripe"></div>
+                                </div>
+                            </div>
+                            <!-- progress over -->
                         </div>
                     </section>
                 </div>
                 <!-- column over -->
-                <!-- column start -->
+                <!-- column-code start -->
                 <div class="col-lg-6">
                     <section class="code-group">
-                        <h6 class="code-title">单文件上传</h6>
+                        <h6 class="code-title">默认样式</h6>
                         <pre>
                             <code class="language-html">
                                 <script type="text/plain">
-                                    <!-- file start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">标题</legend>
-                                        <div class="file-group">
-                                            <input class="file" type="file">
-                                            <button class="button" type="button">上传</button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span class="green">上传成功</span>
-                                                <span>document.jpg</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 100%;"></div>
-                                            </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                    </fieldset>
-                                    <!-- file over -->
+                                    <!-- progress start -->
+                                    <div class="progress-info">
+                                        <h6>默认样式</h6>
+                                        <p class="gray">30%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 30%;"></div>
+                                    </div>
+                                    <!-- progress over -->
                                 </script>
                             </code>
                         </pre>
                     </section>
                     <section class="code-group">
-                        <h6 class="code-title">多文件上传</h6>
+                        <h6 class="code-title">大型进度条</h6>
                         <pre>
                             <code class="language-html">
                                 <script type="text/plain">
-                                    <!-- files start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">标题</legend>
-                                        <div class="file-group">
-                                            <input class="file" type="file" multiple>
-                                            <button class="button" type="button">上传</button>
+                                    <!-- progress start -->
+                                    <div class="progress-info">
+                                        <h6>大型进度条</h6>
+                                        <p class="gray">60%</p>
+                                    </div>
+                                    <div class="progress progress-large">
+                                        <div class="progress-bar" style="width: 60%;"></div>
+                                    </div>
+                                    <!-- progress over -->
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                    <section class="code-group">
+                        <h6 class="code-title">条纹动画</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- progress start -->
+                                    <div class="progress-info">
+                                        <h6>条纹动画</h6>
+                                        <p class="gray">90%</p>
+                                    </div>
+                                    <div class="progress progress-large">
+                                        <div class="progress-bar" style="width: 90%;">
+                                            <div class="progress-bar-stripe"></div>
                                         </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span>50%</span>
-                                                <span>document.jpg</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 50%;"></div>
-                                            </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span class="red">上传失败</span>
-                                                <span>document.jpg</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 0%;"></div>
-                                            </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                    </fieldset>
-                                    <!-- files over -->
+                                    </div>
+                                    <!-- progress over -->
                                 </script>
                             </code>
                         </pre>
                     </section>
                 </div>
-                <!-- column over -->
+                <!-- column-code over -->
             </div>
             <!-- row over -->
             <!-- row start -->
@@ -603,57 +570,107 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">Dropzone<small><code>.dropzone</code> <a href="http://www.dropzonejs.com/" target="_blank">官方网站</a></small></h3>
+                            <h3 class="title">进度条颜色</h3>
                         </div>
                         <div class="card-body">
-                            <!-- form start -->
-                            <form class="form">
-                                <!-- dropzone start -->
-                                <fieldset class="form-group">
-                                    <legend class="label">多文件上传</legend>
-                                    <div class="dropzone" id="dropzone"></div>
-                                </fieldset>
-                                <!-- dropzone over -->
-                            </form>
-                            <!-- form over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>红色进度条</h6>
+                                <p><code>.progress-bar-red</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-red" style="width: 100%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>橙色进度条</h6>
+                                <p><code>.progress-bar-orange</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-orange" style="width: 90%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>黄色进度条</h6>
+                                <p><code>.progress-bar-yellow</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-yellow" style="width: 80%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>绿色进度条</h6>
+                                <p><code>.progress-bar-green</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>青色进度条</h6>
+                                <p><code>.progress-bar-cyan</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-cyan" style="width: 60%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>蓝色进度条</h6>
+                                <p><code>.progress-bar-blue</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-blue" style="width: 50%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>紫色进度条</h6>
+                                <p><code>.progress-bar-purple</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-purple" style="width: 40%;"></div>
+                            </div>
+                            <!-- progress over -->
+                            <!-- progress start -->
+                            <div class="progress-info">
+                                <h6>粉色进度条</h6>
+                                <p><code>.progress-bar-pink</code></p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-pink" style="width: 30%;"></div>
+                            </div>
+                            <!-- progress over -->
                         </div>
                     </section>
                 </div>
                 <!-- column over -->
-                <!-- column start -->
+                <!-- column-code start -->
                 <div class="col-lg-6">
                     <section class="code-group">
-                        <h6 class="code-title">Dropzone</h6>
+                        <h6 class="code-title">彩色进度条</h6>
                         <pre>
                             <code class="language-html">
                                 <script type="text/plain">
-                                    <!-- dropzone start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">多文件上传</legend>
-                                        <div class="dropzone" id="dropzone"></div>
-                                    </fieldset>
-                                    <!-- dropzone over -->
-                                </script>
-                            </code>
-                        </pre>
-                        <pre>
-                            <code class="language-js">
-                                <script type="text/plain">
-                                    // dropzone
-                                    var dropzone = new Dropzone("#dropzone", {
-                                        url: "/",
-                                        maxFiles: 5, // 文件数限制
-                                        maxFilesize: 512, // 文件大小限制
-                                        addRemoveLinks: true, // 单文件移除按钮
-                                        acceptedFiles: ".jpg, .jpeg, .png", // 文件类型
-                                        dictDefaultMessage: "点击这里添加文件, 或将文件拖放到这里" // 初始文字
-                                    });
+                                    <!-- progress start -->
+                                    <div class="progress-info">
+                                        <h6>默认样式</h6>
+                                        <p class="gray">30%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-red" style="width: 30%;"></div>
+                                    </div>
+                                    <!-- progress over -->
                                 </script>
                             </code>
                         </pre>
                     </section>
                 </div>
-                <!-- column over -->
+                <!-- column-code over -->
             </div>
             <!-- row over -->
         </div>
@@ -661,15 +678,6 @@
         <!-- page script start -->
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                // dropzone
-                var dropzone = new Dropzone("#dropzone", {
-                    url: "/",
-                    maxFiles: 5, // 文件数限制
-                    maxFilesize: 512, // 文件大小限制
-                    addRemoveLinks: true, // 单文件移除按钮
-                    acceptedFiles: ".jpg, .jpeg, .png", // 文件类型
-                    dictDefaultMessage: "点击这里添加文件, 或将文件拖放到这里" // 初始文字
-                });
                 // 代码块
                 Prism.highlightAll();
             });

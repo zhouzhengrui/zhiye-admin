@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>文件上传</title>
+    <title>商品管理</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -454,203 +454,352 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>文件上传</h2>
+                <h2>商品管理</h2>
+            </div>
+            <div class="banner-action">
+                <div class="button-group">
+                    <a class="button" href="demo-eCommerce-add.html" data-pjax><i class="icon-plus"></i><span>添加商品</span></a>
+                    <button type="button" class="button button-green button-collapse" data-toggle="collapse" data-target="#demo-search">高级检索</button>
+                </div>
             </div>
         </div>
         <!-- banner over -->
+        <!-- collapse start -->
+        <div class="collapse" id="demo-search">
+            <div class="collapse-body">
+                <!-- form start -->
+                <form class="form">
+                    <!-- row start -->
+                    <div class="row-form">
+                        <div class="col-lg-3">
+                            <fieldset class="form-group">
+                                <legend class="label">模糊查找</legend>
+                                <div class="radiocheckbox-switch-item">
+                                    <label class="radiocheckbox-switch">
+                                        <input class="radiocheckbox" type="checkbox">
+                                        <span class="radiocheckbox-replace">
+                                            <span class="slipper"></span>
+                                        </span>
+                                    </label>
+                                    <p class="radiocheckbox-switch-explain">查找近似产品</p>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-3">
+                            <fieldset class="form-group">
+                                <legend class="label">商品名称</legend>
+                                <input class="input" type="text">
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-3">
+                            <fieldset class="form-group">
+                                <legend class="label">商品分类</legend>
+                                <select class="select">
+                                    <option>电子产品</option>
+                                    <option>食品</option>
+                                    <option>日常用品</option>
+                                    <option>书籍</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-3">
+                            <fieldset class="form-group">
+                                <legend class="label">价格区间</legend>
+                                <div class="input-group">
+                                    <input class="input" type="text">
+                                    <span class="relay">至</span>
+                                    <input class="input" type="text">
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <!-- row over -->
+                    <div class="form-footer">
+                        <p>检索完成, 共找到10条数据</p>
+                        <div class="button-group">
+                            <button type="button" class="button button-flat" data-toggle="collapse" data-target="#demo-search">关闭</button>
+                            <button type="reset" class="button button-cyan">重置</button>
+                            <button type="button" class="button button-green">开始检索</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- form over -->
+            </div>
+        </div>
+        <!-- collapse over -->
         <!-- container start -->
         <div class="container-fluid">
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
-                <div class="col-lg-6">
+                <div class="col-12">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">基本样式<small><code>input.file</code></small></h3>
+                            <h3 class="title">所有商品</h3>
+                            <div class="card-header-action">
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <!-- form start -->
-                            <form class="form">
-                                <!-- file start -->
-                                <fieldset class="form-group">
-                                    <legend class="label">单文件上传</legend>
-                                    <div class="file-group">
-                                        <input class="file" type="file">
-                                        <button class="button" type="button">上传</button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span class="green">上传成功</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 100%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
-                                </fieldset>
-                                <!-- file over -->
-                                <!-- files start -->
-                                <fieldset class="form-group">
-                                    <legend class="label">多文件上传</legend>
-                                    <div class="file-group">
-                                        <input class="file" type="file" multiple>
-                                        <button class="button" type="button">上传</button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span>50%</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 50%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span class="red">上传失败</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 0%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
-                                </fieldset>
-                                <!-- files over -->
-                            </form>
-                            <!-- form over -->
-                        </div>
-                    </section>
-                </div>
-                <!-- column over -->
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="code-group">
-                        <h6 class="code-title">单文件上传</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- file start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">标题</legend>
-                                        <div class="file-group">
-                                            <input class="file" type="file">
-                                            <button class="button" type="button">上传</button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span class="green">上传成功</span>
-                                                <span>document.jpg</span>
+                        <!-- table start -->
+                        <div class="card-table">
+                            <table class="table table-responsive" id="demo-table">
+                                <thead>
+                                    <tr>
+                                        <th align="left">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox" action="checkall">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </th>
+                                        <th align="left">商品编号</th>
+                                        <th align="left">封面</th>
+                                        <th align="left" width="30%">商品名称</th>
+                                        <th align="left" width="20%">库存数量</th>
+                                        <th align="left">商品分类</th>
+                                        <th align="right">相关操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#1</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td><b>三体全集 刘慈欣 雨果奖作品三体2黑暗森林死神永生长篇科幻小说</b></td>
+                                        <td>
+                                            <div class="progress-info">
+                                                <p>60/99</p>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-purple">书籍</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <div class="dropdown">
+                                                <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                    <span>其他</span>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="item" href="#">浏览页面</a>
+                                                    <a class="item" href="#">查看评价</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="item" href="#">删除商品</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#2</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td><b>Apple/苹果 iPhone XR 移动联通电信4G手机双卡双待 苹果iPhoneXR</b></td>
+                                        <td>
+                                            <div class="progress-info">
+                                                <p>10/99</p>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-red" style="width: 10%;"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-cyan">电子产品</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <div class="dropdown">
+                                                <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                    <span>其他</span>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="item" href="#">浏览页面</a>
+                                                    <a class="item" href="#">查看评价</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="item" href="#">删除商品</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#3</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td><b>香记紫菜海苔肉松蛋卷225g</b></td>
+                                        <td>
+                                            <div class="progress-info">
+                                                <p>29/99</p>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 30%;"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-blue">食品</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <div class="dropdown">
+                                                <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                    <span>其他</span>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="item" href="#">浏览页面</a>
+                                                    <a class="item" href="#">查看评价</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="item" href="#">删除商品</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#4</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td><b>海飞丝清爽去油洗发水500x3+补充装200ml长效去屑止痒控油洗发露</b></td>
+                                        <td>
+                                            <div class="progress-info">
+                                                <p>99/99</p>
                                             </div>
                                             <div class="progress">
                                                 <div class="progress-bar" style="width: 100%;"></div>
                                             </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                    </fieldset>
-                                    <!-- file over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">多文件上传</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- files start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">标题</legend>
-                                        <div class="file-group">
-                                            <input class="file" type="file" multiple>
-                                            <button class="button" type="button">上传</button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span>50%</span>
-                                                <span>document.jpg</span>
+                                        </td>
+                                        <td><span class="label label-green">日常用品</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <div class="dropdown">
+                                                <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                    <span>其他</span>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="item" href="#">浏览页面</a>
+                                                    <a class="item" href="#">查看评价</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="item" href="#">删除商品</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#5</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td><b>活着(新版)余华 畅销中国近现代小说 张艺谋电影改编 现代/当代社会文学读物丛书</b></td>
+                                        <td>
+                                            <div class="progress-info">
+                                                <p>60/99</p>
                                             </div>
                                             <div class="progress">
-                                                <div class="progress-bar" style="width: 50%;"></div>
+                                                <div class="progress-bar" style="width: 60%;"></div>
                                             </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span class="red">上传失败</span>
-                                                <span>document.jpg</span>
+                                        </td>
+                                        <td><span class="label label-purple">书籍</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <div class="dropdown">
+                                                <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                    <span>其他</span>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="item" href="#">浏览页面</a>
+                                                    <a class="item" href="#">查看评价</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="item" href="#">删除商品</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#6</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td><b>流浪地球 刘慈欣短篇小说精选 同名电影原著科幻文学周边小说</b></td>
+                                        <td>
+                                            <div class="progress-info">
+                                                <p>30/99</p>
                                             </div>
                                             <div class="progress">
-                                                <div class="progress-bar" style="width: 0%;"></div>
+                                                <div class="progress-bar" style="width: 30%;"></div>
                                             </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                    </fieldset>
-                                    <!-- files over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                </div>
-                <!-- column over -->
-            </div>
-            <!-- row over -->
-            <!-- row start -->
-            <div class="row">
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">Dropzone<small><code>.dropzone</code> <a href="http://www.dropzonejs.com/" target="_blank">官方网站</a></small></h3>
+                                        </td>
+                                        <td><span class="label label-purple">书籍</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <div class="dropdown">
+                                                <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                    <span>其他</span>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="item" href="#">浏览页面</a>
+                                                    <a class="item" href="#">查看评价</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="item" href="#">删除商品</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="card-body">
-                            <!-- form start -->
-                            <form class="form">
-                                <!-- dropzone start -->
-                                <fieldset class="form-group">
-                                    <legend class="label">多文件上传</legend>
-                                    <div class="dropzone" id="dropzone"></div>
-                                </fieldset>
-                                <!-- dropzone over -->
-                            </form>
-                            <!-- form over -->
-                        </div>
-                    </section>
-                </div>
-                <!-- column over -->
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="code-group">
-                        <h6 class="code-title">Dropzone</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- dropzone start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">多文件上传</legend>
-                                        <div class="dropzone" id="dropzone"></div>
-                                    </fieldset>
-                                    <!-- dropzone over -->
-                                </script>
-                            </code>
-                        </pre>
-                        <pre>
-                            <code class="language-js">
-                                <script type="text/plain">
-                                    // dropzone
-                                    var dropzone = new Dropzone("#dropzone", {
-                                        url: "/",
-                                        maxFiles: 5, // 文件数限制
-                                        maxFilesize: 512, // 文件大小限制
-                                        addRemoveLinks: true, // 单文件移除按钮
-                                        acceptedFiles: ".jpg, .jpeg, .png", // 文件类型
-                                        dictDefaultMessage: "点击这里添加文件, 或将文件拖放到这里" // 初始文字
-                                    });
-                                </script>
-                            </code>
-                        </pre>
+                        <!-- table over -->
                     </section>
                 </div>
                 <!-- column over -->
@@ -661,17 +810,53 @@
         <!-- page script start -->
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                // dropzone
-                var dropzone = new Dropzone("#dropzone", {
-                    url: "/",
-                    maxFiles: 5, // 文件数限制
-                    maxFilesize: 512, // 文件大小限制
-                    addRemoveLinks: true, // 单文件移除按钮
-                    acceptedFiles: ".jpg, .jpeg, .png", // 文件类型
-                    dictDefaultMessage: "点击这里添加文件, 或将文件拖放到这里" // 初始文字
+                $(document).on("pjax:beforeReplace", function() {
+                    console.log(123);
                 });
-                // 代码块
-                Prism.highlightAll();
+                // dataTables 初始化
+                dataTableDefaults();
+                // dataTables 执行实例
+                $('#demo-table').DataTable({
+                    // 默认每页显示条数
+                    pageLength: 5,
+                    // 每页显示选项
+                    lengthMenu: [5, 10, 25, 50, 100],
+                    // 定义列的初始属性
+                    columnDefs: [{
+                        // 指定列对象
+                        targets: [0, 2, -1],
+                        // 排序功能
+                        orderable: false
+                    }],
+                    // 禁用列排序必须项
+                    order: [],
+                    // 按钮扩展
+                    buttons: [{
+                        extend: 'excel',
+                        text: '下载Excel文档',
+                        exportOptions: {
+                            columns: [1, 3, 4, 5]
+                        }
+                    },{
+                        extend: 'print',
+                        text: '打印表格',
+                        exportOptions: {
+                            columns: [1, 3, 4, 5]
+                        }
+                    }],
+                    // 自定义布局
+                    dom:"<'card-table-action-bar'lBf>t<'card-table-action-footer'i<'card-table-action-footer-custom'>p>"
+                });
+                // 底部自定义按钮
+                $(".card-table-action-footer-custom").html('<button class="button button-flat">删除已选</button>');
+                // 全选
+                $('[action="checkall"]').on('click', function() {
+                    if (this.checked) {
+                        $('tbody [type="checkbox"]').prop('checked', true);
+                    } else {
+                        $('tbody [type="checkbox"]').prop('checked', false);
+                    }
+                });
             });
         </script>
         <!-- page script over -->

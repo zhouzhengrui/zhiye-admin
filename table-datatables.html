@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>基础样式</title>
+    <title>DataTables</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -454,24 +454,10 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>基础样式<small><code>.card-table</code></small>
+                <h2>DataTables<small>在基础样式表格上扩展了DataTables功能 / <a href="https://datatables.net/" target="_blank">官方网站</a></small></h2>
             </div>
             <div class="banner-action">
-                <!-- form start -->
-                <form class="form">
-                    <fieldset class="form-group">
-                        <select class="select-chosen">
-                            <option>选项一</option>
-                            <option>选项二</option>
-                        </select>
-                    </fieldset>
-                    <fieldset class="form-group">
-                        <input class="input" type="text" placeholder="关键字">
-                    </fieldset>
-                    <button type="button" class="button"><i class="icon-search"></i><span>搜索</span></button>
-                    <button type="button" class="button button-green button-collapse" data-toggle="collapse" data-target="#demo-search">高级检索</button>
-                </form>
-                <!-- form over -->
+                <button type="button" class="button button-collapse" data-toggle="collapse" data-target="#demo-search">高级检索</button>
             </div>
         </div>
         <!-- banner over -->
@@ -524,7 +510,7 @@
         <!-- container start -->
         <div class="container-fluid">
             <ul class="explain">
-                <li>html部分放在卡片<code>section.card</code>里面, 与<code>.card-header</code>同级</li>
+                <li></li>
             </ul>
             <!-- row start -->
             <div class="row">
@@ -532,14 +518,14 @@
                 <div class="col-12">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">基本表格</h3>
+                            <h3 class="title">默认布局<small>默认表格左上条数选择, 右上搜索框, 左下总数统计, 右下分页按钮</small></h3>
                             <div class="card-header-action">
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
                         <!-- table start -->
                         <div class="card-table">
-                            <table class="table table-responsive">
+                            <table class="table table-responsive" id="demo-table-1">
                                 <thead>
                                     <tr>
                                         <th align="left">
@@ -570,18 +556,18 @@
                                         </td>
                                         <td align="left"><b>#1</b></td>
                                         <td>
-                                            <div class="image" style="background-image: url('img/avatar-zhouzhengrui.jpg');">
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
                                             </div>
                                         </td>
                                         <td>
-                                            <h6>周正锐</h6>
-                                            <p class="gray">zhouzhengrui@maszy.cn</p>
+                                            <h6>周杰伦</h6>
+                                            <p class="gray">zhoujielun@maszy.cn</p>
                                         </td>
-                                        <td>UI设计 / 前端开发</td>
-                                        <td><span class="label label-blue">前端攻城师</span></td>
+                                        <td>歌手</td>
+                                        <td><span class="label label-purple">中国台湾</span></td>
                                         <td align="right">
-                                            <a href="#" class="button button-small">编辑</a>
-                                            <a href="#" class="button button-small button-green">新增</a>
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -595,18 +581,18 @@
                                         </td>
                                         <td align="left"><b>#2</b></td>
                                         <td>
-                                            <div class="image" style="background-image: url('img/avatar-shulei.jpg');">
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
                                             </div>
                                         </td>
                                         <td>
-                                            <h6>束磊</h6>
-                                            <p class="gray">shulei@maszy.cn</p>
+                                            <h6>刘德华</h6>
+                                            <p class="gray">liudehua@maszy.cn</p>
                                         </td>
-                                        <td>战略决策 / 项目统筹管理</td>
-                                        <td><span class="label label-green">CEO</span></td>
+                                        <td>演员 / 歌手</td>
+                                        <td><span class="label label-blue">中国香港</span></td>
                                         <td align="right">
-                                            <a href="#" class="button button-small">编辑</a>
-                                            <a href="#" class="button button-small button-cyan">修改</a>
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -620,18 +606,18 @@
                                         </td>
                                         <td align="left"><b>#3</b></td>
                                         <td>
-                                            <div class="image" style="background-image: url('img/avatar-jinjing.jpg');">
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
                                             </div>
                                         </td>
                                         <td>
-                                            <h6>金晶</h6>
-                                            <p class="gray">jinjing@maszy.cn</p>
+                                            <h6>张学友</h6>
+                                            <p class="gray">zhangxueyou@maszy.cn</p>
                                         </td>
-                                        <td>方针制定 / 战术运用</td>
-                                        <td><span class="label label-purple">销售总监</span></td>
+                                        <td>演员 / 歌手</td>
+                                        <td><span class="label label-blue">中国香港</span></td>
                                         <td align="right">
-                                            <a href="#" class="button button-small">编辑</a>
-                                            <a href="#" class="button button-small button-purple">查看</a>
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -645,45 +631,224 @@
                                         </td>
                                         <td align="left"><b>#4</b></td>
                                         <td>
-                                            <div class="image" style="background-image: url('img/avatar-wupeijun.jpg');">
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
                                             </div>
                                         </td>
                                         <td>
-                                            <h6>武佩俊</h6>
-                                            <p class="gray">wupeijun@maszy.cn</p>
+                                            <h6>米津玄师</h6>
+                                            <p class="gray">mijinxuanshi@maszy.cn</p>
                                         </td>
-                                        <td>项目实行 / 质量、安全、进度、成本管理</td>
-                                        <td><span class="label label-cyan">项目经理</span></td>
+                                        <td>歌手</td>
+                                        <td><span class="label label-cyan">日本</span></td>
                                         <td align="right">
-                                            <a href="#" class="button button-small">编辑</a>
-                                            <a href="#" class="button button-small button-red">删除</a>
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#5</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>周星驰</h6>
+                                            <p class="gray">zhouxingchi@maszy.cn</p>
+                                        </td>
+                                        <td>演员</td>
+                                        <td><span class="label label-blue">中国香港</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#6</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>吴京</h6>
+                                            <p class="gray">wujing@maszy.cn</p>
+                                        </td>
+                                        <td>演员</td>
+                                        <td><span class="label label-red">中国</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#7</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>周润发</h6>
+                                            <p class="gray">zhourunfa@maszy.cn</p>
+                                        </td>
+                                        <td>演员</td>
+                                        <td><span class="label label-blue">中国香港</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#8</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>高晓松</h6>
+                                            <p class="gray">gaoxiaosong@maszy.cn</p>
+                                        </td>
+                                        <td>杂家</td>
+                                        <td><span class="label label-red">中国</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#9</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>中岛美雪</h6>
+                                            <p class="gray">zhongdaomeixue@maszy.cn</p>
+                                        </td>
+                                        <td>作曲家 / 歌唱家</td>
+                                        <td><span class="label label-cyan">日本</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#10</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>村上春树</h6>
+                                            <p class="gray">cunshangchunshu@maszy.cn</p>
+                                        </td>
+                                        <td>作家</td>
+                                        <td><span class="label label-cyan">日本</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#11</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>姜文</h6>
+                                            <p class="gray">jiangwen@maszy.cn</p>
+                                        </td>
+                                        <td>导演 / 演员</td>
+                                        <td><span class="label label-red">中国</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </td>
+                                        <td align="left"><b>#12</b></td>
+                                        <td>
+                                            <div class="image" style="background-image: url('img/image-default.jpg');">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>刘慈欣</h6>
+                                            <p class="gray">liucixin@maszy.cn</p>
+                                        </td>
+                                        <td>作家</td>
+                                        <td><span class="label label-red">中国</span></td>
+                                        <td align="right">
+                                            <button type="button" class="button button-small">编辑</button>
+                                            <button type="button" class="button button-small button-red">删除</button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <!-- table over -->
-                        <div class="card-footer">
-                            <div class="button-group">
-                                <button type="button" class="button button-flat">删除已选</button>
-                            </div>
-                            <!-- pagination start -->
-                            <div class="button-group-pagination">
-                                <span class="info">共99条数据</span>
-                                <span>上一页</span>
-                                <div class="pagination">
-                                    <span class="active">1</span>
-                                    <a href="#">2</a>
-                                    <a href="#">3</a>
-                                    <a href="#">4</a>
-                                    <a href="#">5</a>
-                                    <span>...</span>
-                                    <a href="#">99</a>
-                                </div>
-                                <a href="#">下一页</a>
-                            </div>
-                            <!-- pagination over -->
-                        </div>
                     </section>
                 </div>
                 <!-- column over -->
@@ -694,134 +859,223 @@
                 <!-- column start -->
                 <div class="col-12">
                     <section class="code-group">
-                        <h6 class="code-title">基本表格</h6>
+                        <h6 class="code-title">默认布局</h6>
                         <pre>
                             <code class="language-html">
                                 <script type="text/plain">
-                                <!-- table start -->
-                                <div class="card-table">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>表头居中</th>
-                                                <th align="left">表头/左对齐</th>
-                                                <th align="right">表头/右对齐</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>单元格/居中</td>
-                                                <td align="left">单元格/左对齐</td>
-                                                <td align="right">单元格/右对齐</td>
-                                            </tr>
-                                            <tr>
-                                                <td>普通字段</td>
-                                                <td><a href="#">超链接字段</a></td>
-                                                <td><span class="label">标签</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <!-- 图片单元格 -->
-                                                    <div class="image" style="background-image: url('');"></div>
-                                                </td>
-                                                <td>
-                                                    <!-- 信息组单元格 -->
-                                                    <h6>信息组主信息</h6>
-                                                    <p class="gray">信息组附加信息</p>
-                                                </td>
-                                                <td>
-                                                    <!-- 按钮单元格 -->
-                                                    <a class="button button-small" href="#">超链接</a>
-                                                    <button type="button" class="button button-small">按钮</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- table over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <ul class="explain">
-                        <li>合理利用<code>align, rowspan, colspan</code>这些表格自身的属性</li>
-                        <li>单元格内可以直接放表单组件, 但要去掉<code>legend</code></li>
-                        <li>表格里的图片以背景图的方式加载到<code>div.image</code>, 可防止图片变形</li>
-                        <li>需要考虑移动端显示效果的话, 给<code>table.table</code>追加<code>.table-responsive</code>类名, 让表格在移动端有一个横向的滚动条</li>
-                    </ul>
-                    <section class="code-group">
-                        <h6 class="code-title">搜索功能区</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- form start -->
-                                    <form class="form">
-                                        <fieldset class="form-group">
-                                            <select class="select">
-                                                <option>选项一</option>
-                                                <option>选项二</option>
-                                            </select>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <input class="input" type="text" placeholder="关键字">
-                                        </fieldset>
-                                        <button type="button" class="button"><i class="icon-search"></i><span>搜索</span></button>
-                                        <button type="button" class="button button-small button-green button-collapse" data-toggle="collapse" data-target="#demo-search">高级检索</button>
-                                    </form>
-                                    <!-- form over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <ul class="explain">
-                        <li><code>.banner-action</code>和<code>.card-header-action</code>里都可以放以上组件来做搜索等功能, 自行选择</li>
-                    </ul>
-                    <section class="code-group">
-                        <h6 class="code-title">高级检索面板</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- collapse start -->
-                                <div class="collapse" id="demo-search">
-                                    <div class="collapse-body">
-                                        <!-- form start -->
-                                        <form class="form">
-                                            <!-- row start -->
-                                            <div class="row-form">
-                                                <div class="col-lg-3">
-                                                    <!-- 表单组件 -->
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <!-- 表单组件 -->
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <!-- 表单组件 -->
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <!-- 表单组件 -->
-                                                </div>
-                                            </div>
-                                            <!-- row over -->
-                                            <div class="form-footer">
-                                                <p>检索信息</p>
-                                                <div class="button-group">
-                                                    <button type="button" class="button button-flat" data-toggle="collapse" data-target="#demo-search">关闭</button>
-                                                    <button type="reset" class="button button-cyan">重置</button>
-                                                    <button type="button" class="button button-green">开始检索</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <!-- form over -->
+                                    <!-- table start -->
+                                    <div class="card-table">
+                                        <table class="table" id="demo-table">
+                                            ...
+                                        </table>
                                     </div>
-                                </div>
-                                <!-- collapse over -->
+                                    <!-- table over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // dataTable 初始化
+                                    dataTableDefaults();
+                                    // dataTable 执行实例
+                                    $('#demo-table').DataTable({
+                                        // 定义列的初始属性
+                                        columnDefs: [{
+                                            // 指定列对象
+                                            targets: [0, 2, -1],
+                                            // 排序功能
+                                            orderable: false
+                                        }],
+                                        // 禁用列排序必须项
+                                        order: []
+                                    });
                                 </script>
                             </code>
                         </pre>
                     </section>
-                    <ul class="explain">
-                        <li>放在<code>.banner</code>下面, id与高级检索按钮相对应</li>
-                    </ul>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-12">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">紧凑布局<small>将上部功能条移至<code>.card-header</code>右侧</small></h3>
+                        </div>
+                        <!-- table start -->
+                        <div class="card-table">
+                            <table class="table table-responsive" id="demo-table-2">
+                                <thead>
+                                    <tr>
+                                        <th align="left">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox" action="checkall">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </th>
+                                        <th align="left">编号</th>
+                                        <th align="left">图片</th>
+                                        <th align="left">信息组</th>
+                                        <th align="left">字段</th>
+                                        <th align="left">标签</th>
+                                        <th align="right">相关操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- table over -->
+                    </section>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-12">
+                    <section class="code-group">
+                        <h6 class="code-title">紧凑布局</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- table start -->
+                                    <div class="card-table">
+                                        <table class="table" id="demo-table">
+                                            ...
+                                        </table>
+                                    </div>
+                                    <!-- table over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // dataTable 执行实例
+                                    $('#demo-table').DataTable({
+                                        // 定义列的初始属性
+                                        columnDefs: [{
+                                            // 指定列对象
+                                            targets: [0, 2, 6],
+                                            // 排序功能
+                                            "orderable": false
+                                        }],
+                                        // 禁用列排序必须项
+                                        order: [],
+                                        // 自定义布局
+                                        dom:"<'card-table-action-header'lf>t<'card-table-action-footer'i<'card-table-action-footer-custom'>p>"
+                                    });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-12">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">功能扩展<small>已包含导出Excel和打印的扩展插件</small></h3>
+                        </div>
+                        <!-- table start -->
+                        <div class="card-table">
+                            <table class="table table-responsive" id="demo-table-3">
+                                <thead>
+                                    <tr>
+                                        <th align="left">
+                                            <fieldset class="form-group">
+                                                <label class="radiocheckbox-item">
+                                                    <input class="radiocheckbox" type="checkbox" action="checkall">
+                                                    <span class="radiocheckbox-replace"></span>
+                                                </label>
+                                            </fieldset>
+                                        </th>
+                                        <th align="left">编号</th>
+                                        <th align="left">图片</th>
+                                        <th align="left">信息组</th>
+                                        <th align="left">字段</th>
+                                        <th align="left">标签</th>
+                                        <th align="right">相关操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- table over -->
+                    </section>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-12">
+                    <section class="code-group">
+                        <h6 class="code-title">功能扩展</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- table start -->
+                                    <div class="card-table">
+                                        <table class="table" id="demo-table">
+                                            ...
+                                        </table>
+                                    </div>
+                                    <!-- table over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // dataTable 执行实例
+                                    $('#demo-table').DataTable({
+                                        // 定义列的初始属性
+                                        "columnDefs": [{
+                                            // 指定列对象
+                                            targets: [0, 2, 6],
+                                            // 排序功能
+                                            orderable: false
+                                        }],
+                                        // 禁用列排序必须项
+                                        order: [],
+                                        // 按钮扩展
+                                        buttons: [{
+                                            extend: 'excel',
+                                            text: '下载Excel文档',
+                                            exportOptions: {
+                                                columns: [1, 3, 4, 5]
+                                            }
+                                        },{
+                                            extend: 'print',
+                                            text: '打印表格',
+                                            exportOptions: {
+                                                columns: [1, 3, 4, 5]
+                                            }
+                                        }],
+                                        // 自定义布局
+                                        dom:"<'card-table-action-bar'lBf>t<'card-table-action-footer'i<'card-table-action-footer-custom'>p>"
+                                    });
+                                    // 底部自定义按钮
+                                    $(".card-table-action-footer-custom").html('<button class="button button-flat">底部按钮</button>');
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
                 </div>
                 <!-- column over -->
             </div>
@@ -831,15 +1085,64 @@
         <!-- page script start -->
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                // chosen
-                $(".select-chosen").chosen({
-                    disable_search_threshold: 10, // 条数大于n时显示过滤器
-                    max_selected_options: 8 , // 多选数量限制
-                    search_contains: true, // 是否全字段检索
-                    hide_results_on_select: false, // 多选后是否关闭下拉列表
-                    display_selected_options: false, // 下拉框中是否显示已选中项
-                    no_results_text: "没有找到" // 无检索结果显示字段
+                // dataTable 初始化
+                dataTableDefaults();
+                // dataTable 默认布局
+                $('#demo-table-1').DataTable({
+                    // 定义列的初始属性
+                    columnDefs: [{
+                        // 指定列对象
+                        targets: [0, 2, 6],
+                        // 排序功能
+                        orderable: false
+                    }],
+                    // 禁用列排序必须项
+                    order: []
                 });
+                // dataTable 紧凑布局
+                $('#demo-table-2').DataTable({
+                    // 定义列的初始属性
+                    columnDefs: [{
+                        // 指定列对象
+                        targets: [0, 2, 6],
+                        // 排序功能
+                        orderable: false
+                    }],
+                    // 禁用列排序必须项
+                    order: [],
+                    // 自定义布局
+                    dom:"<'card-table-action-header'lf>t<'card-table-action-footer'i<'card-table-action-footer-custom'>p>"
+                });
+                // dataTable 功能扩展
+                $('#demo-table-3').DataTable({
+                    // 定义列的初始属性
+                    columnDefs: [{
+                        // 指定列对象
+                        targets: [0, 2, 6],
+                        // 排序功能
+                        orderable: false
+                    }],
+                    // 禁用列排序必须项
+                    "order": [],
+                    // 按钮扩展
+                    buttons: [{
+                        extend: 'excel',
+                        text: '下载Excel文档',
+                        exportOptions: {
+                            columns: [1, 3, 4, 5]
+                        }
+                    },{
+                        extend: 'print',
+                        text: '打印表格',
+                        exportOptions: {
+                            columns: [1, 3, 4, 5]
+                        }
+                    }],
+                    // 自定义布局
+                    dom:"<'card-table-action-bar'lBf>t<'card-table-action-footer'i<'card-table-action-footer-custom'>p>"
+                });
+                // 底部自定义按钮
+                $(".card-table-action-footer-custom").html('<button class="button button-flat">底部按钮</button>');
                 // 多选框全选
                 $('[action="checkall"]').on('click', function () {
                     if (this.checked) {

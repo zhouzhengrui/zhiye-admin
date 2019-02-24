@@ -1,7 +1,7 @@
 // pjax设置
 $(document).pjax("[data-pjax]", "main", {
     fragment: "main",
-    timeout: "10000"
+    timeout: "15000"
 });
 // nprogress设置
 NProgress.configure({
@@ -26,8 +26,8 @@ jQuery(document).ready(function($) {
             }
         });
     });
-    // pjax complete
-    $(document).on("pjax:complete", function() {
+    // pjax end
+    $(document).on("pjax:end", function() {
         // nprogress over
         setTimeout(function() {
             NProgress.done();
@@ -36,6 +36,7 @@ jQuery(document).ready(function($) {
         $("main").addClass("main-fadein");
         // main复位
         $("main").scrollTop(0);
+
         // 已开启modal的页面复位
         $("body.modal-open").removeClass();
         $(".modal-backdrop").remove();
@@ -61,27 +62,6 @@ jQuery(document).ready(function($) {
         Waves.init();
         Waves.attach('button.button, a.button');
     });
-
-    // tooltip
-    $('[action="tooltip"]').tooltip();
-    // tab
-    $('[action="tab-body"]').tabbedContent();
-    // 卡片全屏
-    $('[action="card-fullscreen"]').on("click", function() {
-        $(this).parent().parent().parent('.card').toggleClass('card-fullscreen');
-        $(this).children('.icon-enlarge').toggleClass('icon-narrow');
-        if ($(this).parent().parent().siblings().children().hasClass('highcharts')) {
-            $(this).parent().parent().parent('.card').toggleClass('card-chart-fullscreen');
-            $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
-        }
-    });
-    // 代码块
-    $('.code-group .code-title').on("click", function() {
-        $(this).siblings('pre').toggleClass('show');
-    });
-    // waves
-    Waves.init();
-    Waves.attach('button.button, a.button');
 
     // 有二级导航的条目添加箭头
     if ($("nav.nav > .item").find(".nav-sub").length > 0) {
@@ -112,18 +92,43 @@ jQuery(document).ready(function($) {
         $(this).addClass("active");
     });
 
-    // main滚动移除laydate弹出框
-    $('main').scroll(function() {
-        $('[action="date"]').blur();
-        $('.layui-laydate').remove();
+    // tooltip
+    $('[action="tooltip"]').tooltip();
+    // tab
+    $('[action="tab-body"]').tabbedContent();
+    // 卡片全屏
+    $('[action="card-fullscreen"]').on("click", function() {
+        $(this).parent().parent().parent('.card').toggleClass('card-fullscreen');
+        $(this).children('.icon-enlarge').toggleClass('icon-narrow');
+        if ($(this).parent().parent().siblings().children().hasClass('highcharts')) {
+            $(this).parent().parent().parent('.card').toggleClass('card-chart-fullscreen');
+            $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
+        }
     });
+    // 代码块
+    $('.code-group .code-title').on("click", function() {
+        $(this).siblings('pre').toggleClass('show');
+    });
+    // waves
+    Waves.init();
+    Waves.attach('button.button, a.button');
+
+    // 禁止对所有元素的自动查找, 由于Dropzone会自动查找class为dropzone的元素, 自动查找后再在这里进行初始化, 有时候会导致重复初始化的错误, 所以在此加上这段代码避免这样的错误
+    Dropzone.autoDiscover = false;
+
+    // main滚动移除laydate弹出框
+    // 没有判断laydate是否弹出的接口, 暂时移除
+    // $('main').scroll(function() {
+    //     $('[action="date"]').blur();
+    //     $('.layui-laydate').remove();
+    // });
 
     // 页面全屏按钮
-    var viewFullScreen = document.getElementById("fullscreen-view");
-    var exitFullScreen = document.getElementById("fullscreen-exit");
+    var viewFullScreen = $("#fullscreen-view");
+    var exitFullScreen = $("#fullscreen-exit");
     $(exitFullScreen).hide();
     if (viewFullScreen) {
-        viewFullScreen.addEventListener("click", function() {
+        viewFullScreen.on("click", function() {
             if (document.documentElement.requestFullscreen) {
                 document.documentElement.requestFullscreen();
             } else if (document.documentElement.webkitRequestFullScreen) {
@@ -134,7 +139,7 @@ jQuery(document).ready(function($) {
         });
     }
     if (exitFullScreen) {
-        exitFullScreen.addEventListener("click", function() {
+        exitFullScreen.on("click", function() {
             if (document.exitFullscreen) {
                 document.exitFullscreen();
             } else if (document.webkitCancelFullScreen) {
@@ -180,7 +185,6 @@ jQuery(document).ready(function($) {
         min: $.validator.format("请输入不小于 {0} 的数值")
     });
 }));
-// validate默认设置
 $.validator.setDefaults({
     // 错误信息显示位置
     errorPlacement: function(error, element) {
@@ -192,9 +196,6 @@ Highcharts.setOptions({
     colors: [
         '#23b7e5', '#27c24c', '#7266ba', '#18C29C', '#f05050', '#E67E22', '#eac459', '#ff5b77'
     ],
-    xAxis: {
-        gridLineWidth: -1,
-    },
     credits: {
         enabled: false // 取消版权
     },
@@ -223,3 +224,36 @@ Highcharts.setOptions({
         exportButtonTitle: "导出图片"
     }
 });
+// dataTables
+function dataTableDefaults() {
+    $.extend( $.fn.dataTable.defaults, {
+        language: {
+            "lengthMenu": "每页显示_MENU_条数据",
+            "zeroRecords": "没有找到数据",
+            "emptyTable": "没有数据",
+            "info": "共_TOTAL_条数据",
+            "infoEmpty": "没有数据",
+            "infoFiltered": "(从_MAX_条数据中检索)",
+            "loadingRecords": "数据加载中...",
+            "zeroRecords": "没有搜索到数据",
+            "processing": "数据处理中...",
+            "searchPlaceholder": "搜索关键字",
+            "search": "",
+            "paginate": {
+                "first": "首页",
+                "previous": "上一页",
+                "next": "下一页",
+                "last": "尾页"
+            }
+        }
+    });
+}
+// 焦点在NPUT/SELECT/TEXTAREA时hotkeys依然起效
+hotkeys.filter = function(event) {
+    return true;
+}
+// toastr全局设置
+// toastr.options = {
+//     "newestOnTop": false,
+//     "positionClass": "toast-bottom-right",
+// }

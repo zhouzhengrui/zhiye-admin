@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- JS ueditor 按需载入 -->
+    <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
+    <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 </head>
-
 
 <body>
     <!-- header start -->
@@ -29,7 +31,7 @@
         <!-- bar start -->
         <div class="header-bar">
             <!-- item start -->
-            <div class="item dropdown header-list">
+            <div class="item dropdown">
                 <button type="button" data-toggle="dropdown">
                     <span>消息通知</span>
                     <span class="badge">3</span>
@@ -37,28 +39,49 @@
                 <div class="dropdown-menu">
                     <h6 class="dropdown-header">你有3条未读消息</h6>
                     <div class="dropdown-divider"></div>
-                    <a class="item header-list-item" href="#">
-                        <div class="dot blue"></div>
-                        <p><b>站内通知: </b>新版后台管理系统即将上线</p>
-                        <span>2017年9月1日 12:00</span>
-                    </a>
-                    <a class="item header-list-item" href="#">
-                        <div class="dot green"></div>
-                        <p><b>系统信息: </b>提交的信息审核通过</p>
-                        <span>2017年9月1日 12:00</span>
-                    </a>
-                    <a class="item header-list-item" href="#">
-                        <div class="dot red"></div>
-                        <p><b>系统信息: </b>提交的信息未通过审核</p>
-                        <span>2017年9月1日 12:00</span>
-                    </a>
+                    <!-- list start -->
+                    <div class="list">
+                        <!-- item start -->
+                        <a class="item" href="#">
+                            <span class="dot"></span>
+                            <div class="item-body">
+                                <p><b>站内通知: </b>新版后台管理系统即将上线</p>
+                                <p class="gray"><small>2017年9月1日 12:00</small></p>
+                            </div>
+                        </a>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <a class="item" href="#">
+                            <span class="dot dot-green"></span>
+                            <div class="item-body">
+                                <p><b>系统信息: </b>提交的信息审核通过</p>
+                                <p class="gray"><small>2017年9月1日 12:00</small></p>
+                            </div>
+                        </a>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <a class="item" href="#">
+                            <span class="dot dot-red"></span>
+                            <div class="item-body">
+                                <p><b>系统信息: </b>提交的信息未通过审核</p>
+                                <p class="gray"><small>2017年9月1日 12:00</small></p>
+                            </div>
+                        </a>
+                        <!-- item over -->
+                    </div>
+                    <!-- list over -->
                     <div class="dropdown-divider"></div>
-                    <a class="item" href="#"><i class="icon-gear"></i>查看更多</a>
+                    <a class="button button-flat button-block" href="#">
+                        <i class="icon-gear"></i>
+                        <span>查看更多</span>
+                    </a>
                 </div>
             </div>
             <!-- item over -->
             <!-- item start -->
-            <div class="item"><a href="http://www.maszy.cn/index.php?m=content&c=index&a=lists&catid=5" target="_blank">技术支持</a></div>
+            <div class="item">
+                <a href="http://www.maszy.cn/index.php?m=content&c=index&a=lists&catid=5" target="_blank">技术支持</a>
+            </div>
             <!-- item over -->
             <!-- user start -->
             <div class="item dropdown header-user" hidden>
@@ -66,7 +89,7 @@
                     <span class="user-name">zhouzhengrui</span>
                     <span class="user-position">前端攻城师</span>
                     <div class="avatar">
-                        <img src="img/avatar.jpg" alt="">
+                        <img src="img/avatar-default.jpg" alt="">
                     </div>
                 </button>
                 <div class="dropdown-menu">
@@ -79,13 +102,19 @@
             <!-- user over -->
             <!-- fullscreen start -->
             <div class="item MT-hidden">
-                <button type="button" id="fullscreen-view"><i class="icon-enlarge"></i></button>
-                <button type="button" id="fullscreen-exit"><i class="icon-narrow"></i></button>
+                <button type="button" id="fullscreen-view">
+                    <i class="icon-enlarge"></i>
+                </button>
+                <button type="button" id="fullscreen-exit">
+                    <i class="icon-narrow"></i>
+                </button>
             </div>
             <!-- fullscreen over -->
             <!-- sidebar switch start -->
             <div class="item MT-hidden">
-                <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar"><i class="icon-dot-array-y"></i></button>
+                <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar">
+                    <i class="icon-dot-array-y"></i>
+                </button>
             </div>
             <!-- sidebar switch over -->
         </div>
@@ -101,7 +130,7 @@
         </div>
         <!-- MT bar over -->
         <!-- sidebar start -->
-        <div class="modal fade modal-sidebar" id="modal-sidebar">
+        <section class="modal fade modal-sidebar" id="modal-sidebar">
             <div class="modal-dialog modal-stick-right">
                 <div class="modal-content">
                     <!-- card start -->
@@ -197,7 +226,7 @@
                     <!-- card over -->
                 </div>
             </div>
-        </div>
+        </section>
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // 窗口加载完成
@@ -247,7 +276,7 @@
         <!-- user start -->
         <div class="side-user">
             <div class="avatar">
-                <img src="img/avatar.jpg" alt="">
+                <img src="img/avatar-default.jpg" alt="">
             </div>
             <div class="info dropdown">
                 <button type="button" class="user-name dropdown-toggle" data-toggle="dropdown">
@@ -276,8 +305,8 @@
                     <a><i class="icon-window"></i><span>演示模板 - 电子商务</span></a>
                     <div class="nav-sub">
                         <div class="item"><a href="demo-eCommerce.html" data-pjax>首页</a></div>
-                        <!-- <div class="item"><a href="#" data-pjax>订单管理</a></div>
-                        <div class="item"><a href="#" data-pjax>商品管理</a></div> -->
+                        <div class="item"><a href="demo-eCommerce-manage.html" data-pjax>商品管理</a></div>
+                        <div class="item"><a href="demo-eCommerce-add.html" data-pjax>添加商品</a></div>
                     </div>
                 </div>
                 <!-- item over -->
@@ -294,7 +323,9 @@
                         <div class="item"><a href="layout-grid.html" data-pjax>网格系统</a></div>
                         <div class="item"><a href="layout-card.html" data-pjax>卡片</a></div>
                         <div class="item"><a href="layout-tab.html" data-pjax>选项卡</a></div>
+                        <div class="item"><a href="layout-banner.html" data-pjax>Banner面板</a></div>
                         <div class="item"><a href="layout-collapse.html" data-pjax>折叠面板</a></div>
+                        <div class="item"><a href="layout-statistic.html" data-pjax>统计面板</a></div>
                         <div class="item"><a href="layout-responsive.html" data-pjax>响应式工具</a></div>
                     </div>
                 </div>
@@ -308,19 +339,10 @@
                         <div class="item"><a href="ui-label.html" data-pjax>标签</a></div>
                         <div class="item"><a href="ui-dropdown.html" data-pjax>下拉菜单</a></div>
                         <div class="item"><a href="ui-tooltip.html" data-pjax>提示框</a></div>
+                        <div class="item"><a href="ui-progress.html" data-pjax>进度条</a></div>
                         <div class="item"><a href="ui-icofont.html" data-pjax>字体图标</a></div>
                         <div class="item"><a href="ui-color.html" data-pjax>颜色</a></div>
                     </div>
-                </div>
-                <!-- item over -->
-                <!-- item start -->
-                <div class="item">
-                    <a href="list.html" data-pjax><i class="icon-gear"></i><span>列表</span></a>
-                </div>
-                <!-- item over -->
-                <!-- item start -->
-                <div class="item">
-                    <a href="table.html" data-pjax><i class="icon-gear"></i><span>表格</span></a>
                 </div>
                 <!-- item over -->
                 <!-- item start -->
@@ -331,10 +353,25 @@
                         <div class="item"><a href="form-input.html" data-pjax>输入框</a></div>
                         <div class="item"><a href="form-select.html" data-pjax>下拉列表</a></div>
                         <div class="item"><a href="form-radiocheckbox.html" data-pjax>单选多选框</a></div>
+                        <div class="item"><a href="form-datetime.html" data-pjax>日期与时间</a></div>
                         <div class="item"><a href="form-upload.html" data-pjax>文件上传</a></div>
                         <div class="item"><a href="form-cropper.html" data-pjax>图片裁剪</a></div>
                         <div class="item"><a href="form-validate.html" data-pjax>表单验证</a></div>
                     </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>表格</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="table.html" data-pjax>基础样式</a></div>
+                        <div class="item"><a href="table-datatables.html" data-pjax>DataTables</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="list.html" data-pjax><i class="icon-gear"></i><span>列表</span></a>
                 </div>
                 <!-- item over -->
                 <!-- item start -->
@@ -367,6 +404,15 @@
                 </div>
                 <!-- item over -->
                 <h6 class="nav-title">其他</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>小工具</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="tool-weather.html" data-pjax>天气信息</a></div>
+                        <div class="item"><a href="tool-hotkey.html" data-pjax>快捷键</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
                 <!-- item start -->
                 <div class="item">
                     <a><i class="icon-gear"></i><span>单页</span></a>
@@ -408,13 +454,12 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>页面名称</h2>
-                <p>页面主要功能的简介, 按需填写或移除整行</p>
+                <h2>页面名称<small>页面主要功能的简介, 按需填写或移除</small></h2>
             </div>
             <div class="banner-action">
-                <div class="banner-status">
-                    <p class="gray">本页统计</p>
-                    <h1 class="font-number" id="status-6"></h1>
+                <div class="banner-statistic">
+                    <p class="banner-statistic-name">Banner统计面板</p>
+                    <h1 class="banner-statistic-number" id="statistic-6">0</h1>
                 </div>
                 <div class="button-group">
                     <button type="button" class="button button-large">
@@ -433,16 +478,16 @@
         <div class="container-fluid">
             <!-- row start -->
             <div class="row">
-                <!-- status start -->
+                <!-- statistic start -->
                 <div class="col-lg-6">
                     <div class="row">
                         <!-- item start -->
                         <div class="col-md-6">
-                            <section class="card card-blue">
-                                <div class="card-body status">
-                                    <p>彩色统计面板 / 图标</p>
-                                    <div class="info">
-                                        <h1 id="status-1">0</h1>
+                            <section class="card">
+                                <div class="statistic statistic-blue">
+                                    <p class="statistic-name">彩色统计面板 / 图标</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number" id="statistic-1">0</h1>
                                         <small><i class="icon-bull-market"></i><span>+12%</span></small>
                                     </div>
                                     <i class="icon-order"></i>
@@ -453,10 +498,10 @@
                         <!-- item start -->
                         <div class="col-md-6">
                             <section class="card">
-                                <div class="card-body status">
-                                    <p>白色统计面板</p>
-                                    <div class="info">
-                                        <h1 id="status-2">0</h1>
+                                <div class="statistic">
+                                    <p class="statistic-name">白色统计面板</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number" id="statistic-2">0</h1>
                                         <small class="red"><i class="icon-bear-market"></i><span>-8%</span></small>
                                     </div>
                                 </div>
@@ -466,65 +511,64 @@
                         <!-- item start -->
                         <div class="col-md-6">
                             <section class="card">
-                                <div class="card-body status">
-                                    <p>白色统计面板 / 按钮</p>
-                                    <div class="info">
-                                        <h1 id="status-3">0</h1>
+                                <div class="statistic">
+                                    <p class="statistic-name">白色统计面板 / 按钮</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number" id="statistic-3">0</h1>
                                         <small class="green"><i class="icon-bull-market"></i><span>+12.5%</span></small>
                                     </div>
-                                    <a class="status-button" href="">按钮</a>
+                                    <a class="statistic-button" href="#">按钮</a>
                                 </div>
                             </section>
                         </div>
                         <!-- item over -->
                         <!-- item start -->
                         <div class="col-md-6">
-                            <section class="card card-green">
-                                <div class="card-body status">
-                                    <p>彩色统计面板 / 按钮</p>
-                                    <div class="info">
-                                        <h1 id="status-4">0</h1>
+                            <section class="card">
+                                <div class="statistic statistic-green">
+                                    <p class="statistic-name">彩色统计面板 / 按钮</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number" id="statistic-4">0</h1>
                                         <small><i class="icon-bull-market"></i><span>+8.5%</span></small>
                                     </div>
-                                    <a class="status-button" href="">按钮</a>
+                                    <a class="statistic-button" href="#">按钮</a>
                                 </div>
                             </section>
                         </div>
                         <!-- item over -->
                         <!-- item start -->
                         <div class="col-md-12">
-                            <section class="card" action="tooltip" data-placement="bottom" title="已完成目标金额的60%">
-                                <div class="card-body status-complex">
-                                    <div class="status-chart" style="width:110px;height:110px;">
+                            <section class="card">
+                                <div class="statistic statistic-pro" action="tooltip" data-placement="bottom" title="已完成目标金额的60%">
+                                    <div class="statistic-pro-chart" style="width:110px;height:110px;">
                                         <div class="highcharts" id="chart-1"></div>
                                     </div>
-                                    <div class="status-info">
-                                        <p>chart统计面板 / 饼图 / 进度条 / 按钮 / tooltip</p>
-                                        <div class="info">
-                                            <h1 id="status-5"></h1>
+                                    <div class="statistic-pro-info">
+                                        <p class="statistic-name">chart统计面板 / 饼图 / 进度条 / tooltip</p>
+                                        <div class="statistic-info">
+                                            <h1 class="statistic-number" id="statistic-5">0</h1>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar" style="width: 60%;"></div>
                                         </div>
                                     </div>
-                                    <a class="status-button" href="">功能按钮</a>
                                 </div>
                             </section>
                         </div>
                         <!-- item over -->
                     </div>
                 </div>
-                <!-- status over -->
+                <!-- statistic over -->
                 <!-- chart start -->
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
                             <h3 class="title">动态数据图<small>实时刷新的曲线面积图</small></h3>
                             <div class="card-header-action">
-                                <button type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="height:300px;">
+                        <div class="card-body" style="height:310px;">
                             <div class="highcharts" id="chart-2"></div>
                         </div>
                     </section>
@@ -540,7 +584,7 @@
                         <div class="card-header">
                             <h3 class="title">数据图<small>基础条形图</small></h3>
                             <div class="card-header-action">
-                                <button type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
                         <div class="card-body" style="height:300px;">
@@ -555,7 +599,7 @@
                         <div class="card-header">
                             <h3 class="title">数据图<small>带图例的饼图</small></h3>
                             <div class="card-header-action">
-                                <button type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
                         <div class="card-body" style="height:300px;">
@@ -570,7 +614,7 @@
                         <div class="card-header">
                             <h3 class="title">数据图<small>极地面积图</small></h3>
                             <div class="card-header-action">
-                                <button type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
                         <div class="card-body" style="height:300px;">
@@ -589,7 +633,7 @@
                         <div class="card-header">
                             <h3 class="title">卡片<small>单条图文信息</small></h3>
                             <div class="card-header-action">
-                                <button type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
                         <div class="card-image">
@@ -611,7 +655,7 @@
                         <div class="card-header">
                             <h3 class="title">列表<small>多条图文信息</small></h3>
                             <div class="card-header-action">
-                                <button type="button"><i class="icon-gear"></i><span>功能按钮</span></button>
+                                <button type="button" class="button button-flat"><i class="icon-gear"></i><span>功能按钮</span></button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -676,7 +720,7 @@
                                 <!-- item start -->
                                 <a class="item" href="#">
                                     <div class="avatar">
-                                        <img src="img/avatar.jpg" alt="">
+                                        <img src="img/avatar-default.jpg" alt="">
                                     </div>
                                     <div class="item-body">
                                         <h5>Administrator</h5>
@@ -694,7 +738,7 @@
                 <!-- column start -->
                 <div class="col-lg-4">
                     <section class="card">
-                        <div class="card-image">
+                        <div class="card-weather">
                             <div class="weather" id="weather"></div>
                         </div>
                         <div class="card-body">
@@ -729,12 +773,12 @@
                         <div class="card-header">
                             <h3 class="title">表格</h3>
                             <div class="card-header-action">
-                                <button type="button"><i class="icon-gear"></i><span>功能按钮</span></button>
-                                <button type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                <button type="button" class="button button-flat"><i class="icon-gear"></i><span>功能按钮</span></button>
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <!-- table start -->
+                        <!-- table start -->
+                        <div class="card-table">
                             <table class="table table-responsive">
                                 <thead>
                                     <tr>
@@ -747,7 +791,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th align="left">#1</th>
+                                        <td align="left"><b>#1</b></td>
                                         <td style="width:70px;">
                                             <div class="image" style="background-image: url('img/avatar-zhouzhengrui.jpg');">
                                             </div>
@@ -764,7 +808,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th align="left">#2</th>
+                                        <td align="left"><b>#2</b></td>
                                         <td style="width:70px;">
                                             <div class="image" style="background-image: url('img/avatar-shulei.jpg');">
                                             </div>
@@ -781,7 +825,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th align="left">#3</th>
+                                        <td align="left"><b>#3</b></td>
                                         <td style="width:70px;">
                                             <div class="image" style="background-image: url('img/avatar-jinjing.jpg');">
                                             </div>
@@ -798,7 +842,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th align="left">#4</th>
+                                        <td align="left"><b>#4</b></td>
                                         <td style="width:70px;">
                                             <div class="image" style="background-image: url('img/avatar-wupeijun.jpg');">
                                             </div>
@@ -816,8 +860,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <!-- table over -->
                         </div>
+                        <!-- table over -->
                     </section>
                 </div>
                 <!-- column over -->
@@ -831,30 +875,26 @@
                 // 加载CountUp
                 $.getScript("js/countUp/countUp.min.js", function() {
                     var CountUpOptions = {
-                        useEasing: true,
-                        useGrouping: true,
                         separator: ',',
                         decimal: '.',
                     };
-                    var status1 = new CountUp('status-1', 0, 128, 0, 1.5, CountUpOptions); // (元素ID, 初始值, 结束值, 小数位, 动画持续时间, 配置)
-                    var status2 = new CountUp('status-2', 0, 1024, 0, 1.5, CountUpOptions);
-                    var status3 = new CountUp('status-3', 0, 2048, 0, 1.5, CountUpOptions);
-                    var status4 = new CountUp('status-4', 0, 4096, 0, 1.5, CountUpOptions);
-                    status1.start();
-                    status2.start();
-                    status3.start();
-                    status4.start();
                     var moneyCountUpOptions = {
-                        useEasing: true,
-                        useGrouping: true,
                         separator: ',',
                         decimal: '.',
                         prefix: '¥'
                     };
-                    var status5 = new CountUp('status-5', 0, 123456.00, 2, 2.5, moneyCountUpOptions);
-                    status5.start();
-                    var status6 = new CountUp('status-6', 0, 12345.00, 2, 2.5, CountUpOptions);
-                    status6.start();
+                    var statistic1 = new CountUp('statistic-1', 0, 128, 0, 1.5, CountUpOptions);
+                    var statistic2 = new CountUp('statistic-2', 0, 1024, 0, 1.5, CountUpOptions);
+                    var statistic3 = new CountUp('statistic-3', 0, 2048, 0, 1.5, CountUpOptions);
+                    var statistic4 = new CountUp('statistic-4', 0, 4096, 0, 1.5, CountUpOptions);
+                    var statistic5 = new CountUp('statistic-5', 0, 123456.00, 2, 2.5, moneyCountUpOptions);
+                    var statistic6 = new CountUp('statistic-6', 0, 12345.00, 2, 2.5, CountUpOptions);
+                    statistic1.start();
+                    statistic2.start();
+                    statistic3.start();
+                    statistic4.start();
+                    statistic5.start();
+                    statistic6.start();
                 });
                 // highcharts
                 $("#chart-1").highcharts({
@@ -1053,16 +1093,12 @@
                         $('#weather').append(
                             '<div class="weather-info">' +
                                 '<p>' + res.data[0].date + '，' + res.data[0].week + '</p>' +
-                                '<h3 class="weather-temperature">' + temfix + '</h3>' +
+                                '<h1 class="weather-temperature">' + temfix + '</h1>' +
                                 '<p>' + res.city + '，' + res.data[0].wea + '</p>' +
                                 '<p>高温' + res.data[0].tem1 + '，低温' + res.data[0].tem2 + '</p>' +
                                 '<p>' + res.data[0].win[0] + '，' + res.data[0].win_speed + '</p>' +
-                                '<p>' + res.data[0].air_tips + '</p>' +
                             '</div>' +
-                            // 拟物图标
                             '<img class="weather-icon" src="img/weather/' + res.data[0].wea_img + '.png">'
-                            // 扁平图标
-                            // '<div class="weather-iconfont"><i class="icon-' + res.data[0].wea_img + '"></i></div>'
                         );
                     }
                 });
@@ -1082,9 +1118,6 @@
     <script src="js/plugins.js"></script>
     <!-- JS global -->
     <script src="js/scripts.js"></script>
-    <!-- JS ueditor 按需载入 -->
-    <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
-    <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 
 </body>
 

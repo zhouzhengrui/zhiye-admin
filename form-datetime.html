@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>文件上传</title>
+    <title>日期与时间</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -454,7 +454,7 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>文件上传</h2>
+                <h2>日期与时间<small><code>action="date"</code> / <a href="http://www.layui.com/laydate/" target="_blank">官方网站</a></small></h2>
             </div>
         </div>
         <!-- banner over -->
@@ -466,194 +466,131 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">基本样式<small><code>input.file</code></small></h3>
+                            <h3 class="title">LayDate</h3>
                         </div>
                         <div class="card-body">
                             <!-- form start -->
                             <form class="form">
-                                <!-- file start -->
                                 <fieldset class="form-group">
-                                    <legend class="label">单文件上传</legend>
-                                    <div class="file-group">
-                                        <input class="file" type="file">
-                                        <button class="button" type="button">上传</button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span class="green">上传成功</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 100%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
+                                    <legend class="label">日期选择</legend>
+                                    <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date-1">
+                                        <span class="addon"><i class="icon-calendar"></i></span>
+                                    </label>
                                 </fieldset>
-                                <!-- file over -->
-                                <!-- files start -->
                                 <fieldset class="form-group">
-                                    <legend class="label">多文件上传</legend>
-                                    <div class="file-group">
-                                        <input class="file" type="file" multiple>
-                                        <button class="button" type="button">上传</button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span>50%</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 50%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
-                                    <div class="file-action">
-                                        <div class="info">
-                                            <span class="red">上传失败</span>
-                                            <span>document.jpg</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 0%;"></div>
-                                        </div>
-                                        <button class="file-delete" type="button"></button>
-                                    </div>
+                                    <legend class="label">时间选择</legend>
+                                    <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date-2">
+                                        <span class="addon"><i class="icon-calendar"></i></span>
+                                    </label>
                                 </fieldset>
-                                <!-- files over -->
+                                <fieldset class="form-group">
+                                    <legend class="label">范围选择</legend>
+                                    <label class="input-addon">
+                                        <input type="text" class="input" action="date" id="date-3">
+                                        <span class="addon"><i class="icon-calendar"></i></span>
+                                    </label>
+                                </fieldset>
                             </form>
                             <!-- form over -->
                         </div>
                     </section>
                 </div>
                 <!-- column over -->
-                <!-- column start -->
+                <!-- column-code start -->
                 <div class="col-lg-6">
                     <section class="code-group">
-                        <h6 class="code-title">单文件上传</h6>
+                        <h6 class="code-title">日期选择</h6>
                         <pre>
                             <code class="language-html">
                                 <script type="text/plain">
-                                    <!-- file start -->
+                                    <!-- date start -->
                                     <fieldset class="form-group">
                                         <legend class="label">标题</legend>
-                                        <div class="file-group">
-                                            <input class="file" type="file">
-                                            <button class="button" type="button">上传</button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span class="green">上传成功</span>
-                                                <span>document.jpg</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 100%;"></div>
-                                            </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
+                                        <label class="input-addon">
+                                            <input type="text" class="input" action="date" id="date">
+                                            <span class="addon"><i class="icon-calendar"></i></span>
+                                        </label>
                                     </fieldset>
-                                    <!-- file over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">多文件上传</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- files start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">标题</legend>
-                                        <div class="file-group">
-                                            <input class="file" type="file" multiple>
-                                            <button class="button" type="button">上传</button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span>50%</span>
-                                                <span>document.jpg</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 50%;"></div>
-                                            </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                        <div class="file-action">
-                                            <div class="info">
-                                                <span class="red">上传失败</span>
-                                                <span>document.jpg</span>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar" style="width: 0%;"></div>
-                                            </div>
-                                            <button class="file-delete" type="button"></button>
-                                        </div>
-                                    </fieldset>
-                                    <!-- files over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                </div>
-                <!-- column over -->
-            </div>
-            <!-- row over -->
-            <!-- row start -->
-            <div class="row">
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">Dropzone<small><code>.dropzone</code> <a href="http://www.dropzonejs.com/" target="_blank">官方网站</a></small></h3>
-                        </div>
-                        <div class="card-body">
-                            <!-- form start -->
-                            <form class="form">
-                                <!-- dropzone start -->
-                                <fieldset class="form-group">
-                                    <legend class="label">多文件上传</legend>
-                                    <div class="dropzone" id="dropzone"></div>
-                                </fieldset>
-                                <!-- dropzone over -->
-                            </form>
-                            <!-- form over -->
-                        </div>
-                    </section>
-                </div>
-                <!-- column over -->
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="code-group">
-                        <h6 class="code-title">Dropzone</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- dropzone start -->
-                                    <fieldset class="form-group">
-                                        <legend class="label">多文件上传</legend>
-                                        <div class="dropzone" id="dropzone"></div>
-                                    </fieldset>
-                                    <!-- dropzone over -->
+                                    <!-- date over -->
                                 </script>
                             </code>
                         </pre>
                         <pre>
                             <code class="language-js">
                                 <script type="text/plain">
-                                    // dropzone
-                                    var dropzone = new Dropzone("#dropzone", {
-                                        url: "/",
-                                        maxFiles: 5, // 文件数限制
-                                        maxFilesize: 512, // 文件大小限制
-                                        addRemoveLinks: true, // 单文件移除按钮
-                                        acceptedFiles: ".jpg, .jpeg, .png", // 文件类型
-                                        dictDefaultMessage: "点击这里添加文件, 或将文件拖放到这里" // 初始文字
+                                    // laydate
+                                    laydate.render({
+                                        elem: '#date',
+                                        format: 'yyyy年MM月dd日',
+                                        showBottom: false
                                     });
                                 </script>
                             </code>
                         </pre>
                     </section>
+                    <section class="code-group">
+                        <h6 class="code-title">时间选择</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- date start -->
+                                    <fieldset class="form-group">
+                                        <legend class="label">标题</legend>
+                                        <label class="input-addon">
+                                            <input type="text" class="input" action="date" id="time">
+                                            <span class="addon"><i class="icon-calendar"></i></span>
+                                        </label>
+                                    </fieldset>
+                                    <!-- date over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                // laydate
+                                laydate.render({
+                                    elem: '#time',
+                                    type: 'time'
+                                });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                    <section class="code-group">
+                        <h6 class="code-title">范围选择</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- date start -->
+                                    <fieldset class="form-group">
+                                        <legend class="label">标题</legend>
+                                        <label class="input-addon">
+                                            <input type="text" class="input" action="date" id="date">
+                                            <span class="addon"><i class="icon-calendar"></i></span>
+                                        </label>
+                                    </fieldset>
+                                    <!-- date over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                // laydate
+                                laydate.render({
+                                    elem: '#date',
+                                    format: 'yyyy年MM月dd日',
+                                    range: true
+                                });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
                 </div>
-                <!-- column over -->
+                <!-- column-code over -->
             </div>
             <!-- row over -->
         </div>
@@ -661,14 +598,22 @@
         <!-- page script start -->
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                // dropzone
-                var dropzone = new Dropzone("#dropzone", {
-                    url: "/",
-                    maxFiles: 5, // 文件数限制
-                    maxFilesize: 512, // 文件大小限制
-                    addRemoveLinks: true, // 单文件移除按钮
-                    acceptedFiles: ".jpg, .jpeg, .png", // 文件类型
-                    dictDefaultMessage: "点击这里添加文件, 或将文件拖放到这里" // 初始文字
+                // 日期选择
+                laydate.render({
+                    elem: '#date-1',
+                    format: 'yyyy年MM月dd日',
+                    showBottom: false
+                });
+                // 时间选择
+                laydate.render({
+                    elem: '#date-2',
+                    type: 'time'
+                });
+                // 范围选择
+                laydate.render({
+                    elem: '#date-3',
+                    format: 'yyyy年MM月dd日',
+                    range: true
                 });
                 // 代码块
                 Prism.highlightAll();

@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- JS ueditor 按需载入 -->
+    <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
+    <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 </head>
-
 
 <body>
     <!-- header start -->
@@ -29,7 +31,7 @@
         <!-- bar start -->
         <div class="header-bar">
             <!-- item start -->
-            <div class="item dropdown header-list">
+            <div class="item dropdown">
                 <button type="button" data-toggle="dropdown">
                     <span>消息通知</span>
                     <span class="badge">3</span>
@@ -37,28 +39,49 @@
                 <div class="dropdown-menu">
                     <h6 class="dropdown-header">你有3条未读消息</h6>
                     <div class="dropdown-divider"></div>
-                    <a class="item header-list-item" href="#">
-                        <div class="dot blue"></div>
-                        <p><b>站内通知: </b>新版后台管理系统即将上线</p>
-                        <span>2017年9月1日 12:00</span>
-                    </a>
-                    <a class="item header-list-item" href="#">
-                        <div class="dot green"></div>
-                        <p><b>系统信息: </b>提交的信息审核通过</p>
-                        <span>2017年9月1日 12:00</span>
-                    </a>
-                    <a class="item header-list-item" href="#">
-                        <div class="dot red"></div>
-                        <p><b>系统信息: </b>提交的信息未通过审核</p>
-                        <span>2017年9月1日 12:00</span>
-                    </a>
+                    <!-- list start -->
+                    <div class="list">
+                        <!-- item start -->
+                        <a class="item" href="#">
+                            <span class="dot"></span>
+                            <div class="item-body">
+                                <p><b>站内通知: </b>新版后台管理系统即将上线</p>
+                                <p class="gray"><small>2017年9月1日 12:00</small></p>
+                            </div>
+                        </a>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <a class="item" href="#">
+                            <span class="dot dot-green"></span>
+                            <div class="item-body">
+                                <p><b>系统信息: </b>提交的信息审核通过</p>
+                                <p class="gray"><small>2017年9月1日 12:00</small></p>
+                            </div>
+                        </a>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <a class="item" href="#">
+                            <span class="dot dot-red"></span>
+                            <div class="item-body">
+                                <p><b>系统信息: </b>提交的信息未通过审核</p>
+                                <p class="gray"><small>2017年9月1日 12:00</small></p>
+                            </div>
+                        </a>
+                        <!-- item over -->
+                    </div>
+                    <!-- list over -->
                     <div class="dropdown-divider"></div>
-                    <a class="item" href="#"><i class="icon-gear"></i>查看更多</a>
+                    <a class="button button-flat button-block" href="#">
+                        <i class="icon-gear"></i>
+                        <span>查看更多</span>
+                    </a>
                 </div>
             </div>
             <!-- item over -->
             <!-- item start -->
-            <div class="item"><a href="http://www.maszy.cn/index.php?m=content&c=index&a=lists&catid=5" target="_blank">技术支持</a></div>
+            <div class="item">
+                <a href="http://www.maszy.cn/index.php?m=content&c=index&a=lists&catid=5" target="_blank">技术支持</a>
+            </div>
             <!-- item over -->
             <!-- user start -->
             <div class="item dropdown header-user" hidden>
@@ -66,7 +89,7 @@
                     <span class="user-name">zhouzhengrui</span>
                     <span class="user-position">前端攻城师</span>
                     <div class="avatar">
-                        <img src="img/avatar.jpg" alt="">
+                        <img src="img/avatar-default.jpg" alt="">
                     </div>
                 </button>
                 <div class="dropdown-menu">
@@ -79,13 +102,19 @@
             <!-- user over -->
             <!-- fullscreen start -->
             <div class="item MT-hidden">
-                <button type="button" id="fullscreen-view"><i class="icon-enlarge"></i></button>
-                <button type="button" id="fullscreen-exit"><i class="icon-narrow"></i></button>
+                <button type="button" id="fullscreen-view">
+                    <i class="icon-enlarge"></i>
+                </button>
+                <button type="button" id="fullscreen-exit">
+                    <i class="icon-narrow"></i>
+                </button>
             </div>
             <!-- fullscreen over -->
             <!-- sidebar switch start -->
             <div class="item MT-hidden">
-                <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar"><i class="icon-dot-array-y"></i></button>
+                <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar">
+                    <i class="icon-dot-array-y"></i>
+                </button>
             </div>
             <!-- sidebar switch over -->
         </div>
@@ -101,7 +130,7 @@
         </div>
         <!-- MT bar over -->
         <!-- sidebar start -->
-        <div class="modal fade modal-sidebar" id="modal-sidebar">
+        <section class="modal fade modal-sidebar" id="modal-sidebar">
             <div class="modal-dialog modal-stick-right">
                 <div class="modal-content">
                     <!-- card start -->
@@ -197,7 +226,7 @@
                     <!-- card over -->
                 </div>
             </div>
-        </div>
+        </section>
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // 窗口加载完成
@@ -247,7 +276,7 @@
         <!-- user start -->
         <div class="side-user">
             <div class="avatar">
-                <img src="img/avatar.jpg" alt="">
+                <img src="img/avatar-default.jpg" alt="">
             </div>
             <div class="info dropdown">
                 <button type="button" class="user-name dropdown-toggle" data-toggle="dropdown">
@@ -276,8 +305,8 @@
                     <a><i class="icon-window"></i><span>演示模板 - 电子商务</span></a>
                     <div class="nav-sub">
                         <div class="item"><a href="demo-eCommerce.html" data-pjax>首页</a></div>
-                        <!-- <div class="item"><a href="#" data-pjax>订单管理</a></div>
-                        <div class="item"><a href="#" data-pjax>商品管理</a></div> -->
+                        <div class="item"><a href="demo-eCommerce-manage.html" data-pjax>商品管理</a></div>
+                        <div class="item"><a href="demo-eCommerce-add.html" data-pjax>添加商品</a></div>
                     </div>
                 </div>
                 <!-- item over -->
@@ -294,7 +323,9 @@
                         <div class="item"><a href="layout-grid.html" data-pjax>网格系统</a></div>
                         <div class="item"><a href="layout-card.html" data-pjax>卡片</a></div>
                         <div class="item"><a href="layout-tab.html" data-pjax>选项卡</a></div>
+                        <div class="item"><a href="layout-banner.html" data-pjax>Banner面板</a></div>
                         <div class="item"><a href="layout-collapse.html" data-pjax>折叠面板</a></div>
+                        <div class="item"><a href="layout-statistic.html" data-pjax>统计面板</a></div>
                         <div class="item"><a href="layout-responsive.html" data-pjax>响应式工具</a></div>
                     </div>
                 </div>
@@ -308,19 +339,10 @@
                         <div class="item"><a href="ui-label.html" data-pjax>标签</a></div>
                         <div class="item"><a href="ui-dropdown.html" data-pjax>下拉菜单</a></div>
                         <div class="item"><a href="ui-tooltip.html" data-pjax>提示框</a></div>
+                        <div class="item"><a href="ui-progress.html" data-pjax>进度条</a></div>
                         <div class="item"><a href="ui-icofont.html" data-pjax>字体图标</a></div>
                         <div class="item"><a href="ui-color.html" data-pjax>颜色</a></div>
                     </div>
-                </div>
-                <!-- item over -->
-                <!-- item start -->
-                <div class="item">
-                    <a href="list.html" data-pjax><i class="icon-gear"></i><span>列表</span></a>
-                </div>
-                <!-- item over -->
-                <!-- item start -->
-                <div class="item">
-                    <a href="table.html" data-pjax><i class="icon-gear"></i><span>表格</span></a>
                 </div>
                 <!-- item over -->
                 <!-- item start -->
@@ -331,10 +353,25 @@
                         <div class="item"><a href="form-input.html" data-pjax>输入框</a></div>
                         <div class="item"><a href="form-select.html" data-pjax>下拉列表</a></div>
                         <div class="item"><a href="form-radiocheckbox.html" data-pjax>单选多选框</a></div>
+                        <div class="item"><a href="form-datetime.html" data-pjax>日期与时间</a></div>
                         <div class="item"><a href="form-upload.html" data-pjax>文件上传</a></div>
                         <div class="item"><a href="form-cropper.html" data-pjax>图片裁剪</a></div>
                         <div class="item"><a href="form-validate.html" data-pjax>表单验证</a></div>
                     </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>表格</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="table.html" data-pjax>基础样式</a></div>
+                        <div class="item"><a href="table-datatables.html" data-pjax>DataTables</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <a href="list.html" data-pjax><i class="icon-gear"></i><span>列表</span></a>
                 </div>
                 <!-- item over -->
                 <!-- item start -->
@@ -367,6 +404,15 @@
                 </div>
                 <!-- item over -->
                 <h6 class="nav-title">其他</h6>
+                <!-- item start -->
+                <div class="item">
+                    <a><i class="icon-gear"></i><span>小工具</span></a>
+                    <div class="nav-sub">
+                        <div class="item"><a href="tool-weather.html" data-pjax>天气信息</a></div>
+                        <div class="item"><a href="tool-hotkey.html" data-pjax>快捷键</a></div>
+                    </div>
+                </div>
+                <!-- item over -->
                 <!-- item start -->
                 <div class="item">
                     <a><i class="icon-gear"></i><span>单页</span></a>
@@ -408,19 +454,18 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>数据图</h2>
-                <p><code>.highcharts</code> / 将它放在卡片的主容器<code>.card-body</code>里面, 数据图适合使用最大化按钮</p>
-                <ul class="explain">
-                    <li>详细说明查看<a href="https://www.hcharts.cn/" target="_blank">Highcharts中文网站</a></li>
-                    <li>包括了highcharts-more.js增强包和modules/exporting.js导出功能</li>
-                    <li>可创建折线图, 曲线图, 面积图, 柱状图, 条形图, 饼图, 环形图, 极地图, 蜘蛛图, 动态图, 混合图...</li>
-                    <li>数据图的高度继承父级容器高度, 所以创建时给<code>.card-body</code>追加<code>style="height:*px;</code></li>
-                </ul>
+                <h2>数据图<small><code>.highcharts</code> / <a href="https://www.hcharts.cn/" target="_blank">Highcharts中文网站</a></small></h2>
             </div>
         </div>
         <!-- banner over -->
         <!-- container start -->
         <div class="container-fluid">
+            <ul class="explain">
+                <li>html部分放在卡片的主容器<code>.card-body</code>里面</li>
+                <li>包括了highcharts-more.js增强包和modules/exporting.js导出功能</li>
+                <li>可创建折线图, 曲线图, 面积图, 柱状图, 条形图, 饼图, 环形图, 极地图, 蜘蛛图, 动态图, 混合图...</li>
+                <li>数据图的高度继承父级容器高度, 所以创建时给<code>.card-body</code>追加<code>style="height:*px;</code></li>
+            </ul>
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
@@ -429,7 +474,7 @@
                         <div class="card-header">
                             <h3 class="title">基本曲线图<small>spline</small></h3>
                             <div class="card-header-action">
-                                <button type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
                         <div class="card-body" style="height:300px;">
@@ -534,13 +579,7 @@
                     }]
                 });
                 // 代码块
-                $.when(
-                    $.getScript('js/clipboard/clipboard.min.js'),
-                    $.getScript('js/prism/prism.js'),
-                    $.getScript('js/prism/prism-copy.js')
-                ).then(function() {
-                    Prism.highlightAll();
-                });
+                Prism.highlightAll();
             });
         </script>
         <!-- page script over -->
@@ -556,9 +595,6 @@
     <script src="js/plugins.js"></script>
     <!-- JS global -->
     <script src="js/scripts.js"></script>
-    <!-- JS ueditor 按需载入 -->
-    <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
-    <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 
 </body>
 

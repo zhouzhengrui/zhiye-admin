@@ -26,8 +26,9 @@
                     var s = (i || e).replace(/\.|\//g, ""),
                         l = "layuicss-" + s,
                         d = 0;
-                    o.rel = "stylesheet", o.href = n.path + e, o.id = l, document.getElementById(l) || r.appendChild(o), "function" == typeof a && ! function c() {
-                        return ++d > 80 ? window.console && console.error("laydate.css: Invalid") : void(1989 === parseInt(t.getStyle(document.getElementById(l), "width")) ? a() : setTimeout(c, 100))
+                    o.rel = "stylesheet", o.href = n.path + e, o.id = l,
+                 "function" == typeof a && ! function c() {
+                        return a()
                     }()
                 }
             }
