@@ -2,7 +2,7 @@
  * zhiye-admin
  * @author  Rui
  * @version 0.1.0
- * @date2019-2-24 21:59:18
+ * @date2019-2-25 12:48:07
  */
 @charset "UTF-8";
 @-ms-viewport {
@@ -13267,16 +13267,27 @@ p.grid-demo {
   text-align: center;
 }
 
-.demo-icofont i {
-  font-size: 24px;
-}
-
-.demo-icofont code {
-  margin-top: 5px;
-}
-
-.demo-icofont [class*="col-"] {
+.demo-icofont .demo-icofont-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 30px;
+}
+
+.demo-icofont i {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.demo-icofont .demo-icofont-button-copy {
+  margin-top: 5px;
 }
 
 .demo-color {
@@ -13452,12 +13463,32 @@ p.grid-demo {
   }
   .banner {
     display: block;
+    height: auto;
+    padding: 15px 30px;
+  }
+  .banner .banner-title small {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
   }
   .banner .banner-title ~ .banner-action {
     margin-top: 15px;
   }
   .banner .banner-title ~ .banner-action .button-group {
     margin-left: 0;
+  }
+  .banner.banner-fixed {
+    position: static;
+    height: auto;
+    padding: 15px 30px;
+  }
+  .banner.banner-fixed .banner-title small {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .banner.banner-fixed ~ .container-fluid {
+    padding-top: 0;
   }
   .container-fluid {
     padding-left: 15px;
