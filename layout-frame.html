@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>下拉菜单</title>
+    <title>基本框架模板</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -458,371 +458,233 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>下拉菜单<small><code>.dropdown</code> / 用于显示更多功能的按钮</small></h2>
+                <h2>基本框架模板<small><code>base-frame.html</code> 这是每个页面最基本的框架结构, 参阅主体布局和组件来布置主体容器里的内容</small></h2>
+            </div>
+            <div class="banner-action">
+                <a class="button" href="base-frame.html" target="_blank">查看基本框架模板页面</a>
             </div>
         </div>
         <!-- banner over -->
         <!-- container start -->
         <div class="container-fluid">
             <ul class="explain">
-                <li>下拉菜单组件由按钮组件和下部菜单组成，并使用<code>&lt;div class=&quot;dropdown&quot;&gt;&lt;/div&gt;</code>包裹</li>
-                <li><code>button</code>必须有类名<code>.dropdown-toggle</code>和属性<code>data-toggle="dropdown"</code></li>
-                <li>下拉按钮的样式与按钮组件的修改方法相同</li>
+                <li><code>head, header, aside, copyright</code>这几个部分建议以引用的方式, 方便统一修改</li>
+                <li><code>&lt;header&gt;&lt;/header&gt;</code>顶部, <code>&lt;aside&gt;&lt;/aside&gt;</code>左侧边栏, <code>&lt;main&gt;&lt;/main&gt;</code>主体</li>
+                <li><code>.MT-header-bar</code>是在移动端显示的导航切换按钮, 不可移除</li>
+                <li>有<code>data-pjax</code>属性的链接是以<a href="https://github.com/defunkt/jquery-pjax" target="_blank">pjax</a>的方式无刷新替换<code>&lt;main&gt;</code>部分, 所以每个页面的独立功能要写在<code>&lt;main&gt;</code>里面的<code>page script</code>位置, 主体容器里的链接也建议使用这种方式</li>
+                <li>页面独立插件在<code>page script</code>位置以<code>$.getScript</code>的方式加载执行</li>
+                <li><code>setNavActive("nav-*");</code>是页面id, 需与主导航的id对应</li>
             </ul>
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单类型</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="button-group">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>icon menu</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-gear"></i>
-                                        <span>icon dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns title</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <h6 class="dropdown-header">菜单标题</h6>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                            </div>
-                        </div>
+                <div class="col-12">
+                    <section class="code-group">
+                        <pre class="show">
+                            <code class="language-html">
+                                &lt;!DOCTYPE html&gt;
+                                &lt;html&gt;
+                                &lt;head&gt;
+                                    &lt;meta charset=&quot;utf-8&quot;&gt;
+                                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no&quot;&gt;
+                                    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+                                    &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;
+                                    &lt;title&gt;页面标题&lt;/title&gt;
+                                    &lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot;&gt;
+                                    &lt;!-- CSS icofont --&gt;
+                                    &lt;link rel=&quot;stylesheet&quot; href=&quot;icofont/style.css&quot;&gt;
+                                    &lt;!-- CSS global --&gt;
+                                    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.min.css&quot;&gt;
+                                    &lt;!-- jQuery --&gt;
+                                    &lt;script src=&quot;js/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+                                &lt;/head&gt;
+                                &lt;body&gt;
+                                    &lt;!-- header start --&gt;
+                                    &lt;header&gt;
+                                        &lt;!-- brand start --&gt;
+                                        &lt;div class=&quot;brand&quot;&gt;
+                                            &lt;h4 class=&quot;title&quot;&gt;项目名称&lt;small&gt;系统名称&lt;/small&gt;&lt;/h4&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- brand start --&gt;
+                                        &lt;!-- bar start --&gt;
+                                        &lt;div class=&quot;header-bar&quot;&gt;
+                                            &lt;!-- item start --&gt;
+                                            &lt;div class=&quot;item&quot;&gt;
+                                                &lt;button type=&quot;button&quot;&gt;
+                                                    &lt;i class=&quot;icon-gear&quot;&gt;&lt;/i&gt;
+                                                    &lt;span&gt;普通按钮&lt;/span&gt;
+                                                    &lt;span class=&quot;badge&quot;&gt;0&lt;/span&gt;
+                                                &lt;/button&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- item over --&gt;
+                                            &lt;!-- item start --&gt;
+                                            &lt;div class=&quot;item dropdown&quot;&gt;
+                                                &lt;button type=&quot;button&quot; data-toggle=&quot;dropdown&quot;&gt;
+                                                    &lt;i class=&quot;icon-gear&quot;&gt;&lt;/i&gt;
+                                                    &lt;span&gt;下拉按钮&lt;/span&gt;
+                                                    &lt;span class=&quot;badge&quot;&gt;0&lt;/span&gt;
+                                                &lt;/button&gt;
+                                                &lt;div class=&quot;dropdown-menu&quot;&gt;
+                                                    &lt;!-- 下拉菜单组件或列表组件 --&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- item over --&gt;
+                                            &lt;!-- item start --&gt;
+                                            &lt;div class=&quot;item&quot;&gt;
+                                                &lt;a href=&quot;http://www.maszy.cn/&quot; target=&quot;_blank&quot;&gt;链接&lt;/a&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- item over --&gt;
+                                            &lt;!-- fullscreen start --&gt;
+                                            &lt;div class=&quot;item MT-hidden&quot;&gt;
+                                                &lt;button type=&quot;button&quot; id=&quot;fullscreen-view&quot;&gt;
+                                                    &lt;i class=&quot;icon-enlarge&quot;&gt;&lt;/i&gt;
+                                                &lt;/button&gt;
+                                                &lt;button type=&quot;button&quot; id=&quot;fullscreen-exit&quot;&gt;
+                                                    &lt;i class=&quot;icon-narrow&quot;&gt;&lt;/i&gt;
+                                                &lt;/button&gt;
+                                            &lt;/div&gt;
+                                            &lt;!-- fullscreen over --&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- bar over --&gt;
+                                        &lt;!-- MT bar start --&gt;
+                                        &lt;div class=&quot;MT-header-bar&quot;&gt;
+                                            &lt;button class=&quot;MT-header-bar-button&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.header-bar&quot;&gt;&lt;i class=&quot;icon-user&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;button class=&quot;MT-header-bar-button&quot; type=&quot;button&quot; data-toggle=&quot;aside&quot;&gt;&lt;i class=&quot;icon-list&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- MT bar over --&gt;
+                                    &lt;/header&gt;
+                                    &lt;!-- header over --&gt;
+                                    &lt;!-- aside collapse button start --&gt;
+                                    &lt;button class=&quot;aside-collapse-button MT-hidden&quot; data-toggle=&quot;aside-collapse&quot; action=&quot;tooltip&quot; title=&quot;折叠导航 Alt+Z&quot; data-placement=&quot;right&quot; data-trigger=&quot;hover&quot;&gt;&lt;i class=&quot;icon-aside-collapse&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                                    &lt;!-- aside collapse button over --&gt;
+                                    &lt;!-- aside start --&gt;
+                                    &lt;aside&gt;
+                                        &lt;!-- user start --&gt;
+                                        &lt;div class=&quot;aside-user&quot;&gt;
+                                            &lt;div class=&quot;avatar&quot;&gt;
+                                                &lt;img src=&quot;img/avatar-default.jpg&quot;&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;info dropdown&quot;&gt;
+                                                &lt;button type=&quot;button&quot; class=&quot;user-name dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                                                    &lt;span&gt;用户名&lt;/span&gt;
+                                                &lt;/button&gt;
+                                                &lt;span class=&quot;user-label&quot;&gt;标签&lt;/span&gt;
+                                                &lt;div class=&quot;dropdown-menu&quot;&gt;
+                                                    &lt;a class=&quot;item&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;icon-gear&quot;&gt;&lt;/i&gt;链接&lt;/a&gt;
+                                                    &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+                                                    &lt;button class=&quot;item&quot;&gt;&lt;i class=&quot;icon-gear&quot;&gt;&lt;/i&gt;按钮&lt;/button&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- user over --&gt;
+                                        &lt;!-- nav start --&gt;
+                                        &lt;nav class=&quot;aside-nav&quot;&gt;
+                                            &lt;ul class=&quot;nav&quot; id=&quot;nav&quot;&gt;
+                                                &lt;!-- item start --&gt;
+                                                &lt;li class=&quot;nav-item mm-active&quot; id=&quot;nav-1&quot;&gt;
+                                                    &lt;a href=&quot;#&quot; data-pjax&gt;&lt;i class=&quot;icon-home&quot;&gt;&lt;/i&gt;&lt;span&gt;首页&lt;/span&gt;&lt;/a&gt;
+                                                &lt;/li&gt;
+                                                &lt;!-- item over --&gt;
+                                                &lt;!-- item start --&gt;
+                                                &lt;li class=&quot;nav-item&quot; id=&quot;nav-2&quot;&gt;
+                                                    &lt;a&gt;&lt;i class=&quot;icon-gear&quot;&gt;&lt;/i&gt;&lt;span&gt;二级导航&lt;/span&gt;&lt;/a&gt;
+                                                    &lt;ul class=&quot;nav-sub&quot;&gt;
+                                                        &lt;li class=&quot;nav-item&quot; id=&quot;nav-2-1&quot;&gt;&lt;a href=&quot;#&quot; data-pjax&gt;&lt;span&gt;子导航&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                                        &lt;li class=&quot;nav-item&quot; id=&quot;nav-2-2&quot;&gt;&lt;a href=&quot;#&quot; data-pjax&gt;&lt;span&gt;子导航&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                                        &lt;li class=&quot;nav-item&quot; id=&quot;nav-2-3&quot;&gt;&lt;a href=&quot;#&quot; data-pjax&gt;&lt;span&gt;子导航&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/li&gt;
+                                                &lt;!-- item over --&gt;
+                                                &lt;h6 class=&quot;nav-title&quot;&gt;&lt;span&gt;导航分类标题&lt;/span&gt;&lt;/h6&gt;
+                                                &lt;!-- item start --&gt;
+                                                &lt;li class=&quot;nav-item&quot; id=&quot;nav-3&quot;&gt;
+                                                    &lt;a&gt;&lt;i class=&quot;icon-gear&quot;&gt;&lt;/i&gt;&lt;span&gt;三级导航&lt;/span&gt;&lt;/a&gt;
+                                                    &lt;ul class=&quot;nav-sub&quot;&gt;
+                                                        &lt;li class=&quot;nav-item&quot; id=&quot;nav-3-1&quot;&gt;
+                                                            &lt;a&gt;&lt;span&gt;子导航&lt;/span&gt;&lt;/a&gt;
+                                                            &lt;ul class=&quot;nav-sub&quot;&gt;
+                                                                &lt;li class=&quot;nav-item&quot; id=&quot;nav-3-1-1&quot;&gt;&lt;a href=&quot;#&quot; data-pjax&gt;&lt;span&gt;子子导航&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;nav-item&quot; id=&quot;nav-3-1-2&quot;&gt;&lt;a href=&quot;#&quot; data-pjax&gt;&lt;span&gt;子子导航&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                                            &lt;/ul&gt;
+                                                        &lt;/li&gt;
+                                                        &lt;li class=&quot;nav-item&quot; id=&quot;nav-3-2&quot;&gt;
+                                                            &lt;a&gt;&lt;span&gt;子导航&lt;/span&gt;&lt;/a&gt;
+                                                            &lt;ul class=&quot;nav-sub&quot;&gt;
+                                                                &lt;li class=&quot;nav-item&quot; id=&quot;nav-3-2-1&quot;&gt;&lt;a href=&quot;#&quot; data-pjax&gt;&lt;span&gt;子子导航&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li class=&quot;nav-item&quot; id=&quot;nav-3-2-2&quot;&gt;&lt;a href=&quot;#&quot; data-pjax&gt;&lt;span&gt;子子导航&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                                            &lt;/ul&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/li&gt;
+                                                &lt;!-- item over --&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/nav&gt;
+                                        &lt;!-- nav over --&gt;
+                                    &lt;/aside&gt;
+                                    &lt;!-- aside over --&gt;
+                                    &lt;!-- main start --&gt;
+                                    &lt;main&gt;
+                                        &lt;!-- banner start --&gt;
+                                        &lt;div class=&quot;banner&quot;&gt;
+                                            &lt;div class=&quot;banner-title&quot;&gt;
+                                                &lt;h2&gt;页面标题&lt;small&gt;页面副标题&lt;/small&gt;&lt;/h2&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class=&quot;banner-action&quot;&gt;
+                                                &lt;!-- Banner 功能区 --&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- banner over --&gt;
+                                        &lt;!-- container start --&gt;
+                                        &lt;div class=&quot;container-fluid&quot;&gt;
+                                            &lt;!-- 主体容器, 放入网格 --&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- container over --&gt;
+                                        &lt;!-- page script start --&gt;
+                                        &lt;script type=&quot;text/javascript&quot;&gt;
+                                            jQuery(document).ready(function($) {
+                                                // nav active
+                                                setNavActive(&quot;nav-1&quot;);
+                                            });
+                                        &lt;/script&gt;
+                                        &lt;!-- page script over --&gt;
+                                        &lt;!-- copyright start --&gt;
+                                        &lt;div class=&quot;copyright&quot;&gt;
+                                            &lt;p&gt;Powered by &lt;a href=&quot;http://www.maszy.cn&quot; target=&quot;_blank&quot;&gt;© ZhiYe Software Technology Co.,Ltd&lt;/a&gt;&lt;/p&gt;
+                                        &lt;/div&gt;
+                                        &lt;!-- copyright over --&gt;
+                                    &lt;/main&gt;
+                                    &lt;!-- main over --&gt;
+                                    &lt;!-- JS plugins --&gt;
+                                    &lt;script src=&quot;js/plugins.js&quot;&gt;&lt;/script&gt;
+                                    &lt;!-- JS global --&gt;
+                                    &lt;script src=&quot;js/scripts.js&quot;&gt;&lt;/script&gt;
+                                &lt;/body&gt;
+                                &lt;/html&gt;
+
+                            </code>
+                        </pre>
                     </section>
                     <ul class="explain">
-                        <li><code>.dropdown-divider</code>为分割线</li>
+                        <p><b><code>js/scripts.js</code>是前端全局js, 不要编辑修改</b></p>
+                        <p><b><code>js/plugins.js</code>打包了以下插件供全局使用</b></p>
+                        <li><a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/#js" target="_blank">bootstrap.js</a> (bootstrap的全部功能)</li>
+                        <li><a href="https://popper.js.org/" target="_blank">popper.js</a> (popup定位引擎, bootstrap依赖插件)</li>
+                        <li><a href="http://ricostacruz.com/nprogress/" target="_blank">nprogress.js</a> (页面加载进度条)</li>
+                        <li><a href="https://github.com/defunkt/jquery-pjax" target="_blank">jquery.pjax.js</a> (页面无刷新替换)</li>
+                        <li><a href="http://fian.my.id/Waves/" target="_blank">waves.js</a> (按钮点击反馈)</li>
+                        <li><a href="https://github.com/onokumus/metismenu" target="_blank">metisMenu.js</a> (多级导航)</li>
+                        <li><a href="https://github.com/utatti/perfect-scrollbar" target="_blank">perfect-scrollbar.js</a> (滚动条美化)</li>
+                        <li><a href="http://elboletaire.github.io/tabbedcontent/" target="_blank">tabbedcontent.js</a> (选项卡)</li>
+                        <li><a href="https://jqueryvalidation.org/" target="_blank">jQueryValidatio.js</a> (表单验证)</li>
+                        <li><a href="https://datatables.net/" target="_blank">DataTables</a> (数据表格)</li>
+                        <li><a href="http://www.layui.com/laydate/" target="_blank">laydate.js</a> (日期和时间控件)</li>
+                        <li><a href="https://harvesthq.github.io/chosen/" target="_blank">chosen.js</a> (下拉列表美化和功能增强)</li>
+                        <li><a href="https://github.com/CodeSeven/toastr" target="_blank">toastr.js</a> (toast提示框)</li>
+                        <li><a href="http://www.dropzonejs.com/" target="_blank">dropzone.js</a> (多文件上传)</li>
+                        <li><a href="https://github.com/jaywcjlove/hotkeys" target="_blank">hotkeys.js</a> (快捷键)</li>
+                        <li><a href="https://clipboardjs.com/" target="_blank">clipboard.js</a> (内容复制)</li>
+                        <li><a href="https://prismjs.com/" target="_blank">prism.js</a> (代码美化)</li>
                     </ul>
-                </div>
-                <!-- column over -->
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="code-group">
-                        <h6 class="code-title">dropdowns</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">icon menu</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns + icon</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">icon dropdowns</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-gear"></i>
-                                        <span>icon dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">dropdowns title</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>dropdowns title</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <h6 class="dropdown-header">菜单标题</h6>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="item" href="#">查看数据</a>
-                                            <a class="item" href="#">修改数据</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="item" href="#">删除数据</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                </div>
-                <!-- column over -->
-            </div>
-            <!-- row over -->
-            <!-- row start -->
-            <div class="row">
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单按钮大小<small>默认, 大型, 小型, 按需使用，用法与按钮组件相同</small></h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="demo-list">
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>默认大小</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-large dropdown-toggle" data-toggle="dropdown">
-                                            <span>大型下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-large</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-small dropdown-toggle" data-toggle="dropdown">
-                                            <span>小型下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-small</code>
-                                </li>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- column over -->
-            </div>
-            <!-- row over -->
-            <!-- row start -->
-            <div class="row">
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单按钮颜色<small>按情境使用，用法与按钮组件相同</small></h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="demo-list">
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>默认颜色</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-red dropdown-toggle" data-toggle="dropdown">
-                                            <span>红色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-red</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-orange dropdown-toggle" data-toggle="dropdown">
-                                            <span>橙色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-orange</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-yellow dropdown-toggle" data-toggle="dropdown">
-                                            <span>黄色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-yellow</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-green dropdown-toggle" data-toggle="dropdown">
-                                            <span>绿色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-green</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-cyan dropdown-toggle" data-toggle="dropdown">
-                                            <span>青色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-cyan</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-blue dropdown-toggle" data-toggle="dropdown">
-                                            <span>蓝色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-blue</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-purple dropdown-toggle" data-toggle="dropdown">
-                                            <span>紫色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-purple</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-pink dropdown-toggle" data-toggle="dropdown">
-                                            <span>粉色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-pink</code>
-                                </li>
-                            </div>
-                        </div>
-                    </section>
                 </div>
                 <!-- column over -->
             </div>
@@ -833,7 +695,7 @@
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // nav active
-                setNavActive("nav-5-3");
+                setNavActive("nav-3-1");
                 // code highlight
                 Prism.highlightAll();
             });

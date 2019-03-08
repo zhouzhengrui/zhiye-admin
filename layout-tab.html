@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
     <title>选项卡</title>
@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- JS highcharts 按需载入 -->
+    <script src="js/highcharts/highcharts.js"></script>
+    <script src="js/highcharts/highcharts-more.js"></script>
+    <script src="js/highcharts/modules/exporting.js"></script>
     <!-- JS ueditor 按需载入 -->
     <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
     <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
@@ -24,8 +28,7 @@
     <header>
         <!-- brand start -->
         <div class="brand">
-            <h4 class="title">马鞍山市志业软件科技有限公司</h4>
-            <p>后台管理系统</p>
+            <h4 class="title">马鞍山市志业软件科技有限公司<small>后台管理系统</small></h4>
         </div>
         <!-- brand start -->
         <!-- bar start -->
@@ -87,7 +90,7 @@
             <div class="item dropdown header-user" hidden>
                 <button type="button" data-toggle="dropdown">
                     <span class="user-name">zhouzhengrui</span>
-                    <span class="user-position">前端攻城师</span>
+                    <span class="user-label">前端攻城师</span>
                     <div class="avatar">
                         <img src="img/avatar-default.jpg" alt="">
                     </div>
@@ -110,324 +113,325 @@
                 </button>
             </div>
             <!-- fullscreen over -->
-            <!-- sidebar switch start -->
+            <!-- sidebar start -->
             <div class="item MT-hidden">
                 <button type="button" id="modal-sidebar-button" data-toggle="modal" data-target="#modal-sidebar">
                     <i class="icon-dot-array-y"></i>
                 </button>
             </div>
-            <!-- sidebar switch over -->
+            <section class="modal fade modal-sidebar" id="modal-sidebar">
+                <div class="modal-dialog modal-stick-right">
+                    <div class="modal-header">
+                        <h3 class="title">右侧边栏</h3>
+                        <div class="card-header-action">
+                            <button type="button" class="button button-flat" data-dismiss="modal"><i class="icon-cancel"></i></button>
+                        </div>
+                    </div>
+                    <div class="modal-content">
+                        <!-- card start -->
+                        <section class="card">
+                            <div class="card-text">
+                                <p>固定在右侧的一个额外区域，可用来放一些全局的设置或信息，按实际需求使用</p>
+                                <p>内容的布局与卡片的用法相同</p>
+                                <p>内容高度超出时会自动生成美化后的滚动条</p>
+                            </div>
+                            <div class="card-divider"></div>
+                            <div class="card-body">
+                                <!-- form start -->
+                                <form class="form">
+                                    <fieldset class="form-group">
+                                        <legend class="label">效果演示</legend>
+                                        <div class="radiocheckbox-switch-item">
+                                            <label class="radiocheckbox-switch">
+                                                <input class="radiocheckbox" type="checkbox" id="demo-aside-user-switch" checked>
+                                                <span class="radiocheckbox-replace">
+                                                    <span class="slipper"></span>
+                                                </span>
+                                            </label>
+                                            <p class="radiocheckbox-switch-explain">左侧用户面板</p>
+                                        </div>
+                                        <div class="radiocheckbox-switch-item">
+                                            <label class="radiocheckbox-switch">
+                                                <input class="radiocheckbox" type="checkbox" id="demo-aside-dashboard-switch">
+                                                <span class="radiocheckbox-replace">
+                                                    <span class="slipper"></span>
+                                                </span>
+                                            </label>
+                                            <p class="radiocheckbox-switch-explain">左侧仪表面板</p>
+                                        </div>
+                                        <div class="radiocheckbox-switch-item">
+                                            <label class="radiocheckbox-switch">
+                                                <input class="radiocheckbox" type="checkbox" id="demo-header-user-switch">
+                                                <span class="radiocheckbox-replace">
+                                                    <span class="slipper"></span>
+                                                </span>
+                                            </label>
+                                            <p class="radiocheckbox-switch-explain">顶部用户面板</p>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <!-- form over -->
+                            </div>
+                        </section>
+                        <!-- card over -->
+                        <!-- card start -->
+                        <section class="card">
+                            <div class="card-header">
+                                <h3 class="title">待办事项</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- timeline start -->
+                                <div class="list-timeline">
+                                    <h4 class="title">今天</h4>
+                                    <div class="item">
+                                        <a class="info" href="#">近期的项目验收</a>
+                                        <p class="tag">12:00</p>
+                                    </div>
+                                    <h4 class="title">明天</h4>
+                                    <div class="item">
+                                        <a class="info" href="#">陪马云喝茶，并谈一谈未来十年移动互联网的发展方向</a>
+                                        <p class="tag">14:00</p>
+                                    </div>
+                                    <div class="item">
+                                        <a class="info" href="#">陪马化腾喝茶</a>
+                                        <p class="tag">18:00</p>
+                                    </div>
+                                    <h4 class="title">后天</h4>
+                                    <div class="item">
+                                        <a class="info" href="#">陪王健林喝茶</a>
+                                        <p class="tag">18:00</p>
+                                    </div>
+                                    <div class="item">
+                                        <a class="info" href="#">陪李嘉诚喝茶，并谈一谈未来十年移动互联网的发展方向</a>
+                                        <p class="tag">14:00</p>
+                                    </div>
+                                    <div class="item">
+                                        <a class="info" href="#">陪雷军喝茶</a>
+                                        <p class="tag">18:00</p>
+                                    </div>
+                                </div>
+                                <!-- timeline over -->
+                            </div>
+                        </section>
+                        <!-- card over -->
+                    </div>
+                </div>
+            </section>
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    // 右侧边栏滚动条美化
+                    var sidebarScrollbar = new PerfectScrollbar('#modal-sidebar .modal-content', {
+                        suppressScrollX: true,
+                        swipeEasing: false,
+                        wheelPropagation: false
+                    });
+                    // 左侧用户面板开关
+                    $('#demo-aside-user-switch').on('click', function () {
+                        if (this.checked) {
+                            $('.aside-user').removeAttr('hidden');
+                        } else {
+                            $('.aside-user').attr('hidden', true);
+                        }
+                    });
+                    // 左侧仪表面板开关
+                    $('#demo-aside-dashboard-switch').on('click', function () {
+                        if (this.checked) {
+                            $('.aside-dashboard').removeAttr('hidden');
+                        } else {
+                            $('.aside-dashboard').attr('hidden', true);
+                        }
+                    });
+                    // 顶部用户面板开关
+                    $('#demo-header-user-switch').on('click', function () {
+                        if (this.checked) {
+                            $('.header-user').removeAttr('hidden');
+                        } else {
+                            $('.header-user').attr('hidden', true);
+                        }
+                    });
+                });
+            </script>
+            <!-- sidebar over -->
         </div>
         <!-- bar over -->
         <!-- MT bar start -->
         <div class="MT-header-bar">
-            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target=".header-bar">
+            <button class="MT-header-bar-button" type="button" data-toggle="collapse" data-target=".header-bar">
                 <i class="icon-user"></i>
             </button>
-            <button class="MT-bar-toggler" type="button" data-toggle="collapse" data-target="aside">
+            <button class="MT-header-bar-button" type="button" data-toggle="aside">
                 <i class="icon-list"></i>
             </button>
         </div>
         <!-- MT bar over -->
-        <!-- sidebar start -->
-        <section class="modal fade modal-sidebar" id="modal-sidebar">
-            <div class="modal-dialog modal-stick-right">
-                <div class="modal-content">
-                    <!-- card start -->
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">右侧边栏</h3>
-                            <div class="card-header-action">
-                                <button type="button" data-dismiss="modal"><i class="icon-cancel"></i></button>
-                            </div>
-                        </div>
-                        <div class="card-text">
-                            <p>固定在右侧的一个额外区域，可用来放一些全局的设置或信息，按实际需求使用</p>
-                            <p>内容的布局与卡片的用法相同</p>
-                            <p>内容高度超出时会自动生成美化后的滚动条</p>
-                        </div>
-                        <div class="card-body">
-                            <!-- form start -->
-                            <form class="form">
-                                <fieldset class="form-group">
-                                    <legend class="label">效果演示</legend>
-                                    <div class="radiocheckbox-switch-item">
-                                        <label class="radiocheckbox-switch">
-                                            <input class="radiocheckbox" type="checkbox" id="demo-side-user-switch" checked>
-                                            <span class="radiocheckbox-replace">
-                                                <span class="slipper"></span>
-                                            </span>
-                                        </label>
-                                        <p class="radiocheckbox-switch-explain">左侧用户面板</p>
-                                    </div>
-                                    <div class="radiocheckbox-switch-item">
-                                        <label class="radiocheckbox-switch">
-                                            <input class="radiocheckbox" type="checkbox" id="demo-side-dashboard-switch">
-                                            <span class="radiocheckbox-replace">
-                                                <span class="slipper"></span>
-                                            </span>
-                                        </label>
-                                        <p class="radiocheckbox-switch-explain">左侧仪表面板</p>
-                                    </div>
-                                    <div class="radiocheckbox-switch-item">
-                                        <label class="radiocheckbox-switch">
-                                            <input class="radiocheckbox" type="checkbox" id="demo-header-user-switch">
-                                            <span class="radiocheckbox-replace">
-                                                <span class="slipper"></span>
-                                            </span>
-                                        </label>
-                                        <p class="radiocheckbox-switch-explain">顶部用户面板</p>
-                                    </div>
-                                </fieldset>
-                            </form>
-                            <!-- form over -->
-                        </div>
-                    </section>
-                    <!-- card over -->
-                    <!-- card start -->
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">待办事项</h3>
-                        </div>
-                        <div class="card-body">
-                            <!-- timeline start -->
-                            <div class="list-timeline">
-                                <h4 class="title">今天</h4>
-                                <div class="item">
-                                    <a class="info" href="#">近期的项目验收</a>
-                                    <p class="tag">12:00</p>
-                                </div>
-                                <h4 class="title">明天</h4>
-                                <div class="item">
-                                    <a class="info" href="#">陪马云喝茶，并谈一谈未来十年移动互联网的发展方向</a>
-                                    <p class="tag">14:00</p>
-                                </div>
-                                <div class="item">
-                                    <a class="info" href="#">陪马化腾喝茶</a>
-                                    <p class="tag">18:00</p>
-                                </div>
-                                <h4 class="title">后天</h4>
-                                <div class="item">
-                                    <a class="info" href="#">陪王健林喝茶</a>
-                                    <p class="tag">18:00</p>
-                                </div>
-                                <div class="item">
-                                    <a class="info" href="#">陪李嘉诚喝茶，并谈一谈未来十年移动互联网的发展方向</a>
-                                    <p class="tag">14:00</p>
-                                </div>
-                                <div class="item">
-                                    <a class="info" href="#">陪雷军喝茶</a>
-                                    <p class="tag">18:00</p>
-                                </div>
-                            </div>
-                            <!-- timeline over -->
-                        </div>
-                    </section>
-                    <!-- card over -->
-                </div>
-            </div>
-        </section>
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                // 窗口加载完成
-                $(window).on("load", function() {
-                    // 右侧边栏滚动条美化
-                    $(".modal-sidebar .modal-content").mCustomScrollbar({
-                        autoHideScrollbar: true,
-                        scrollInertia: 0,
-                        theme: "dark",
-                        mouseWheel:{
-                            scrollAmount: 40
-                        }
-                    });
-                });
-                // 左侧用户面板开关
-                $('#demo-side-user-switch').on('click', function () {
-                    if (this.checked) {
-                        $('.side-user').removeAttr('hidden');
-                    } else {
-                        $('.side-user').attr('hidden', true);
-                    }
-                });
-                // 左侧仪表面板开关
-                $('#demo-side-dashboard-switch').on('click', function () {
-                    if (this.checked) {
-                        $('.side-dashboard').removeAttr('hidden');
-                    } else {
-                        $('.side-dashboard').attr('hidden', true);
-                    }
-                });
-                // 顶部用户面板开关
-                $('#demo-header-user-switch').on('click', function () {
-                    if (this.checked) {
-                        $('.header-user').removeAttr('hidden');
-                    } else {
-                        $('.header-user').attr('hidden', true);
-                    }
-                });
-            });
-        </script>
-        <!-- sidebar over -->
     </header>
     <!-- header over -->
 
+    <!-- aside collapse button start -->
+    <button class="aside-collapse-button MT-hidden" data-toggle="aside-collapse" action="tooltip" title="折叠导航 Alt+Z" data-placement="right" data-trigger="hover"><i class="icon-aside-collapse"></i></button>
+    <!-- aside collapse button over -->
     <!-- aside start -->
     <aside>
         <!-- user start -->
-        <div class="side-user">
+        <div class="aside-user">
             <div class="avatar">
-                <img src="img/avatar-default.jpg" alt="">
+                <img src="img/avatar-default.jpg">
             </div>
             <div class="info dropdown">
                 <button type="button" class="user-name dropdown-toggle" data-toggle="dropdown">
                     <span>zhouzhengrui</span>
                 </button>
-                <span class="user-position">前端攻城师</span>
+                <span class="user-label">前端攻城师</span>
                 <div class="dropdown-menu">
-                    <a class="item" href="#">编辑账号信息</a>
-                    <a class="item" href="#">修改密码</a>
+                    <a class="item" href="#"><i class="icon-pen"></i><span>编辑账号信息</span></a>
+                    <a class="item" href="#"><i class="icon-lock"></i><span>修改密码</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="item" href="page-login.html">退出</a>
+                    <a class="item" href="page-login.html"><i class="icon-cancel-2"></i><span>退出</span></a>
                 </div>
             </div>
         </div>
         <!-- user over -->
         <!-- nav start -->
-        <div class="side-nav">
-            <nav class="nav">
+        <nav class="aside-nav">
+            <ul class="nav" id="nav">
                 <!-- item start -->
-                <div class="item">
-                    <a class="active" href="index.html" data-pjax><i class="icon-home"></i><span>首页</span></a>
-                </div>
+                <li class="nav-item mm-active" id="nav-1">
+                    <a href="index.html" data-pjax><i class="icon-home"></i><span>首页</span></a>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-2">
                     <a><i class="icon-window"></i><span>演示模板 - 电子商务</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="demo-eCommerce.html" data-pjax>首页</a></div>
-                        <div class="item"><a href="demo-eCommerce-manage.html" data-pjax>商品管理</a></div>
-                        <div class="item"><a href="demo-eCommerce-add.html" data-pjax>添加商品</a></div>
-                    </div>
-                </div>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-2-1"><a href="demo-eCommerce.html" data-pjax><span>首页</span></a></li>
+                        <li class="nav-item" id="nav-2-2"><a href="demo-eCommerce-manage.html" data-pjax><span>商品管理</span></a></li>
+                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品</span></a></li>
+                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
-                <h6 class="nav-title">页面布局</h6>
+                <h6 class="nav-title"><span>页面布局</span></h6>
                 <!-- item start -->
-                <div class="item">
-                    <a href="layout-templet.html" data-pjax><i class="icon-window-empty"></i><span>初始模板</span></a>
-                </div>
+                <li class="nav-item" id="nav-3">
+                    <a><i class="icon-window-empty"></i><span>外部框架</span></a>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-3-1"><a href="layout-frame.html" data-pjax><span>基本框架模板</span></a></li>
+                        <li class="nav-item" id="nav-3-2"><a href="layout-frame-other.html" data-pjax><span>其他区域</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-4">
                     <a><i class="icon-layout"></i><span>主体布局</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="layout-grid.html" data-pjax>网格系统</a></div>
-                        <div class="item"><a href="layout-card.html" data-pjax>卡片</a></div>
-                        <div class="item"><a href="layout-tab.html" data-pjax>选项卡</a></div>
-                        <div class="item"><a href="layout-banner.html" data-pjax>Banner面板</a></div>
-                        <div class="item"><a href="layout-collapse.html" data-pjax>折叠面板</a></div>
-                        <div class="item"><a href="layout-statistic.html" data-pjax>统计面板</a></div>
-                        <div class="item"><a href="layout-responsive.html" data-pjax>响应式工具</a></div>
-                    </div>
-                </div>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-4-1"><a href="layout-grid.html" data-pjax><span>网格系统</span></a></li>
+                        <li class="nav-item" id="nav-4-2"><a href="layout-card.html" data-pjax><span>卡片</span></a></li>
+                        <li class="nav-item" id="nav-4-3"><a href="layout-tab.html" data-pjax><span>选项卡</span></a></li>
+                        <li class="nav-item" id="nav-4-4"><a href="layout-banner.html" data-pjax><span>Banner面板</span></a></li>
+                        <li class="nav-item" id="nav-4-5"><a href="layout-collapse.html" data-pjax><span>折叠面板</span></a></li>
+                        <li class="nav-item" id="nav-4-6"><a href="layout-statistic.html" data-pjax><span>统计面板</span></a></li>
+                        <li class="nav-item" id="nav-4-7"><a href="layout-responsive.html" data-pjax><span>响应式工具</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
-                <h6 class="nav-title">组件</h6>
+                <h6 class="nav-title"><span>组件</span></h6>
                 <!-- item start -->
-                <div class="item">
-                    <a href="#" data-pjax><i class="icon-blocks"></i><span>UI元素</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="ui-button.html" data-pjax>按钮</a></div>
-                        <div class="item"><a href="ui-label.html" data-pjax>标签</a></div>
-                        <div class="item"><a href="ui-dropdown.html" data-pjax>下拉菜单</a></div>
-                        <div class="item"><a href="ui-tooltip.html" data-pjax>提示框</a></div>
-                        <div class="item"><a href="ui-progress.html" data-pjax>进度条</a></div>
-                        <div class="item"><a href="ui-icofont.html" data-pjax>字体图标</a></div>
-                        <div class="item"><a href="ui-color.html" data-pjax>颜色</a></div>
-                    </div>
-                </div>
+                <li class="nav-item" id="nav-5">
+                    <a><i class="icon-blocks"></i><span>UI元素</span></a>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-5-1"><a href="ui-button.html" data-pjax><span>按钮</span></a></li>
+                        <li class="nav-item" id="nav-5-2"><a href="ui-label.html" data-pjax><span>标签</span></a></li>
+                        <li class="nav-item" id="nav-5-3"><a href="ui-dropdown.html" data-pjax><span>下拉菜单</span></a></li>
+                        <li class="nav-item" id="nav-5-4"><a href="ui-tooltip.html" data-pjax><span>提示框</span></a></li>
+                        <li class="nav-item" id="nav-5-5"><a href="ui-progress.html" data-pjax><span>进度条</span></a></li>
+                        <li class="nav-item" id="nav-5-6"><a href="ui-icofont.html" data-pjax><span>字体图标</span></a></li>
+                        <li class="nav-item" id="nav-5-7"><a href="ui-color.html" data-pjax><span>颜色</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-6">
                     <a><i class="icon-form"></i><span>表单</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="form-layout.html" data-pjax>表单布局</a></div>
-                        <div class="item"><a href="form-input.html" data-pjax>输入框</a></div>
-                        <div class="item"><a href="form-select.html" data-pjax>下拉列表</a></div>
-                        <div class="item"><a href="form-radiocheckbox.html" data-pjax>单选多选框</a></div>
-                        <div class="item"><a href="form-datetime.html" data-pjax>日期与时间</a></div>
-                        <div class="item"><a href="form-upload.html" data-pjax>文件上传</a></div>
-                        <div class="item"><a href="form-cropper.html" data-pjax>图片裁剪</a></div>
-                        <div class="item"><a href="form-validate.html" data-pjax>表单验证</a></div>
-                    </div>
-                </div>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-6-1"><a href="form-layout.html" data-pjax><span>表单布局</span></a></li>
+                        <li class="nav-item" id="nav-6-2"><a href="form-input.html" data-pjax><span>输入框</span></a></li>
+                        <li class="nav-item" id="nav-6-3"><a href="form-select.html" data-pjax><span>下拉列表</span></a></li>
+                        <li class="nav-item" id="nav-6-4"><a href="form-radiocheckbox.html" data-pjax><span>单选多选框</span></a></li>
+                        <li class="nav-item" id="nav-6-5"><a href="form-datetime.html" data-pjax><span>日期与时间</span></a></li>
+                        <li class="nav-item" id="nav-6-6"><a href="form-upload.html" data-pjax><span>文件上传</span></a></li>
+                        <li class="nav-item" id="nav-6-7"><a href="form-cropper.html" data-pjax><span>图片裁剪</span></a></li>
+                        <li class="nav-item" id="nav-6-8">
+                            <a><span>文本编辑器</span></a>
+                            <ul class="nav-sub">
+                                <li class="nav-item" id="nav-6-8-1"><a href="editor-ueditor.html" data-pjax><span>UEditor</span></a></li>
+                                <li class="nav-item" id="nav-6-8-2"><a href="editor-editormd.html" data-pjax><span>Editor.md</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id="nav-6-9"><a href="form-validate.html" data-pjax><span>表单验证</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-7">
                     <a><i class="icon-file-table"></i><span>表格</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="table.html" data-pjax>基础样式</a></div>
-                        <div class="item"><a href="table-datatables.html" data-pjax>DataTables</a></div>
-                    </div>
-                </div>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-7-1"><a href="table.html" data-pjax><span>基础样式</span></a></li>
+                        <li class="nav-item" id="nav-7-2"><a href="table-datatables.html" data-pjax><span>DataTables</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-8">
                     <a href="list.html" data-pjax><i class="icon-list-2"></i><span>列表</span></a>
-                </div>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
-                    <a><i class="icon-write"></i><span>文本编辑器</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="editor-ueditor.html" data-pjax>UEditor</a></div>
-                        <div class="item"><a href="editor-editormd.html" data-pjax>Editor.md</a></div>
-                    </div>
-                </div>
-                <!-- item over -->
-                <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-9">
                     <a><i class="icon-tree"></i><span>树</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="tree-ztree.html" data-pjax>zTree</a></div>
-                        <div class="item"><a href="tree-treeview.html" data-pjax>Tree View</a></div>
-                        <div class="item"><a href="tree-nestable.html" data-pjax>Nestable</a></div>
-                    </div>
-                </div>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-9-1"><a href="tree-ztree.html" data-pjax><span>zTree</span></a></li>
+                        <li class="nav-item" id="nav-9-2"><a href="tree-treeview.html" data-pjax><span>Tree View</span></a></li>
+                        <li class="nav-item" id="nav-9-3"><a href="tree-nestable.html" data-pjax><span>Nestable</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-10">
                     <a href="modal.html" data-pjax><i class="icon-modal"></i><span>模态框</span></a>
-                </div>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-11">
                     <a href="chart.html" data-pjax><i class="icon-chart-2"></i><span>数据图</span></a>
-                </div>
+                </li>
                 <!-- item over -->
-                <h6 class="nav-title">其他</h6>
+                <h6 class="nav-title"><span>其他</span></h6>
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-12">
                     <a><i class="icon-tool"></i><span>小工具</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="tool-weather.html" data-pjax>天气信息</a></div>
-                        <div class="item"><a href="tool-hotkey.html" data-pjax>快捷键</a></div>
-                    </div>
-                </div>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-12-1"><a href="tool-weather.html" data-pjax><span>天气信息</span></a></li>
+                        <li class="nav-item" id="nav-12-2"><a href="tool-hotkey.html" data-pjax><span>快捷键</span></a></li>
+                        <li class="nav-item" id="nav-12-3"><a href="tool-clipboard.html" data-pjax><span>内容复制</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
                 <!-- item start -->
-                <div class="item">
+                <li class="nav-item" id="nav-13">
                     <a><i class="icon-file-code"></i><span>单页</span></a>
-                    <div class="nav-sub">
-                        <div class="item"><a href="page-login.html">登录</a></div>
-                        <div class="item"><a href="page-404.html">404</a></div>
-                    </div>
-                </div>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-13-1"><a href="page-login.html"><span>登录</span></a></li>
+                        <li class="nav-item" id="nav-13-2"><a href="page-404.html"><span>404</span></a></li>
+                        <li class="nav-item" id="nav-13-3"><a href="page-inside-404.html" data-pjax><span>内部单页 - 404</span></a></li>
+                    </ul>
+                </li>
                 <!-- item over -->
-            </nav>
-        </div>
+            </ul>
+        </nav>
         <!-- nav over -->
         <!-- dashboard start -->
-        <div class="side-dashboard MT-hidden" hidden>
-            <h6 class="side-title">仪表面板</h6>
+        <div class="aside-dashboard MT-hidden" hidden>
+            <h6 class="aside-title">仪表面板</h6>
             <div class="inner">
                 <div class="info">
                     <p>进度条</p>
@@ -492,7 +496,7 @@
                 </div>
                 <!-- column over -->
                 <!-- column start -->
-                <div class="col-6">
+                <div class="col-lg-6">
                     <section class="code-group">
                         <h6 class="code-title">默认样式</h6>
                         <pre>
@@ -565,7 +569,7 @@
                 </div>
                 <!-- column over -->
                 <!-- column start -->
-                <div class="col-6">
+                <div class="col-lg-6">
                     <section class="code-group">
                         <h6 class="code-title">禁止点击 / 切换控制</h6>
                         <pre>
@@ -609,7 +613,9 @@
         <!-- page script start -->
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                // 代码块
+                // nav active
+                setNavActive("nav-4-3");
+                // code highlight
                 Prism.highlightAll();
             });
         </script>
@@ -624,6 +630,8 @@
     <!-- main over -->
     <!-- JS plugins -->
     <script src="js/plugins.js"></script>
+    <!-- treeview 需修改bug -->
+    <script src="js/treeview/bootstrap-treeview.min.js"></script>
     <!-- JS global -->
     <script src="js/scripts.js"></script>
 

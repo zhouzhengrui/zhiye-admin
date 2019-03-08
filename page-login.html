@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
     <title>登录</title>
@@ -14,17 +14,22 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- JS highcharts 按需载入 -->
+    <script src="js/highcharts/highcharts.js"></script>
+    <script src="js/highcharts/highcharts-more.js"></script>
+    <script src="js/highcharts/modules/exporting.js"></script>
     <!-- JS ueditor 按需载入 -->
     <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
     <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 </head>
 
 <body>
-    <!-- main start -->
+    <!-- page start -->
     <div class="page page-login">
         <!-- background start -->
         <div class="background">
             <video class="video" loop muted></video>
+            <div class="image"></div>
             <div class="cover"></div>
         </div>
         <!-- background over -->
@@ -36,25 +41,23 @@
         <!-- brand over -->
         <!-- login start -->
         <div class="login">
-            <form class="form" id="login" action="index.html" onkeydown="keyLogin();">
+            <form class="form" id="form-login" action="index.html" onkeydown="keyLogin();">
                 <fieldset class="form-group">
-                    <input type="text" class="input" id="username" placeholder="用户名" autofocus value="">
+                    <input type="text" class="input" id="username" placeholder="用户名" autofocus>
                 </fieldset>
                 <fieldset class="form-group">
-                    <input type="password" class="input" id="password" placeholder="密码" value="">
+                    <input type="password" class="input" id="password" placeholder="密码">
                 </fieldset>
                 <fieldset class="form-group">
                     <label class="radiocheckbox-item">
-                        <input type="checkbox" class="radiocheckbox" hidden>
+                        <input type="checkbox" class="radiocheckbox">
                         <span class="radiocheckbox-replace"></span>
                         <p>记住我</p>
                     </label>
                 </fieldset>
                 <div class="button-group">
-                    <button type="button" class="button button-block" id="button" onclick="loginDemo();">登录</button>
+                    <button type="button" class="button button-block" id="login">登录</button>
                 </div>
-                <!-- 错误提示 -->
-                <p class="alert alert-red" id="alert" hidden>用户名或密码错误</p>
             </form>
         </div>
         <!-- login over -->
@@ -65,49 +68,54 @@
         <!-- copyright over -->
 
     </div>
-    <!-- main over -->
-    <!-- JS plugins -->
-    <script src="js/plugins.js"></script>
-    <!-- JS global -->
-    <script src="js/scripts.js"></script>
-
+    <!-- page over -->
+    <script src="js/waves/waves.min.js"></script>
     <script src="js/bideo/bideo.js"></script>
     <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            // video background
-            var bv = new Bideo();
-            bv.init({
-                videoEl: document.querySelector('.video'),
-                resize: true,
-                src: [{
-                    src: 'img/page-login.mp4',
-                    type: 'video/mp4'
-                }],
-                onLoad: function() {
-                    document.querySelector('.page-login').style.opacity = '1';
-                }
-            });
+        // video background
+        var backgroundVideo = new Bideo();
+        backgroundVideo.init({
+            videoEl: document.querySelector('.video'),
+            resize: true,
+            isMobile: window.matchMedia('(max-width: 991px)').matches,
+            src: [{
+                src: 'img/page-login-video.mp4',
+                type: 'video/mp4'
+            }],
+            onLoad: function() {
+                document.querySelector('.image').style.display = 'none';
+            }
         });
         // 回车登录
         function keyLogin() {
             if (event.keyCode == 13) {
-                document.getElementById("button").click();
+                document.getElementById("login").click();
             }
         };
-        // login demo
-        function loginDemo() {
-            var username = $("#username").val();
-            var password = $("#password").val();
-            if (username == "" || password == "") {
-                $(".login").addClass("login-invalid");
-                setTimeout(function() {
-                    $(".login").removeClass("login-invalid");
-                }, 1000);
-                $("#alert").removeAttr('hidden');
-            } else {
-                $("#login").submit();
-            }
-        }
+        jQuery(document).ready(function($) {
+            // 界面动画
+            $(window).on("load", function() {
+                $('.page-login').css("opacity", "1")
+            });
+            // waves
+            Waves.init();
+            Waves.attach('button.button, a.button');
+            // login demo
+            $("#login").on("click", function() {
+                var username = $("#username").val();
+                var password = $("#password").val();
+                if (username == "" || password == "") {
+                    $(".login").addClass("login-invalid");
+                    setTimeout(function() {
+                        $(".login").removeClass("login-invalid");
+                    }, 1000);
+                    $(".alert").remove()
+                    $(".form").append('<p class="alert alert-red">用户名或密码错误</p>')
+                } else {
+                    $("#form-login").submit();
+                }
+            });
+        });
     </script>
 </body>
 

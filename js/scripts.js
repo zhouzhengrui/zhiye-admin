@@ -1,46 +1,64 @@
-// pjax设置
+// pjax 设置
 $(document).pjax("[data-pjax]", "main", {
     fragment: "main",
-    timeout: "15000"
+    timeout: "5000"
 });
-// nprogress设置
+// nprogress 设置
 NProgress.configure({
     showSpinner: false,
     speed: 300
 });
-// pjax start
+// pjax 开始
 $(document).on("pjax:start", function() {
-    // nprogress start
+    // nprogress 开始
     NProgress.start();
+    // 移动端
+    if (window.screen.width <= 991) {
+        // aside收起, 按钮复原
+        $("aside").removeClass("show");
+        $('[data-toggle="aside"]').removeClass("active");
+    }
 });
+// pjax 浏览器前进或后退
+$(document).on("pjax:popstate", function() {
+    // $.pjax.reload("main")
+});
+// 移除 nav active 样式
+function resetNavActive() {
+    $("ul#nav .mm-active").each(function() {
+        $(this).removeClass("mm-active");
+    });
+    $("ul#nav .mm-show").each(function() {
+        $(this).removeClass("mm-show");
+    });
+};
+// 重设 nav active 样式
+function setNavActive(item) {
+    resetNavActive();
+    var item = $("#" + item);
+    item.addClass("mm-active");
+    item.parents(".nav-item").addClass("mm-active");
+    item.parents(".nav-sub").addClass("mm-show");
+}
 // document ready
 jQuery(document).ready(function($) {
+    // 主导航 初始化
+    $('ul#nav').metisMenu();
+    // 主导航 有子导航的条目添加箭头
+    if ($("ul.nav .nav-item").find(".nav-sub").length > 0) {
+        $(this).find(".nav-sub").siblings("a").append("<i class='icon-arrow-down'></i>");
+    }
     // 窗口加载完成
     $(window).on("load", function() {
-        // 主导航滚动条
-        $(".side-nav").mCustomScrollbar({
-            autoHideScrollbar: true,
-            scrollInertia: 0,
-            mouseWheel:{
-                scrollAmount: 40
-            }
+        // 主导航滚动条美化
+        var sideNavScrollbar = new PerfectScrollbar('.aside-nav', {
+            suppressScrollX: true,
+            swipeEasing: false,
+            wheelPropagation: false
         });
     });
-    // pjax end
-    $(document).on("pjax:end", function() {
-        // nprogress over
-        setTimeout(function() {
-            NProgress.done();
-        }, 300);
-        // main淡入动画
-        $("main").addClass("main-fadein");
-        // main复位
-        $("main").scrollTop(0);
-
-        // 已开启modal的页面复位
-        $("body.modal-open").removeClass();
-        $(".modal-backdrop").remove();
-
+    // main内部需重复执行的组件
+    function repetitiveExecution() {
         // tooltip
         $('[action="tooltip"]').tooltip();
         // tab
@@ -54,64 +72,48 @@ jQuery(document).ready(function($) {
                 $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
             }
         });
-        // 代码块
+        // code highlight折叠
         $('.code-group .code-title').on("click", function() {
             $(this).siblings('pre').toggleClass('show');
         });
         // waves
         Waves.init();
         Waves.attach('button.button, a.button');
-    });
-
-    // 有二级导航的条目添加箭头
-    if ($("nav.nav > .item").find(".nav-sub").length > 0) {
-        $(this).find(".nav-sub").siblings("a").append("<i class='icon-arrow-down'></i>");
     }
-    // 一级导航点击事件
-    var nav = $('nav.nav > .item > a');
-    var subnav = $('nav.nav > .item > .nav-sub');
-    nav.on('click', function() {
-        // 一级导航没有active时
-        if ($(this).attr('class') != 'active') {
-            subnav.slideUp(300);
-            $(this).next().stop(true, true).slideToggle(300);
-            $(this).parent().siblings().children("a").removeClass("active");
-            $(this).addClass("active");
-            $(this).parent().siblings().children(".nav-sub").removeClass("active");
-            $(this).siblings(".nav-sub").toggleClass("active");
+    repetitiveExecution();
+    // pjax 结束
+    $(document).on("pjax:end", function() {
+        // nprogress 结束
+        setTimeout(function() {
+            NProgress.done();
+        }, 300);
+        // PC端
+        if (window.screen.width > 991) {
+            // main 复位
+            $("main").scrollTop(0);
         }
-        // 点击没有二级导航的一级导航时移除其他二级导航的active
-        if ($(this).next(".nav-sub").length == 0) {
-            $(this).parent().siblings().children(".nav-sub").children(".item").removeClass("active");
-        }
+        // main 淡入动画
+        $("main").addClass("main-fadein");
+        // 已开启 modal 的页面复位
+        $("body.modal-open").removeClass();
+        // $(".modal").removeClass("show");
+        $(".modal-backdrop").remove();
+        // main内部需重复执行的组件
+        repetitiveExecution();
     });
-    // 二级导航点击事件
-    $(".nav-sub > .item").click(function() {
-        // 移除其他active, 并在此二级导航添加active
-        $(".nav-sub > .item.active").removeClass("active");
-        $(this).addClass("active");
+    // aside 移动端切换按钮
+    $('[data-toggle="aside"]').on("click", function() {
+        $(this).toggleClass("active")
+        $("aside").toggleClass("show");
     });
-
-    // tooltip
-    $('[action="tooltip"]').tooltip();
-    // tab
-    $('[action="tab-body"]').tabbedContent();
-    // 卡片全屏
-    $('[action="card-fullscreen"]').on("click", function() {
-        $(this).parent().parent().parent('.card').toggleClass('card-fullscreen');
-        $(this).children('.icon-enlarge').toggleClass('icon-narrow');
-        if ($(this).parent().parent().siblings().children().hasClass('highcharts')) {
-            $(this).parent().parent().parent('.card').toggleClass('card-chart-fullscreen');
-            $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
-        }
+    // aside PC端折叠按钮
+    $('[data-toggle="aside-collapse"]').on("click", function() {
+        $("body").toggleClass("aside-collapse");
     });
-    // 代码块
-    $('.code-group .code-title').on("click", function() {
-        $(this).siblings('pre').toggleClass('show');
+    // hotkeys 折叠导航
+    hotkeys("alt+z", function() {
+        $('[data-toggle="aside-collapse"]').click();
     });
-    // waves
-    Waves.init();
-    Waves.attach('button.button, a.button');
 
     // 禁止对所有元素的自动查找, 由于Dropzone会自动查找class为dropzone的元素, 自动查找后再在这里进行初始化, 有时候会导致重复初始化的错误, 所以在此加上这段代码避免这样的错误
     Dropzone.autoDiscover = false;
@@ -193,9 +195,7 @@ $.validator.setDefaults({
 });
 // Highcharts全局设置
 Highcharts.setOptions({
-    colors: [
-        '#23b7e5', '#27c24c', '#7266ba', '#18C29C', '#f05050', '#E67E22', '#eac459', '#ff5b77'
-    ],
+    colors: ['#23b7e5', '#27c24c', '#7266ba', '#18C29C', '#f05050', '#E67E22', '#eac459', '#ff5b77'],
     credits: {
         enabled: false // 取消版权
     },
@@ -226,7 +226,7 @@ Highcharts.setOptions({
 });
 // dataTables
 function dataTableDefaults() {
-    $.extend( $.fn.dataTable.defaults, {
+    $.extend($.fn.dataTable.defaults, {
         language: {
             "lengthMenu": "每页显示_MENU_条数据",
             "zeroRecords": "没有找到数据",
@@ -248,7 +248,7 @@ function dataTableDefaults() {
         }
     });
 }
-// 焦点在NPUT/SELECT/TEXTAREA时hotkeys依然起效
+// 焦点在input/select/textarea时hotkeys依然起效
 hotkeys.filter = function(event) {
     return true;
 }

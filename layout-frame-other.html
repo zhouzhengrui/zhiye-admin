@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>下拉菜单</title>
+    <title>其他面板</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -458,183 +458,95 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>下拉菜单<small><code>.dropdown</code> / 用于显示更多功能的按钮</small></h2>
+                <h2>其他区域<small>可在基本框架上追加的一些区域</small></h2>
             </div>
         </div>
         <!-- banner over -->
         <!-- container start -->
         <div class="container-fluid">
-            <ul class="explain">
-                <li>下拉菜单组件由按钮组件和下部菜单组成，并使用<code>&lt;div class=&quot;dropdown&quot;&gt;&lt;/div&gt;</code>包裹</li>
-                <li><code>button</code>必须有类名<code>.dropdown-toggle</code>和属性<code>data-toggle="dropdown"</code></li>
-                <li>下拉按钮的样式与按钮组件的修改方法相同</li>
-            </ul>
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单类型</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="button-group">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
+                <div class="col-12">
+                    <section class="code-group">
+                        <h6 class="code-title">顶部用户面板</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- user start -->
+                                    <div class="item dropdown header-user">
+                                        <button type="button" data-toggle="dropdown">
+                                            <span class="user-name">zhouzhengrui</span>
+                                            <span class="user-label">前端攻城师</span>
+                                            <div class="avatar">
+                                                <img src="img/avatar-default.jpg" alt="">
+                                            </div>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="item" href="#"><i class="icon-pen"></i>编辑账号信息</a>
+                                            <a class="item" href="#"><i class="icon-lock"></i>修改密码</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="item" href="#"><i class="icon-gear"></i>退出</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>icon menu</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-gear"></i>
-                                        <span>icon dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns title</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <h6 class="dropdown-header">菜单标题</h6>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                            </div>
-                        </div>
+                                    <!-- user over -->
+                                </script>
+                            </code>
+                        </pre>
                     </section>
                     <ul class="explain">
-                        <li><code>.dropdown-divider</code>为分割线</li>
+                        <li>主导航按钮较多时可移除左侧用户面板, 启用顶部用户面板</li>
+                        <li>放在<code>.header-bar</code>里面</li>
+                        <li>左侧用户面板移除后需要将<code>button.aside-collapse-button</code>移至顶部<code>.brand</code>里面, 否则折叠按钮会与主导航位置冲突</li>
                     </ul>
                 </div>
                 <!-- column over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
                 <!-- column start -->
-                <div class="col-lg-6">
+                <div class="col-12">
                     <section class="code-group">
-                        <h6 class="code-title">dropdowns</h6>
+                        <h6 class="code-title">右侧边栏</h6>
                         <pre>
                             <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
+                                &lt;!-- sidebar start --&gt;
+                                &lt;div class=&quot;item MT-hidden&quot;&gt;
+                                    &lt;button type=&quot;button&quot; id=&quot;modal-sidebar-button&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-sidebar&quot;&gt;
+                                        &lt;i class=&quot;icon-dot-array-y&quot;&gt;&lt;/i&gt;
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+                                &lt;section class=&quot;modal fade modal-sidebar&quot; id=&quot;modal-sidebar&quot;&gt;
+                                    &lt;div class=&quot;modal-dialog modal-stick-right&quot;&gt;
+                                        &lt;div class=&quot;modal-header&quot;&gt;
+                                            &lt;h3 class=&quot;title&quot;&gt;右侧边栏标题&lt;/h3&gt;
+                                            &lt;div class=&quot;card-header-action&quot;&gt;
+                                                &lt;button type=&quot;button&quot; class=&quot;button button-flat&quot; data-dismiss=&quot;modal&quot;&gt;&lt;i class=&quot;icon-cancel&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;modal-content&quot;&gt;
+                                            &lt;!-- 卡片系统 --&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/section&gt;
+                                &lt;script type=&quot;text/javascript&quot;&gt;
+                                    jQuery(document).ready(function($) {
+                                        // 右侧边栏滚动条美化
+                                        var sidebarScrollbar = new PerfectScrollbar(&#x27;#modal-sidebar .modal-content&#x27;, {
+                                            suppressScrollX: true,
+                                            swipeEasing: false,
+                                            wheelPropagation: false
+                                        });
+                                    });
+                                &lt;/script&gt;
+                                &lt;!-- sidebar over --&gt;
                             </code>
                         </pre>
                     </section>
-                    <section class="code-group">
-                        <h6 class="code-title">icon menu</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns + icon</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">icon dropdowns</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-gear"></i>
-                                        <span>icon dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">dropdowns title</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>dropdowns title</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <h6 class="dropdown-header">菜单标题</h6>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="item" href="#">查看数据</a>
-                                            <a class="item" href="#">修改数据</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="item" href="#">删除数据</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
+                    <ul class="explain">
+                        <li>放在<code>.header-bar</code>里面</li>
+                    </ul>
                 </div>
                 <!-- column over -->
             </div>
@@ -642,187 +554,40 @@
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单按钮大小<small>默认, 大型, 小型, 按需使用，用法与按钮组件相同</small></h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="demo-list">
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>默认大小</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
+                <div class="col-12">
+                    <section class="code-group">
+                        <h6 class="code-title">左侧仪表面板</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- dashboard start -->
+                                    <div class="aside-dashboard MT-hidden">
+                                        <h6 class="aside-title">仪表面板</h6>
+                                        <div class="inner">
+                                            <div class="info">
+                                                <p>进度条</p>
+                                                <p>60%</p>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                            <div class="info">
+                                                <p>里程碑</p>
+                                                <p>30%</p>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 30%;"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- dropdown over -->
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-large dropdown-toggle" data-toggle="dropdown">
-                                            <span>大型下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-large</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-small dropdown-toggle" data-toggle="dropdown">
-                                            <span>小型下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-small</code>
-                                </li>
-                            </div>
-                        </div>
+                                    <!-- dashboard over -->
+                                </script>
+                            </code>
+                        </pre>
                     </section>
-                </div>
-                <!-- column over -->
-            </div>
-            <!-- row over -->
-            <!-- row start -->
-            <div class="row">
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单按钮颜色<small>按情境使用，用法与按钮组件相同</small></h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="demo-list">
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>默认颜色</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-red dropdown-toggle" data-toggle="dropdown">
-                                            <span>红色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-red</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-orange dropdown-toggle" data-toggle="dropdown">
-                                            <span>橙色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-orange</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-yellow dropdown-toggle" data-toggle="dropdown">
-                                            <span>黄色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-yellow</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-green dropdown-toggle" data-toggle="dropdown">
-                                            <span>绿色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-green</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-cyan dropdown-toggle" data-toggle="dropdown">
-                                            <span>青色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-cyan</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-blue dropdown-toggle" data-toggle="dropdown">
-                                            <span>蓝色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-blue</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-purple dropdown-toggle" data-toggle="dropdown">
-                                            <span>紫色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-purple</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-pink dropdown-toggle" data-toggle="dropdown">
-                                            <span>粉色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-pink</code>
-                                </li>
-                            </div>
-                        </div>
-                    </section>
+                    <ul class="explain">
+                        <li>放在<code>aside</code>里面</li>
+                    </ul>
                 </div>
                 <!-- column over -->
             </div>
@@ -833,7 +598,7 @@
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // nav active
-                setNavActive("nav-5-3");
+                setNavActive("nav-3-2");
                 // code highlight
                 Prism.highlightAll();
             });

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>下拉菜单</title>
+    <title>商品分类管理</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -458,384 +458,421 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>下拉菜单<small><code>.dropdown</code> / 用于显示更多功能的按钮</small></h2>
+                <h2>商品分类管理</h2>
+            </div>
+            <div class="banner-action">
+                <div class="button-group">
+                    <button type="button" class="button"><i class="icon-checkmark"></i><span>保存修改</span></button>
+                </div>
             </div>
         </div>
         <!-- banner over -->
         <!-- container start -->
         <div class="container-fluid">
-            <ul class="explain">
-                <li>下拉菜单组件由按钮组件和下部菜单组成，并使用<code>&lt;div class=&quot;dropdown&quot;&gt;&lt;/div&gt;</code>包裹</li>
-                <li><code>button</code>必须有类名<code>.dropdown-toggle</code>和属性<code>data-toggle="dropdown"</code></li>
-                <li>下拉按钮的样式与按钮组件的修改方法相同</li>
-            </ul>
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单类型</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="button-group">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
+                <div class="col-12">
+                    <!-- card-group start -->
+                    <div class="card-group">
+                        <!-- card start -->
+                        <section class="card" style="width:30%;">
+                            <div class="card-header">
+                                <h3 class="title">分类信息</h3>
+                                <div class="card-header-action">
+                                    <button type="button" class="button button-flat" id="expand-all">全部展开</button>
+                                    <button type="button" class="button button-flat" id="collapse-all">全部收缩</button>
                                 </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>icon menu</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-gear"></i>
-                                        <span>icon dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns title</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <h6 class="dropdown-header">菜单标题</h6>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
                             </div>
-                        </div>
-                    </section>
-                    <ul class="explain">
-                        <li><code>.dropdown-divider</code>为分割线</li>
-                    </ul>
-                </div>
-                <!-- column over -->
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="code-group">
-                        <h6 class="code-title">dropdowns</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#">查看数据</a>
-                                        <a class="item" href="#">修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#">删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">icon menu</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <span>dropdowns + icon</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">icon dropdowns</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                <!-- dropdown start -->
-                                <div class="dropdown">
-                                    <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-gear"></i>
-                                        <span>icon dropdowns</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="item" href="#"><i class="icon-document"></i>查看数据</a>
-                                        <a class="item" href="#"><i class="icon-pen"></i>修改数据</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="item" href="#"><i class="icon-cancel-2"></i>删除数据</a>
-                                    </div>
-                                </div>
-                                <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                    <section class="code-group">
-                        <h6 class="code-title">dropdowns title</h6>
-                        <pre>
-                            <code class="language-html">
-                                <script type="text/plain">
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>dropdowns title</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <h6 class="dropdown-header">菜单标题</h6>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="item" href="#">查看数据</a>
-                                            <a class="item" href="#">修改数据</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="item" href="#">删除数据</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                </div>
-                <!-- column over -->
-            </div>
-            <!-- row over -->
-            <!-- row start -->
-            <div class="row">
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单按钮大小<small>默认, 大型, 小型, 按需使用，用法与按钮组件相同</small></h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="demo-list">
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>默认大小</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-large dropdown-toggle" data-toggle="dropdown">
-                                            <span>大型下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-large</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-small dropdown-toggle" data-toggle="dropdown">
-                                            <span>小型下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-small</code>
-                                </li>
+                            <div class="card-toolbar">
+                                <fieldset class="form-group flex-grow-1">
+                                    <input class="input" id="treeview-search-input" type="text" placeholder="搜索关键字">
+                                </fieldset>
+                                <button type="button" class="button button-flat" id="add" action="tooltip" title="新建分类" data-trigger="hover"><i class="icon-plus"></i></button>
+                                <button type="button" class="button button-flat" id="edit" action="tooltip" title="编辑分类" data-trigger="hover"><i class="icon-pen"></i></button>
+                                <button type="button" class="button button-flat" id="delete" action="tooltip" title="删除分类" data-trigger="hover"><i class="icon-trash"></i></button>
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- column over -->
-            </div>
-            <!-- row over -->
-            <!-- row start -->
-            <div class="row">
-                <!-- column start -->
-                <div class="col-lg-6">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">下拉菜单按钮颜色<small>按情境使用，用法与按钮组件相同</small></h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="demo-list">
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button dropdown-toggle" data-toggle="dropdown">
-                                            <span>默认颜色</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-red dropdown-toggle" data-toggle="dropdown">
-                                            <span>红色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-red</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-orange dropdown-toggle" data-toggle="dropdown">
-                                            <span>橙色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-orange</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-yellow dropdown-toggle" data-toggle="dropdown">
-                                            <span>黄色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-yellow</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-green dropdown-toggle" data-toggle="dropdown">
-                                            <span>绿色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-green</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-cyan dropdown-toggle" data-toggle="dropdown">
-                                            <span>青色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-cyan</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-blue dropdown-toggle" data-toggle="dropdown">
-                                            <span>蓝色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-blue</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-purple dropdown-toggle" data-toggle="dropdown">
-                                            <span>紫色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-purple</code>
-                                </li>
-                                <li>
-                                    <!-- dropdown start -->
-                                    <div class="dropdown">
-                                        <button type="button" class="button button-pink dropdown-toggle" data-toggle="dropdown">
-                                            <span>粉色下拉菜单</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="item" href="#">菜单选项</a>
-                                        </div>
-                                    </div>
-                                    <!-- dropdown over -->
-                                    <code>.button-pink</code>
-                                </li>
+                            <div class="card-body">
+                                <!-- tree start -->
+                                <div class="treeview" id="treeview"></div>
+                                <!-- tree over -->
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                        <!-- card over -->
+                        <!-- card start -->
+                        <section class="card" style="width:70%;">
+                            <div class="card-header">
+                                <h3 class="title">商品信息<small>书籍 - 科幻小说</small></h3>
+                                <div class="card-header-action">
+                                    <button class="button button-flat"><span>删除已选</span></button>
+                                    <button class="button button-flat"><span>更换分类</span></button>
+                                </div>
+                            </div>
+                            <!-- table start -->
+                            <div class="card-table">
+                                <table class="table table-responsive" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th align="left" width="1%">
+                                                <fieldset class="form-group">
+                                                    <label class="radiocheckbox-item">
+                                                        <input class="radiocheckbox" type="checkbox" action="checkall">
+                                                        <span class="radiocheckbox-replace"></span>
+                                                    </label>
+                                                </fieldset>
+                                            </th>
+                                            <th align="left" width="1%" class="details-control"></th>
+                                            <th align="left" width="1%">封面</th>
+                                            <th align="left" width="50%">商品名称</th>
+                                            <th align="right">相关操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td align="center">
+                                                <fieldset class="form-group">
+                                                    <label class="radiocheckbox-item">
+                                                        <input class="radiocheckbox" type="checkbox">
+                                                        <span class="radiocheckbox-replace"></span>
+                                                    </label>
+                                                </fieldset>
+                                            </td>
+                                            <td class="details-control"><i class="icon-plus"></i></td>
+                                            <td>
+                                                <div class="image" style="background-image: url('img/image-default.jpg');"></div>
+                                            </td>
+                                            <td><b>三体全集 刘慈欣 雨果奖作品三体2黑暗森林死神永生长篇科幻小说</b></td>
+                                            <td align="right">
+                                                <button type="button" class="button button-small">编辑</button>
+                                                <div class="dropdown">
+                                                    <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                        <span>其他</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="item" href="#">浏览页面</a>
+                                                        <a class="item" href="#">查看评价</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="item" href="#">删除商品</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <fieldset class="form-group">
+                                                    <label class="radiocheckbox-item">
+                                                        <input class="radiocheckbox" type="checkbox">
+                                                        <span class="radiocheckbox-replace"></span>
+                                                    </label>
+                                                </fieldset>
+                                            </td>
+                                            <td class="details-control"><i class="icon-plus"></i></td>
+                                            <td>
+                                                <div class="image" style="background-image: url('img/image-default.jpg');"></div>
+                                            </td>
+                                            <td><b>活着(新版)余华 畅销中国近现代小说 张艺谋电影改编 现代/当代社会文学读物丛书</b></td>
+                                            <td align="right">
+                                                <button type="button" class="button button-small">编辑</button>
+                                                <div class="dropdown">
+                                                    <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                        <span>其他</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="item" href="#">浏览页面</a>
+                                                        <a class="item" href="#">查看评价</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="item" href="#">删除商品</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <fieldset class="form-group">
+                                                    <label class="radiocheckbox-item">
+                                                        <input class="radiocheckbox" type="checkbox">
+                                                        <span class="radiocheckbox-replace"></span>
+                                                    </label>
+                                                </fieldset>
+                                            </td>
+                                            <td class="details-control"><i class="icon-plus"></i></td>
+                                            <td>
+                                                <div class="image" style="background-image: url('img/image-default.jpg');"></div>
+                                            </td>
+                                            <td><b>魔戒三部曲 全套3册 中文版 J.R.R托尔金著 奇幻史诗小说 指环王书 霍比特人</b></td>
+                                            <td align="right">
+                                                <button type="button" class="button button-small">编辑</button>
+                                                <div class="dropdown">
+                                                    <button type="button" class="button button-green button-small dropdown-toggle" data-toggle="dropdown">
+                                                        <span>其他</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="item" href="#">浏览页面</a>
+                                                        <a class="item" href="#">查看评价</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="item" href="#">删除商品</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- table over -->
+                        </section>
+                        <!-- card over -->
+                    </div>
+                    <!-- card-group over -->
                 </div>
                 <!-- column over -->
             </div>
             <!-- row over -->
         </div>
         <!-- container over -->
+        <!-- modal start -->
+        <section class="modal fade" id="modal-add">
+            <div class="modal-dialog modal-small">
+                <!-- card start -->
+                <section class="card">
+                    <div class="card-header">
+                        <h4 class="title">新建分类</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- input start -->
+                        <fieldset class="form-group">
+                            <legend class="label">分类名称</legend>
+                            <input class="input" type="text" id="modal-add-name">
+                        </fieldset>
+                        <!-- input over -->
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="button" id="modal-add-button">确定</button>
+                        <button type="button" class="button button-flat" data-dismiss="modal">关闭</button>
+                    </div>
+                </section>
+                <!-- card over -->
+            </div>
+        </section>
+        <section class="modal fade" id="modal-edit">
+            <div class="modal-dialog modal-small">
+                <!-- card start -->
+                <section class="card">
+                    <div class="card-header">
+                        <h4 class="title">修改分类名称</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- input start -->
+                        <fieldset class="form-group">
+                            <legend class="label">分类名称</legend>
+                            <input class="input" type="text" id="modal-edit-name">
+                        </fieldset>
+                        <!-- input over -->
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="button" id="modal-edit-button">确定</button>
+                        <button type="button" class="button button-flat" data-dismiss="modal">关闭</button>
+                    </div>
+                </section>
+                <!-- card over -->
+            </div>
+        </section>
+        <section class="modal fade" id="modal-delete">
+            <div class="modal-dialog modal-small">
+                <!-- card start -->
+                <section class="card">
+                    <div class="card-header">
+                        <h4 class="title">删除分类</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>这将会删除分类和该分类下的所有商品信息, 并无法恢复, 确定删除吗?</p>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="button button-red" id="modal-delete-button">删除</button>
+                        <button type="button" class="button button-flat" data-dismiss="modal">取消</button>
+                    </div>
+                </section>
+                <!-- card over -->
+            </div>
+        </section>
+        <!-- modal over -->
         <!-- page script start -->
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // nav active
-                setNavActive("nav-5-3");
-                // code highlight
-                Prism.highlightAll();
+                setNavActive("nav-2-4");
+                // treeview data
+                var treeviewData = [{
+                    text: '食品',
+                    nodes: [{
+                        text: '休闲食品',
+                    }, {
+                        text: '进口食品'
+                    }]
+                }, {
+                    text: '日常用品',
+                    nodes: [{
+                        text: '洗漱永平',
+                    }, {
+                        text: '床上用品'
+                    }]
+                }, {
+                    text: '书籍',
+                    nodes: [{
+                        text: '古典名著',
+                    }, {
+                        text: '科幻小说'
+                    }]
+                }, {
+                    text: '电子产品',
+                    nodes: [{
+                        text: '手机',
+                    }, {
+                        text: '笔记本电脑'
+                    }]
+                }];
+                // 新建节点弹出框
+                $("#add").on("click", function() {
+                    // 启用快捷键
+                    hotkeys("enter", "add", function() {
+                        $("#modal-add-button").click();
+                    });
+                    hotkeys.setScope("add");
+                    $('#modal-add').modal('show');
+                    $('#modal-add-name').val('');
+                    setTimeout(function() {
+                        $('#modal-add-name').focus()
+                    }, 350);
+                });
+                // 静态添加节点
+                $("#modal-add-button").on("click", function() {
+                    $('#modal-add').modal('hide');
+                    var parentNode = $('#treeview').treeview('getSelected');
+                    var node = {
+                        text: $('#modal-add-name').val()
+                    };
+                    // 添加新增节点
+                    $('#treeview').treeview('addNode', [node, parentNode]);
+                    // 销毁快捷键
+                    hotkeys.deleteScope("add");
+                });
+                // 编辑节点弹出框
+                $("#edit").click(function() {
+                    // 当前选中节点
+                    var node = $('#treeview').treeview('getSelected');
+                    if (node == 0) {
+                        toastr.warning('请先选择一个分类');
+                    } else {
+                        $("#modal-edit").modal("show");
+                    }
+                });
+                // 静态编辑节点
+                $('#modal-edit-button').click(function() {
+                    $("#modal-edit").modal("hide");
+                    // 当前选中节点
+                    var node = $('#treeview').treeview('getSelected');
+                    var newNode = {
+                        text: $('#modal-edit-name').val()
+                    };
+                    $('#treeview').treeview('updateNode', [node, newNode]);
+                });
+                // 删除节点弹出框
+                $("#delete").click(function() {
+                    // 当前选中节点
+                    var node = $('#treeview').treeview('getSelected');
+                    if (node == 0) {
+                        toastr.warning('请先选择一个分类');
+                    } else {
+                        $("#modal-delete").modal("show");
+                    }
+                });
+                // 静态删除节点
+                $("#modal-delete-button").on("click", function() {
+                    $('#modal-delete').modal('hide');
+                    // 当前当前选中节点
+                    var node = $('#treeview').treeview('getSelected');
+                    $('#treeview').treeview('removeNode', [node, {
+                        silent: true
+                    }]);
+                });
+                // treeview 实例化
+                var $treeview = $('#treeview').treeview({
+                    data: treeviewData,
+                    showIcon: false,
+                    showTags: false, // 标签
+                    levels: 2, // 默认展开等级
+                    showCheckbox: true, // 节点多选框
+                    hierarchicalCheck: true // 节点多选框选中联动
+                });
+                // 搜索功能
+                var search = function() {
+                    var pattern = $('#treeview-search-input').val();
+                    var results = $treeview.treeview('search', [pattern]);
+                }
+                $('#treeview-search-input').on('keyup', search);
+                // 全部展开
+                $('#expand-all').on('click', function() {
+                    $treeview.treeview('expandAll');
+                });
+                // 全部收缩
+                $('#collapse-all').on('click', function() {
+                    $treeview.treeview('collapseAll');
+                });
+                // dataTable 初始化
+                dataTableDefaults();
+                // 行详细信息的格式化功能 `d` is the original data object for the row
+                function format(d) {
+                    return '<table>' +
+                        '<tr>' +
+                            '<td width="15%"><b>商品编号:</b></td>' +
+                            '<td>' + '#001' + '</td>' +
+                        '</tr>' +
+                        '<tr>' +
+                            '<td><b>商品分类:</b></td>' +
+                            '<td>' + '<span class="label label-purple">书籍</span><span class="label label-purple">科幻小说</span>' + '</td>' +
+                        '</tr>' +
+                        '<tr>' +
+                            '<td><b>库存数量:</b></td>' +
+                            '<td>' + '99' + '</td>' +
+                        '</tr>' +
+                        '<tr>' +
+                            '<td><b>商品价格:</b></td>' +
+                            '<td>' + '998.00' + '</td>' +
+                        '</tr>' +
+                    '</table>';
+                }
+                // dataTable 执行实例
+                var table = $('#table').DataTable({
+                    // 定义列的初始属性
+                    columnDefs: [{
+                        targets: [0, 1, 2, 4], // 指定列对象
+                        orderable: false // 排序功能
+                    }],
+                    // 禁用列排序必须项
+                    order: []
+                });
+                // 行详细信息显示隐藏
+                $('#table tbody').on('click', 'td.details-control', function() {
+                    var tr = $(this).closest('tr');
+                    var row = table.row(tr);
+                    if (row.child.isShown()) {
+                        row.child.hide();
+                        tr.removeClass('shown');
+                        $(this).children('i').removeClass('icon-minus').addClass('icon-plus');
+                    } else {
+                        // Open this row
+                        row.child(format(row.data())).show();
+                        tr.addClass('shown');
+                        $(this).children('i').removeClass('icon-plus').addClass('icon-minus');
+                    }
+                });
+                // 全选
+                $('[action="checkall"]').on('click', function() {
+                    if (this.checked) {
+                        $('tbody [type="checkbox"]').prop('checked', true);
+                    } else {
+                        $('tbody [type="checkbox"]').prop('checked', false);
+                    }
+                });
             });
         </script>
         <!-- page script over -->

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>页面标题</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS icofont -->
+    <link rel="stylesheet" href="icofont/style.css">
+    <!-- CSS global -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- jQuery -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <!-- header start -->
+    <header>
+        <!-- brand start -->
+        <div class="brand">
+            <h4 class="title">项目名称<small>系统名称</small></h4>
+        </div>
+        <!-- brand start -->
+        <!-- bar start -->
+        <div class="header-bar">
+            <!-- item start -->
+            <div class="item">
+                <button type="button">
+                    <i class="icon-gear"></i>
+                    <span>普通按钮</span>
+                    <span class="badge">0</span>
+                </button>
+            </div>
+            <!-- item over -->
+            <!-- item start -->
+            <div class="item dropdown">
+                <button type="button" data-toggle="dropdown">
+                    <i class="icon-gear"></i>
+                    <span>下拉按钮</span>
+                    <span class="badge">0</span>
+                </button>
+                <div class="dropdown-menu">
+                    <!-- 下拉菜单组件或列表组件 -->
+                </div>
+            </div>
+            <!-- item over -->
+            <!-- item start -->
+            <div class="item">
+                <a href="http://www.maszy.cn/" target="_blank">链接</a>
+            </div>
+            <!-- item over -->
+            <!-- fullscreen start -->
+            <div class="item MT-hidden">
+                <button type="button" id="fullscreen-view">
+                    <i class="icon-enlarge"></i>
+                </button>
+                <button type="button" id="fullscreen-exit">
+                    <i class="icon-narrow"></i>
+                </button>
+            </div>
+            <!-- fullscreen over -->
+        </div>
+        <!-- bar over -->
+        <!-- MT bar start -->
+        <div class="MT-header-bar">
+            <button class="MT-header-bar-button" type="button" data-toggle="collapse" data-target=".header-bar"><i class="icon-user"></i></button>
+            <button class="MT-header-bar-button" type="button" data-toggle="aside"><i class="icon-list"></i></button>
+        </div>
+        <!-- MT bar over -->
+    </header>
+    <!-- header over -->
+    <!-- aside collapse button start -->
+    <button class="aside-collapse-button MT-hidden" data-toggle="aside-collapse" action="tooltip" title="折叠导航 Alt+Z" data-placement="right" data-trigger="hover"><i class="icon-aside-collapse"></i></button>
+    <!-- aside collapse button over -->
+    <!-- aside start -->
+    <aside>
+        <!-- user start -->
+        <div class="aside-user">
+            <div class="avatar">
+                <img src="img/avatar-default.jpg">
+            </div>
+            <div class="info dropdown">
+                <button type="button" class="user-name dropdown-toggle" data-toggle="dropdown">
+                    <span>用户名</span>
+                </button>
+                <span class="user-label">标签</span>
+                <div class="dropdown-menu">
+                    <a class="item" href="#"><i class="icon-gear"></i>链接</a>
+                    <div class="dropdown-divider"></div>
+                    <button class="item"><i class="icon-gear"></i>按钮</button>
+                </div>
+            </div>
+        </div>
+        <!-- user over -->
+        <!-- nav start -->
+        <nav class="aside-nav">
+            <ul class="nav" id="nav">
+                <!-- item start -->
+                <li class="nav-item mm-active" id="nav-1">
+                    <a href="#" data-pjax><i class="icon-home"></i><span>首页</span></a>
+                </li>
+                <!-- item over -->
+                <!-- item start -->
+                <li class="nav-item" id="nav-2">
+                    <a><i class="icon-gear"></i><span>二级导航</span></a>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-2-1"><a href="#" data-pjax><span>子导航</span></a></li>
+                        <li class="nav-item" id="nav-2-2"><a href="#" data-pjax><span>子导航</span></a></li>
+                        <li class="nav-item" id="nav-2-3"><a href="#" data-pjax><span>子导航</span></a></li>
+                    </ul>
+                </li>
+                <!-- item over -->
+                <h6 class="nav-title"><span>导航分类标题</span></h6>
+                <!-- item start -->
+                <li class="nav-item" id="nav-3">
+                    <a><i class="icon-gear"></i><span>三级导航</span></a>
+                    <ul class="nav-sub">
+                        <li class="nav-item" id="nav-3-1">
+                            <a><span>子导航</span></a>
+                            <ul class="nav-sub">
+                                <li class="nav-item" id="nav-3-1-1"><a href="#" data-pjax><span>子子导航</span></a></li>
+                                <li class="nav-item" id="nav-3-1-2"><a href="#" data-pjax><span>子子导航</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id="nav-3-2">
+                            <a><span>子导航</span></a>
+                            <ul class="nav-sub">
+                                <li class="nav-item" id="nav-3-2-1"><a href="#" data-pjax><span>子子导航</span></a></li>
+                                <li class="nav-item" id="nav-3-2-2"><a href="#" data-pjax><span>子子导航</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- item over -->
+            </ul>
+        </nav>
+        <!-- nav over -->
+    </aside>
+    <!-- aside over -->
+    <!-- main start -->
+    <main>
+        <!-- banner start -->
+        <div class="banner">
+            <div class="banner-title">
+                <h2>页面标题<small>页面副标题</small></h2>
+            </div>
+            <div class="banner-action">
+                <!-- Banner 功能区 -->
+            </div>
+        </div>
+        <!-- banner over -->
+        <!-- container start -->
+        <div class="container-fluid">
+            <!-- 主体容器, 放入网格 -->
+        </div>
+        <!-- container over -->
+        <!-- page script start -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                // nav active
+                setNavActive("nav-1");
+            });
+        </script>
+        <!-- page script over -->
+        <!-- copyright start -->
+        <div class="copyright">
+            <p>Powered by <a href="http://www.maszy.cn" target="_blank">© ZhiYe Software Technology Co.,Ltd</a></p>
+        </div>
+        <!-- copyright over -->
+    </main>
+    <!-- main over -->
+    <!-- JS plugins -->
+    <script src="js/plugins.js"></script>
+    <!-- JS global -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
