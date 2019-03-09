@@ -513,9 +513,6 @@
         <!-- collapse over -->
         <!-- container start -->
         <div class="container-fluid">
-            <ul class="explain">
-                <li></li>
-            </ul>
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
@@ -951,7 +948,7 @@
                                     // dataTable 初始化
                                     dataTableDefaults();
                                     // dataTable 执行实例
-                                    $('#demo-table').DataTable({
+                                    var table = $('#demo-table').DataTable({
                                         // 定义列的初始属性
                                         columnDefs: [{
                                             // 指定列对象

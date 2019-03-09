@@ -2,7 +2,7 @@
  * zhiye-admin
  * @author  Rui
  * @version 0.1.0
- * @date2019-3-8 21:56:43
+ * @date2019-3-9 15:15:41
  */
 @charset "UTF-8";
 @-ms-viewport {
@@ -3997,9 +3997,6 @@ input.highcharts-range-selector {
   .form .form-footer > p {
     margin-bottom: 10px;
   }
-  .form-group select.select-chosen {
-    display: block;
-  }
 }
 
 .radiocheckbox-item {
@@ -4601,6 +4598,12 @@ input.highcharts-range-selector {
 .chosen-container-active.chosen-with-drop .chosen-drop {
   -webkit-animation: chosenFadeInUp .3s ease;
   animation: chosenFadeInUp .3s ease;
+}
+
+@media (max-width: 991px) {
+  .form-group select.select-chosen {
+    display: block;
+  }
 }
 
 /* @end */
@@ -11671,24 +11674,16 @@ table.table thead tr th:last-child {
   padding-right: 20px;
 }
 
-table.table tbody tr {
-  transition: background-color 0.3s;
-}
-
-table.table tbody tr:hover {
-  background-color: rgba(240, 243, 244, 0.5);
-}
-
-table.table tbody tr:last-child td,
-table.table tbody tr:last-child th {
+table.table > tbody > tr:last-child > td,
+table.table > tbody > tr:last-child > th {
   border-bottom: 0;
 }
 
-table.table tbody tr td:first-child {
+table.table > tbody > tr > td:first-child {
   padding-left: 20px;
 }
 
-table.table tbody tr td:last-child {
+table.table > tbody > tr > td:last-child {
   padding-right: 20px;
 }
 
@@ -11696,6 +11691,14 @@ table.table td,
 table.table th {
   padding: 10px 15px;
   border-bottom: 1px solid #edf1f2;
+}
+
+table.table tr {
+  transition: background-color 0.3s;
+}
+
+table.table tr:hover {
+  background-color: rgba(240, 243, 244, 0.5);
 }
 
 table.table td .button {
@@ -11726,6 +11729,19 @@ table.table .shown + tr > td {
 
 table.table table {
   width: 100%;
+}
+
+table.table table tbody tr:last-child td,
+table.table table tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+table.table table tbody tr td:first-child {
+  padding-left: 20px;
+}
+
+table.table table tbody tr td:last-child {
+  padding-right: 20px;
 }
 
 table.table .radiocheckbox-replace {
@@ -13181,6 +13197,9 @@ body.aside-collapse .modal-backdrop {
   .card .card-footer .button-group ~ .button-group-pagination {
     margin-top: 10px;
   }
+  .card .card-scrollbar {
+    -webkit-overflow-scrolling: touch;
+  }
   .card-group {
     display: block;
   }
@@ -13759,6 +13778,7 @@ ul.tab a[disabled] {
 .page {
   width: 100%;
   height: 100%;
+  padding: 0 30px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
