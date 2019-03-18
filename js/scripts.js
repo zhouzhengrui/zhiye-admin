@@ -67,10 +67,11 @@ jQuery(document).ready(function($) {
         $('[action="card-fullscreen"]').on("click", function() {
             $(this).parent().parent().parent('.card').toggleClass('card-fullscreen');
             $(this).children('.icon-enlarge').toggleClass('icon-narrow');
-            if ($(this).parent().parent().siblings().children().hasClass('highcharts')) {
-                $(this).parent().parent().parent('.card').toggleClass('card-chart-fullscreen');
-                $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
-            }
+            // highcharts 卡片全屏是刷新尺寸, 暂时弃用
+            // if ($(this).parent().parent().siblings().children().hasClass('highcharts')) {
+            //     $(this).parent().parent().parent('.card').toggleClass('card-chart-fullscreen');
+            //     $(this).parent().parent().siblings().children('.highcharts').highcharts().reflow();
+            // }
         });
         // code highlight折叠
         $('.code-group .code-title').on("click", function() {
@@ -191,37 +192,6 @@ $.validator.setDefaults({
     // 错误信息显示位置
     errorPlacement: function(error, element) {
         error.appendTo(element.parents('.form-group').children('.label'));
-    }
-});
-// Highcharts全局设置
-Highcharts.setOptions({
-    colors: ['#23b7e5', '#27c24c', '#7266ba', '#18C29C', '#f05050', '#E67E22', '#eac459', '#ff5b77'],
-    credits: {
-        enabled: false // 取消版权
-    },
-    tooltip: {
-        useHTML: true // 使用html结构
-    },
-    navigation: {
-        buttonOptions: {
-            enabled: false, // 禁用导航按钮
-            height: 32,
-            width: 32,
-            symbolSize: 14,
-            symbolX: 16,
-            symbolY: 16,
-            x: 8,
-            y: -10
-        }
-    },
-    lang: {
-        contextButtonTitle: "导出图表",
-        printChart: "打印图表",
-        downloadJPEG: "下载JPEG图片",
-        downloadPDF: "下载PDF文档",
-        downloadPNG: "下载PNG图片",
-        downloadSVG: "下载SVG矢量图",
-        exportButtonTitle: "导出图片"
     }
 });
 // dataTables

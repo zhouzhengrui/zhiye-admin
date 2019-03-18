@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
-    <!-- JS highcharts 按需载入 -->
-    <script src="js/highcharts/highcharts.js"></script>
-    <script src="js/highcharts/highcharts-more.js"></script>
-    <script src="js/highcharts/modules/exporting.js"></script>
+    <!-- JS echarts 按需载入 -->
+    <script src="js/jquery-resize/jquery.ba-resize.min.js"></script>
+    <script src="js/echarts/echarts.min.js"></script>
+    <script src="js/echarts/theme/zhiye-admin.js"></script>
     <!-- JS ueditor 按需载入 -->
     <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
     <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
@@ -550,8 +550,8 @@
                                         <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                                     </div>
                                 </div>
-                                <div class="card-body" style="height:300px;">
-                                    <div class="highcharts" id="chart-1"></div>
+                                <div class="card-chart" style="height:300px;">
+                                    <div class="echarts" id="chart-1"></div>
                                 </div>
                             </div>
                         </div>
@@ -565,8 +565,8 @@
                                         <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                                     </div>
                                 </div>
-                                <div class="card-body" style="height:300px;">
-                                    <div class="highcharts" id="chart-2"></div>
+                                <div class="card-chart" style="height:300px;">
+                                    <div class="echarts" id="chart-2"></div>
                                 </div>
                             </div>
                         </div>
@@ -580,8 +580,8 @@
                                         <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                                     </div>
                                 </div>
-                                <div class="card-body" style="height:300px;">
-                                    <div class="highcharts" id="chart-3"></div>
+                                <div class="card-chart" style="height:300px;">
+                                    <div class="echarts" id="chart-3"></div>
                                 </div>
                             </div>
                         </div>
@@ -595,8 +595,8 @@
                                         <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                                     </div>
                                 </div>
-                                <div class="card-body" style="height:300px;">
-                                    <div class="highcharts" id="chart-4"></div>
+                                <div class="card-chart" style="height:300px;">
+                                    <div class="echarts" id="chart-4"></div>
                                 </div>
                             </div>
                         </div>
@@ -682,133 +682,201 @@
                     statistic4.start();
                     statistic5.start();
                 });
-                // highcharts
-                $('#chart-1').highcharts({
-                    chart: {
-                        type: 'spline',
-                    },
+                // chart-1
+                var chart1 = echarts.init(document.getElementById('chart-1'), 'zhiye-admin');
+                var option1 = {
                     title: {
-                        text: '近半年销售额曲线图'
-                    },
-                    xAxis: {
-                        categories: ['一月', '二月', '三月', '四月', '五月', '六月'],
-                    },
-                    yAxis: {
-                        title: {
-                            text: null,
-                        },
-                    },
-                    tooltip: {
-                        valueSuffix: '万'
-                    },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
+                        text: '2019年1月-6月',
+                        left: 'center',
+                        textStyle:{
+                            fontSize: '14'
                         }
                     },
-                    legend: {
-                        enabled: false
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: '{c}万'
                     },
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            magicType: {
+                                type: ['bar']
+                            },
+                            restore: {},
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
+                        }
+                    },
+                    xAxis: {
+                        data: ["1月", "2月", "3月", "4月", "5月", "6月"]
+                    },
+                    yAxis: {},
                     series: [{
-                        name: '2018年',
+                        name: '销售额',
+                        type: 'line',
+                        smooth: true,
                         data: [507, 231, 635, 203, 362, 890]
                     }]
-                });
-                $('#chart-2').highcharts({
-                    chart: {
-                        type: 'pie',
-                    },
-                    title: {
-                        text: null
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: false
-                            },
-                            showInLegend: true
-                        }
-                    },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
-                        }
-                    },
-                    series: [{
-                        name: '商品分类占比',
-                        innerSize: '60%',
-                        data: [
-                            ['食品', 45.0],
-                            ['日常用品', 15.0],
-                            ['书籍', 20.0],
-                            ['电子产品', 20.0]
-                        ]
-                    }]
-                });
-                $('#chart-3').highcharts({
-                    chart: {
-                        type: 'pie',
-                    },
-                    title: {
-                        text: null
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: false
-                            },
-                            showInLegend: true
-                        }
-                    },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
-                        }
-                    },
-                    series: [{
-                        name: '商品分类占比',
-                        data: [
-                            ['食品', 45.0],
-                            ['日常用品', 15.0],
-                            ['书籍', 20.0],
-                            ['电子产品', 20.0]
-                        ]
-                    }]
-                });
-                $('#chart-4').highcharts({
-                    chart: {
-                        type: 'column',
-                    },
-                    title: {
-                        text: '注册及会员办理条形图'
-                    },
-                    xAxis: {
-                        categories: ['一月', '二月', '三月', '四月', '五月', '六月'],
-                    },
-                    yAxis: {
-                        title: {
-                            text: null,
-                        },
+                };
+                chart1.setOption(option1);
+                // chart-2
+                var chart2 = echarts.init(document.getElementById('chart-2'), 'zhiye-admin');
+                var option2 = {
+                    legend: {
+                        bottom: '0',
+                        data: ['食品', '日常用品', '书籍', '电子产品']
                     },
                     tooltip: {
-                        valueSuffix: '人'
+                        confine: true
                     },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
                         }
                     },
+                    itemStyle: {
+                        borderColor: '#fff'
+                    },
                     series: [{
-                        name: '新用户注册',
-                        data: [507, 231, 947, 408, 362, 890]
-                    }, {
-                        name: '会员办理',
-                        data: [333, 156, 635, 203, 216, 790]
+                        name: '订单分类占比',
+                        type: 'pie',
+                        center: ['50%', '42.5%'],
+                        radius: ['45%', '80%'],
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [{
+                                name: '食品',
+                                value: 335
+                            },
+                            {
+                                name: '日常用品',
+                                value: 310
+                            },
+                            {
+                                name: '书籍',
+                                value: 234
+                            },
+                            {
+                                name: '电子产品',
+                                value: 135
+                            }
+                        ]
                     }]
+                };
+                chart2.setOption(option2);
+                // chart-3
+                var chart3 = echarts.init(document.getElementById('chart-3'), 'zhiye-admin');
+                var option3 = {
+                    legend: {
+                        bottom: '0',
+                        data: ['食品', '日常用品', '书籍', '电子产品']
+                    },
+                    tooltip: {
+                        confine: true
+                    },
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        borderColor: '#fff'
+                    },
+                    series: [{
+                        name: '商品分类占比',
+                        type: 'pie',
+                        center: ['50%', '42.5%'],
+                        roseType: 'radius',
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [{
+                                name: '食品',
+                                value: 335
+                            },
+                            {
+                                name: '日常用品',
+                                value: 285
+                            },
+                            {
+                                name: '书籍',
+                                value: 234
+                            },
+                            {
+                                name: '电子产品',
+                                value: 185
+                            }
+                        ]
+                    }]
+                };
+                chart3.setOption(option3);
+                // chart-4
+                var chart4 = echarts.init(document.getElementById('chart-4'), 'zhiye-admin');
+                var option4 = {
+                    legend: {
+                        data: ['新用户注册', '会员办理']
+                    },
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    xAxis: {
+                        data: ["1月", "2月", "3月", "4月", "5月", "6月"]
+                    },
+                    yAxis: {},
+                    series: [{
+                            name: '新用户注册',
+                            type: 'bar',
+                            barWidth: '25%',
+                            data: [507, 231, 635, 203, 362, 890]
+                        },
+                        {
+                            name: '会员办理',
+                            type: 'bar',
+                            barWidth: '25%',
+                            data: [333, 156, 947, 408, 216, 790]
+                        }
+                    ]
+                };
+                chart4.setOption(option4);
+                // echarts 容器尺寸变化时刷新图表尺寸
+                $(".echarts").resize(function() {
+                    chart1.resize();
+                    chart2.resize();
+                    chart3.resize();
+                    chart4.resize();
                 });
             });
         </script>

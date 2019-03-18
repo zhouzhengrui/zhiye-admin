@@ -14,14 +14,15 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
-    <!-- JS highcharts 按需载入 -->
-    <script src="js/highcharts/highcharts.js"></script>
-    <script src="js/highcharts/highcharts-more.js"></script>
-    <script src="js/highcharts/modules/exporting.js"></script>
+    <!-- JS echarts 按需载入 -->
+    <script src="js/jquery-resize/jquery.ba-resize.min.js"></script>
+    <script src="js/echarts/echarts.min.js"></script>
+    <script src="js/echarts/theme/zhiye-admin.js"></script>
     <!-- JS ueditor 按需载入 -->
     <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
     <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 </head>
+
 
 <body>
     <!-- header start -->
@@ -458,22 +459,22 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>数据图<small><code>.highcharts</code> / <a href="https://www.hcharts.cn/" target="_blank">Highcharts中文网站</a></small></h2>
+                <h2>数据图<small><code>.card-chart</code> / <a href="https://www.echartsjs.com/index.html" target="_blank">官方网站</a></small></h2>
             </div>
         </div>
         <!-- banner over -->
         <!-- container start -->
         <div class="container-fluid">
             <ul class="explain">
-                <li>html部分放在卡片的主容器<code>.card-body</code>里面</li>
-                <li>数据图的高度继承父级容器高度, 所以创建时给<code>.card-body</code>追加<code>style="height:*px;</code></li>
-                <li>使用数据图的项目的需在<code>head</code>里面载入<code>js/highcharts/highcharts.js</code></li>
-                <li><code>js/highcharts/</code>文件夹内包含了Highcharts的其他功能组件, 按需载入</li>
-                <li><code>js/highcharts/highcharts-more.js</code>增强包, 制作一些特殊图表</li>
-                <li><code>js/highcharts/highcharts-3d.js</code>3D图表功能模块</li>
-                <li><code>js/highcharts/modules/map.js</code>地图功能模块</li>
-                <li><code>js/highcharts/modules/exporting.js</code>打印导出功能模块</li>
-                <li><code>js/highcharts/highstock.js</code>K线图、蜡烛图等股票金融专用图表, 取代<code>highcharts.js</code></li>
+                <li>html部分放在卡片<code>section.card</code>里面</li>
+                <li>图表高度由<code>.card-chart</code>的<code>style="height:*px;"</code>控制</li>
+                <li>使用数据图的项目的需在<code>head</code>里面载入以下3个js:
+                    <p><code>js/jquery-resize/jquery.ba-resize.min.js</code></p>
+                    <p><code>js/echarts/echarts.min.js</code></p>
+                    <p><code>js/echarts/theme/zhiye-admin.js</code></p>
+                </li>
+                <li><code>echarts.min.js</code>是完整版js, 包含所有图表和功能, 文件较大, 实际项目中可根据需求<a href="https://www.echartsjs.com/builder.html" target="_blank">在线定制</a>需要的图表和功能, 减小插件体积</li>
+                <li><code>js/echarts/map</code>文件夹内有中国和各省市地图JSON / <a href="https://github.com/apache/incubator-echarts/tree/master/map" target="_blank">中国和各省市地图JSON</a> / <a href="https://github.com/lyingying/echarts-mapJson" target="_blank">县级地图JSON</a></li>
             </ul>
             <!-- row start -->
             <div class="row">
@@ -481,67 +482,374 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">基本曲线图<small>spline</small></h3>
+                            <h3 class="title">基本折线图<small>line / 包含工具条</small></h3>
                             <div class="card-header-action">
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="height:300px;">
-                            <!-- highcharts start -->
-                            <div class="highcharts" id="chart-1"></div>
-                            <!-- highcharts over -->
+                        <!-- chart start -->
+                        <div class="card-chart" style="height:300px;">
+                            <div class="echarts" id="chart-1"></div>
                         </div>
+                        <!-- chart over -->
                     </section>
-                </div>
-                <!-- column over -->
-                <!-- column start -->
-                <div class="col-lg-6">
                     <section class="code-group">
-                        <h6 class="code-title">基本曲线图</h6>
+                        <h6 class="code-title">基本折线图</h6>
                         <pre>
                             <code class="language-html">
                                 <script type="text/plain">
-                                <!-- highcharts start -->
-                                <div class="highcharts" id="chart-1"></div>
-                                <!-- highcharts over -->
+                                    <!-- chart start -->
+                                    <div class="card-chart" style="height:300px;">
+                                        <div class="echarts" id="chart-1"></div>
+                                    </div>
+                                    <!-- chart over -->
                                 </script>
                             </code>
                         </pre>
                         <pre>
                             <code class="language-js">
                                 <script type="text/plain">
-                                // highcharts
-                                $('#chart-1').highcharts({
-                                    chart: {
-                                        type: 'spline',
-                                    },
-                                    title: {
-                                        text: '图表名称'
-                                    },
-                                    xAxis: {
-                                        categories: ['一月', '二月', '三月', '四月', '五月', '六月'],
-                                    },
-                                    yAxis: {
-                                        title: {
-                                            text: null,
+                                    // chart-1
+                                    var chart1 = echarts.init(document.getElementById('chart-1'), 'zhiye-admin');
+                                    var option1 = {
+                                        legend: {
+                                            data: ['图例']
                                         },
-                                    },
-                                    tooltip: {
-                                        valueSuffix: '万'
-                                    },
-                                    navigation: {
-                                        buttonOptions: {
-                                            enabled: true
+                                        toolbox: {
+                                            itemSize: '14',
+                                            top: '-4',
+                                            right: '10',
+                                            feature: {
+                                                magicType: {
+                                                    type: ['bar']
+                                                },
+                                                restore: {},
+                                                saveAsImage: {
+                                                    title: '保存图片'
+                                                }
+                                            }
+                                        },
+                                        tooltip: {},
+                                        xAxis: {
+                                            data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                                        },
+                                        yAxis: {},
+                                        series: [{
+                                            name: '图例',
+                                            type: 'line',
+                                            data: [507, 231, 635, 203, 362, 890]
+                                        }]
+                                    };
+                                    chart1.setOption(option1);
+                                    // echarts 容器尺寸变化时刷新图表尺寸
+                                    $(".echarts").resize(function(){
+                                         chart1.resize();
+                                    });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column over -->
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">基本曲线图<small>line <code>smooth:true</code></small></h3>
+                            <div class="card-header-action">
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                            </div>
+                        </div>
+                        <!-- chart start -->
+                        <div class="card-chart" style="height:300px;">
+                            <div class="echarts" id="chart-2"></div>
+                        </div>
+                        <!-- chart over -->
+                    </section>
+                    <section class="code-group">
+                        <h6 class="code-title">基本曲线图</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- chart start -->
+                                    <div class="card-chart" style="height:300px;">
+                                        <div class="echarts" id="chart-2"></div>
+                                    </div>
+                                    <!-- chart over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // chart-2
+                                    var chart2 = echarts.init(document.getElementById('chart-2'), 'zhiye-admin');
+                                    var option2 = {
+                                        legend: {
+                                            data: ['图例']
+                                        },
+                                        tooltip: {},
+                                        xAxis: {
+                                            data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                                        },
+                                        yAxis: {},
+                                        series: [{
+                                            name: '图例',
+                                            type: 'line',
+                                            smooth: true,
+                                            data: [507, 231, 635, 203, 362, 890]
+                                        }]
+                                    };
+                                    chart2.setOption(option2);
+                                    // echarts 容器尺寸变化时刷新图表尺寸
+                                    $(".echarts").resize(function(){
+                                         chart2.resize();
+                                    });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">基本柱状图<small>bar</small></h3>
+                            <div class="card-header-action">
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                            </div>
+                        </div>
+                        <!-- chart start -->
+                        <div class="card-chart" style="height:300px;">
+                            <div class="echarts" id="chart-3"></div>
+                        </div>
+                        <!-- chart over -->
+                    </section>
+                    <section class="code-group">
+                        <h6 class="code-title">基本柱状图</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- chart start -->
+                                    <div class="card-chart" style="height:300px;">
+                                        <div class="echarts" id="chart-3"></div>
+                                    </div>
+                                    <!-- chart over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // chart-3
+                                    var chart3 = echarts.init(document.getElementById('chart-3'), 'zhiye-admin');
+                                    var option3 = {
+                                        legend: {
+                                            data: ['图例']
+                                        },
+                                        tooltip: {},
+                                        xAxis: {
+                                            data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                                        },
+                                        yAxis: {},
+                                        series: [{
+                                            name: '图例',
+                                            type: 'bar',
+                                            barWidth: '40%',
+                                            data: [507, 231, 635, 203, 362, 890]
+                                        }]
+                                    };
+                                    chart3.setOption(option3);
+                                    // echarts 容器尺寸变化时刷新图表尺寸
+                                    $(".echarts").resize(function(){
+                                         chart3.resize();
+                                    });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column over -->
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">基本饼图<small>pie</small></h3>
+                            <div class="card-header-action">
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                            </div>
+                        </div>
+                        <!-- chart start -->
+                        <div class="card-chart" style="height:300px;">
+                            <div class="echarts" id="chart-4"></div>
+                        </div>
+                        <!-- chart over -->
+                    </section>
+                    <section class="code-group">
+                        <h6 class="code-title">基本饼图</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- chart start -->
+                                    <div class="card-chart" style="height:300px;">
+                                        <div class="echarts" id="chart-4"></div>
+                                    </div>
+                                    <!-- chart over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // chart-4
+                                    var chart4 = echarts.init(document.getElementById('chart-4'), 'zhiye-admin');
+                                    var option4 = {
+                                        tooltip: {},
+                                        itemStyle: {
+                                            borderColor: '#fff'
+                                        },
+                                        series: [{
+                                            name: '图例',
+                                            type: 'pie',
+                                            data: [{
+                                                    name: '项目1',
+                                                    value: 335
+                                                },
+                                                {
+                                                    name: '项目2',
+                                                    value: 310
+                                                },
+                                                {
+                                                    name: '项目3',
+                                                    value: 234
+                                                },
+                                                {
+                                                    name: '项目4',
+                                                    value: 135
+                                                }
+                                            ]
+                                        }]
+                                    };
+                                    chart4.setOption(option4);
+                                    // echarts 容器尺寸变化时刷新图表尺寸
+                                    $(".echarts").resize(function(){
+                                         chart4.resize();
+                                    });
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </div>
+                <!-- column over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row">
+                <!-- column start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">地图<small>map</small></h3>
+                            <div class="card-header-action">
+                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                            </div>
+                        </div>
+                        <!-- chart start -->
+                        <div class="card-chart" style="height:400px;">
+                            <div class="echarts" id="chart-5"></div>
+                        </div>
+                        <!-- chart over -->
+                    </section>
+                    <section class="code-group">
+                        <h6 class="code-title">地图</h6>
+                        <pre>
+                            <code class="language-html">
+                                <script type="text/plain">
+                                    <!-- chart start -->
+                                    <div class="card-chart" style="height:400px;">
+                                        <div class="echarts" id="chart-5"></div>
+                                    </div>
+                                    <!-- chart over -->
+                                </script>
+                            </code>
+                        </pre>
+                        <pre>
+                            <code class="language-js">
+                                <script type="text/plain">
+                                    // chart-5
+                                    $.ajax({
+                                        type: 'GET',
+                                        url: 'js/echarts/map/china.json',
+                                        dataType: 'JSON',
+                                        success: function(chinaJson) {
+                                            echarts.registerMap('china', chinaJson);
+                                            var chart5 = echarts.init(document.getElementById('chart-5'), 'zhiye-admin');
+                                            var option = {
+                                                tooltip: {},
+                                                visualMap: {
+                                                    min: 100,
+                                                    max: 1000
+                                                },
+                                                series: [{
+                                                    name: 'china',
+                                                    type: 'map',
+                                                    map: 'china',
+                                                    zoom: '1.2',
+                                                    itemStyle: {
+                                                        normal: {
+                                                            areaColor: "#f0f3f4",
+                                                            borderColor: "#c5c5ca",
+                                                            borderWidth: 0.5
+                                                        },
+                                                        emphasis: {
+                                                            areaColor: "#23b7e5",
+                                                            borderColor: "#23b7e5",
+                                                            borderWidth: 0
+                                                        }
+                                                    },
+                                                    data: [{
+                                                            name: '安徽',
+                                                            value: 998
+                                                        },
+                                                        {
+                                                            name: '江苏',
+                                                            value: 798
+                                                        },
+                                                        {
+                                                            name: '浙江',
+                                                            value: 598
+                                                        },
+                                                        {
+                                                            name: '湖北',
+                                                            value: 198
+                                                        },
+                                                        {
+                                                            name: '河南',
+                                                            value: 298
+                                                        },
+                                                        {
+                                                            name: '山东',
+                                                            value: 698
+                                                        },
+                                                        {
+                                                            name: '江西',
+                                                            value: 498
+                                                        }
+                                                    ]
+                                                }]
+                                            }
+                                            chart5.setOption(option);
+                                            // echarts 容器尺寸变化时刷新图表尺寸
+                                            $(".echarts").resize(function() {
+                                                chart5.resize();
+                                            });
                                         }
-                                    },
-                                    series: [{
-                                        name: '2017年',
-                                        data: [507, 231, 635, 203, 362, 890]
-                                    }, {
-                                        name: '2016年',
-                                        data: [333, 156, 947, 408, 216, 790]
-                                    }]
-                                });
+                                    });
                                 </script>
                             </code>
                         </pre>
@@ -557,37 +865,181 @@
             jQuery(document).ready(function($) {
                 // nav active
                 setNavActive("nav-11");
-                // highcharts
-                $('#chart-1').highcharts({
-                    chart: {
-                        type: 'spline',
+                // chart-1
+                var chart1 = echarts.init(document.getElementById('chart-1'), 'zhiye-admin');
+                var option1 = {
+                    legend: {
+                        data: ['图例']
                     },
-                    title: {
-                        text: '图表名称'
-                    },
-                    xAxis: {
-                        categories: ['一月', '二月', '三月', '四月', '五月', '六月'],
-                    },
-                    yAxis: {
-                        title: {
-                            text: null,
-                        },
-                    },
-                    tooltip: {
-                        valueSuffix: '万'
-                    },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            magicType: {
+                                type: ['bar']
+                            },
+                            restore: {},
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
                         }
                     },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                    },
+                    yAxis: {},
                     series: [{
-                        name: '2017年',
+                        name: '图例',
+                        type: 'line',
                         data: [507, 231, 635, 203, 362, 890]
-                    }, {
-                        name: '2016年',
-                        data: [333, 156, 947, 408, 216, 790]
                     }]
+                };
+                chart1.setOption(option1);
+                // chart-2
+                var chart2 = echarts.init(document.getElementById('chart-2'), 'zhiye-admin');
+                var option2 = {
+                    legend: {
+                        data: ['图例']
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '图例',
+                        type: 'line',
+                        smooth: true,
+                        data: [507, 231, 635, 203, 362, 890]
+                    }]
+                };
+                chart2.setOption(option2);
+                // chart-3
+                var chart3 = echarts.init(document.getElementById('chart-3'), 'zhiye-admin');
+                var option3 = {
+                    legend: {
+                        data: ['图例']
+                    },
+                    tooltip: {},
+                    xAxis: {
+                        data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '图例',
+                        type: 'bar',
+                        barWidth: '40%',
+                        data: [507, 231, 635, 203, 362, 890]
+                    }]
+                };
+                chart3.setOption(option3);
+                // chart-4
+                var chart4 = echarts.init(document.getElementById('chart-4'), 'zhiye-admin');
+                var option4 = {
+                    tooltip: {},
+                    itemStyle: {
+                        borderColor: '#fff'
+                    },
+                    series: [{
+                        name: '图例',
+                        type: 'pie',
+                        data: [{
+                                name: '项目1',
+                                value: 335
+                            },
+                            {
+                                name: '项目2',
+                                value: 310
+                            },
+                            {
+                                name: '项目3',
+                                value: 234
+                            },
+                            {
+                                name: '项目4',
+                                value: 135
+                            }
+                        ]
+                    }]
+                };
+                chart4.setOption(option4);
+                // echarts 容器尺寸变化时刷新图表尺寸
+                $(".echarts").resize(function() {
+                    chart1.resize();
+                    chart2.resize();
+                    chart3.resize();
+                    chart4.resize();
+                });
+                // chart-5
+                $.ajax({
+                    type: 'GET',
+                    url: 'js/echarts/map/china.json',
+                    dataType: 'JSON',
+                    success: function(chinaJson) {
+                        echarts.registerMap('china', chinaJson);
+                        var chart5 = echarts.init(document.getElementById('chart-5'), 'zhiye-admin');
+                        var option = {
+                            tooltip: {},
+                            visualMap: {
+                                min: 100,
+                                max: 1000
+                            },
+                            series: [{
+                                name: 'china',
+                                type: 'map',
+                                map: 'china',
+                                zoom: '1.2',
+                                itemStyle: {
+                                    normal: {
+                                        areaColor: "#f0f3f4",
+                                        borderColor: "#c5c5ca",
+                                        borderWidth: 0.5
+                                    },
+                                    emphasis: {
+                                        areaColor: "#23b7e5",
+                                        borderColor: "#23b7e5",
+                                        borderWidth: 0
+                                    }
+                                },
+                                data: [{
+                                        name: '安徽',
+                                        value: 998
+                                    },
+                                    {
+                                        name: '江苏',
+                                        value: 798
+                                    },
+                                    {
+                                        name: '浙江',
+                                        value: 598
+                                    },
+                                    {
+                                        name: '湖北',
+                                        value: 198
+                                    },
+                                    {
+                                        name: '河南',
+                                        value: 298
+                                    },
+                                    {
+                                        name: '山东',
+                                        value: 698
+                                    },
+                                    {
+                                        name: '江西',
+                                        value: 498
+                                    }
+                                ]
+                            }]
+                        }
+                        chart5.setOption(option);
+                        // echarts 容器尺寸变化时刷新图表尺寸
+                        $(".echarts").resize(function() {
+                            chart5.resize();
+                        });
+                    }
                 });
                 // code highlight
                 Prism.highlightAll();

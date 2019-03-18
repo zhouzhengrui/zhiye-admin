@@ -14,14 +14,15 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- jQuery -->
     <script src="js/jquery-1.9.1.min.js"></script>
-    <!-- JS highcharts 按需载入 -->
-    <script src="js/highcharts/highcharts.js"></script>
-    <script src="js/highcharts/highcharts-more.js"></script>
-    <script src="js/highcharts/modules/exporting.js"></script>
+    <!-- JS echarts 按需载入 -->
+    <script src="js/jquery-resize/jquery.ba-resize.min.js"></script>
+    <script src="js/echarts/echarts.min.js"></script>
+    <script src="js/echarts/theme/zhiye-admin.js"></script>
     <!-- JS ueditor 按需载入 -->
     <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
     <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 </head>
+
 
 <body>
     <!-- header start -->
@@ -545,7 +546,7 @@
                             <section class="card">
                                 <div class="statistic statistic-pro" action="tooltip" data-placement="bottom" title="已完成目标金额的60%">
                                     <div class="statistic-pro-chart" style="width:110px;height:110px;">
-                                        <div class="highcharts" id="chart-1"></div>
+                                        <div class="echarts" id="chart-1"></div>
                                     </div>
                                     <div class="statistic-pro-info">
                                         <p class="statistic-name">chart统计面板 / 饼图 / 进度条 / tooltip</p>
@@ -572,8 +573,8 @@
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="height:310px;">
-                            <div class="highcharts" id="chart-2"></div>
+                        <div class="card-chart" style="height:310px;">
+                            <div class="echarts" id="chart-2"></div>
                         </div>
                     </section>
                 </div>
@@ -586,13 +587,13 @@
                 <div class="col-lg-6">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">数据图<small>基础条形图</small></h3>
+                            <h3 class="title">数据图<small>基础柱状图</small></h3>
                             <div class="card-header-action">
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="height:300px;">
-                            <div class="highcharts" id="chart-3"></div>
+                        <div class="card-chart" style="height:300px;">
+                            <div class="echarts" id="chart-3"></div>
                         </div>
                     </section>
                 </div>
@@ -606,8 +607,8 @@
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="height:300px;">
-                            <div class="highcharts" id="chart-4"></div>
+                        <div class="card-chart" style="height:300px;">
+                            <div class="echarts" id="chart-4"></div>
                         </div>
                     </section>
                 </div>
@@ -616,13 +617,13 @@
                 <div class="col-lg-3">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">数据图<small>极地面积图</small></h3>
+                            <h3 class="title">数据图<small>六边形战士</small></h3>
                             <div class="card-header-action">
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
-                        <div class="card-body" style="height:300px;">
-                            <div class="highcharts" id="chart-5"></div>
+                        <div class="card-chart" style="height:300px;">
+                            <div class="echarts" id="chart-5"></div>
                         </div>
                     </section>
                 </div>
@@ -902,191 +903,255 @@
                     statistic5.start();
                     statistic6.start();
                 });
-                // highcharts
-                $("#chart-1").highcharts({
-                    chart: {
-                        type: 'pie',
-                        margin: 0
-                    },
-                    title: {
-                        text: null
-                    },
+                // chart-1
+                var chart1 = echarts.init(document.getElementById('chart-1'), 'zhiye-admin');
+                var option1 = {
                     tooltip: {
-                        headerFormat: null,
-                        pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                        confine: true
                     },
-                    plotOptions: {
-                        pie: {
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: false
-                            }
-                        }
+                    itemStyle: {
+                        borderColor: '#fff'
                     },
                     series: [{
+                        name: '图例',
                         type: 'pie',
-                        innerSize: '50%',
-                        borderWidth: 2,
-                        name: '金额占比',
-                        data: [
-                            ['软件开发', 63.2],
-                            ['网站制作', 36.8],
-                        ]
-                    }],
-                });
-                $('#chart-2').highcharts({
-                    chart: {
-                        type: 'areaspline',
-                        animation: Highcharts.svg,
-                        events: {
-                            load: function() {
-                                var series = this.series[0],
-                                    chart = this;
-                                setInterval(function() {
-                                    var x = (new Date()).getTime(),
-                                        y = Math.random();
-                                    series.addPoint([x, y], true, true);
-                                }, 3000);
-                            }
-                        }
-                    },
-                    title: {
-                        text: null
-                    },
-                    xAxis: {
-                        type: 'datetime',
-                        tickPixelInterval: 150
-                    },
-                    yAxis: {
-                        title: {
-                            text: null
+                        radius: ['45%', '80%'],
+                        label: {
+                            show: false
                         },
-                    },
-                    tooltip: {
-                        formatter: function() {
-                            return '<h6>' + this.series.name + '</h6>' +
-                                '<p>' + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '</p>' +
-                                '<p>' + Highcharts.numberFormat(this.y, 2) + '</p>';
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    exporting: {
-                        enabled: false
-                    },
-                    series: [{
-                        name: '随机数据',
-                        colorIndex: 0,
-                        data: (function() {
-                            var data = [],
-                                time = (new Date()).getTime(),
-                                i;
-                            for (i = -19; i <= 0; i += 1) {
-                                data.push({
-                                    x: time + i * 1000,
-                                    y: Math.random()
-                                });
-                            }
-                            return data;
-                        }())
-                    }]
-                });
-                $('#chart-3').highcharts({
-                    chart: {
-                        type: 'column',
-                    },
-                    title: {
-                        text: '图表名称'
-                    },
-                    xAxis: {
-                        categories: ['一月', '二月', '三月', '四月', '五月', '六月'],
-                    },
-                    yAxis: {
-                        title: {
-                            text: null,
+                        labelLine: {
+                            show: false
                         },
-                    },
-                    tooltip: {
-                        valueSuffix: '万'
-                    },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
-                        }
-                    },
-                    series: [{
-                        name: '2017年',
-                        data: [507, 231, 635, 203, 362, 890]
-                    }, {
-                        name: '2016年',
-                        data: [333, 156, 947, 408, 216, 790]
-                    }]
-                });
-                $('#chart-4').highcharts({
-                    chart: {
-                        type: 'pie',
-                    },
-                    title: {
-                        text: null
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: false
+                        data: [{
+                                name: '项目1',
+                                value: 335
                             },
-                            showInLegend: true
-                        }
-                    },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
-                        }
-                    },
-                    series: [{
-                        name: '浏览器访问量占比',
-                        data: [
-                            ['Firefox', 45.0],
-                            ['IE', 26.8],
-                            ['Chrome', 12.8],
-                            ['Safari', 8.5]
+                            {
+                                name: '项目2',
+                                value: 310
+                            },
+                            {
+                                name: '项目3',
+                                value: 234
+                            },
+                            {
+                                name: '项目4',
+                                value: 135
+                            }
                         ]
                     }]
-                });
-                $('#chart-5').highcharts({
-                    chart: {
-                        polar: true,
-                        type: 'area',
+                };
+                chart1.setOption(option1);
+                // chart-2
+                var chart2 = echarts.init(document.getElementById('chart-2'), 'zhiye-admin');
+                var option2 = {
+                    grid: {
+                        top: '10',
+                        right: '10'
                     },
-                    title: {
-                        text: null,
-                    },
-                    pane: {
-                        size: '80%'
+                    tooltip: {
+                        trigger: 'axis'
                     },
                     xAxis: {
-                        categories: ['网站制作', '软件开发', '市场营销', '客户支持', '信息技术', '行政管理'],
-                        gridLineWidth: 1
+                        type: 'category',
+                        boundaryGap: false,
+                        data: (function() {
+                            var now = new Date();
+                            var res = [];
+                            var len = 10;
+                            while (len--) {
+                                res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
+                                now = new Date(now - 3000);
+                            }
+                            return res;
+                        })()
                     },
                     yAxis: {
-                        gridLineInterpolation: 'polygon',
-                        max: 10
+                        type: 'value',
+                        max: 30,
+                        min: 0
                     },
+                    series: {
+                        name: '随机数据',
+                        type: 'line',
+                        smooth: true,
+                        areaStyle: {},
+                        data: (function() {
+                            var res = [];
+                            var len = 0;
+                            while (len < 30) {
+                                res.push((Math.random() * 30).toFixed(1) - 0);
+                                len++;
+                            }
+                            return res;
+                        })()
+                    }
+                };
+                chart2.setOption(option2);
+                setInterval(function() {
+                    axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+                    var data = option2.series.data;
+                    data.shift();
+                    data.push((Math.random() * 30).toFixed(1) - 0);
+                    option2.xAxis.data.shift();
+                    option2.xAxis.data.push(axisData);
+                    chart2.setOption(option2);
+                }, 3000);
+                // chart-3
+                var chart3 = echarts.init(document.getElementById('chart-3'), 'zhiye-admin');
+                var option3 = {
                     legend: {
-                        enabled: false
+                        data: ['图例1', '图例2']
                     },
-                    navigation: {
-                        buttonOptions: {
-                            enabled: true
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
                         }
                     },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    xAxis: {
+                        data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                    },
+                    yAxis: {},
                     series: [{
-                        name: '能力值',
-                        data: [10, 8, 8, 10, 8, 8],
-                        pointPlacement: 'on'
+                            name: '图例1',
+                            type: 'bar',
+                            barWidth: '25%',
+                            data: [507, 231, 635, 203, 362, 890]
+                        },
+                        {
+                            name: '图例2',
+                            type: 'bar',
+                            barWidth: '25%',
+                            data: [333, 156, 947, 408, 216, 790]
+                        }
+                    ]
+                };
+                chart3.setOption(option3);
+                // chart-4
+                var chart4 = echarts.init(document.getElementById('chart-4'), 'zhiye-admin');
+                var option4 = {
+                    legend: {
+                        bottom: '0',
+                        data: ['图例1', '图例2', '图例3', '图例4']
+                    },
+                    tooltip: {
+                        confine: true
+                    },
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        borderColor: '#fff'
+                    },
+                    series: [{
+                        name: '图例',
+                        type: 'pie',
+                        center: ['50%', '42.5%'],
+                        label: {
+                            show: false
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [{
+                                name: '图例1',
+                                value: 335
+                            },
+                            {
+                                name: '图例2',
+                                value: 310
+                            },
+                            {
+                                name: '图例3',
+                                value: 234
+                            },
+                            {
+                                name: '图例4',
+                                value: 135
+                            }
+                        ]
                     }]
+                };
+                chart4.setOption(option4);
+                // chart-5
+                var chart5 = echarts.init(document.getElementById('chart-5'), 'zhiye-admin');
+                var option5 = {
+                    tooltip: {
+                        confine: true
+                    },
+                    toolbox: {
+                        itemSize: '14',
+                        top: '-4',
+                        right: '10',
+                        feature: {
+                            saveAsImage: {
+                                title: '保存图片'
+                            }
+                        }
+                    },
+                    radar: {
+                        indicator: [{
+                                name: '项目1',
+                                max: 100
+                            },
+                            {
+                                name: '项目2',
+                                max: 100
+                            },
+                            {
+                                name: '项目3',
+                                max: 100
+                            },
+                            {
+                                name: '项目4',
+                                max: 100
+                            },
+                            {
+                                name: '项目5',
+                                max: 100
+                            },
+                            {
+                                name: '项目6',
+                                max: 100
+                            }
+                        ]
+                    },
+                    series: [{
+                        name: '图例',
+                        type: 'radar',
+                        areaStyle: {},
+                        data: [{
+                                value: [100, 100, 100, 100, 100, 100],
+                                name: '预算分配'
+                            }
+                        ]
+                    }]
+                };
+                chart5.setOption(option5);
+                // echarts 容器尺寸变化时刷新图表尺寸
+                $(".echarts").resize(function() {
+                    chart2.resize();
+                    chart3.resize();
+                    chart4.resize();
+                    chart5.resize();
                 });
                 // weather
                 $.ajax({
@@ -1098,11 +1163,11 @@
                         var temfix = res.data[0].tem.substring(0, res.data[0].tem.length - 1);
                         $('#weather').append(
                             '<div class="weather-info">' +
-                                '<p>' + res.data[0].date + '，' + res.data[0].week + '</p>' +
-                                '<h1 class="weather-temperature">' + temfix + '</h1>' +
-                                '<p>' + res.city + '，' + res.data[0].wea + '</p>' +
-                                '<p>高温' + res.data[0].tem1 + '，低温' + res.data[0].tem2 + '</p>' +
-                                '<p>' + res.data[0].win[0] + '，' + res.data[0].win_speed + '</p>' +
+                            '<p>' + res.data[0].date + '，' + res.data[0].week + '</p>' +
+                            '<h1 class="weather-temperature">' + temfix + '</h1>' +
+                            '<p>' + res.city + '，' + res.data[0].wea + '</p>' +
+                            '<p>高温' + res.data[0].tem1 + '，低温' + res.data[0].tem2 + '</p>' +
+                            '<p>' + res.data[0].win[0] + '，' + res.data[0].win_speed + '</p>' +
                             '</div>' +
                             '<img class="weather-icon" src="img/weather/' + res.data[0].wea_img + '.png">'
                         );
