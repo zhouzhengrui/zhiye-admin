@@ -305,8 +305,9 @@
                     <ul class="nav-sub">
                         <li class="nav-item" id="nav-2-1"><a href="demo-eCommerce.html" data-pjax><span>首页</span></a></li>
                         <li class="nav-item" id="nav-2-2"><a href="demo-eCommerce-manage.html" data-pjax><span>商品管理</span></a></li>
-                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品</span></a></li>
-                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品 - 单卡片布局</span></a></li>
+                        <li class="nav-item" id="nav-2-5"><a href="demo-eCommerce-add-2.html" data-pjax><span>添加商品 - 多卡片布局</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -413,6 +414,7 @@
                         <li class="nav-item" id="nav-12-1"><a href="tool-weather.html" data-pjax><span>天气信息</span></a></li>
                         <li class="nav-item" id="nav-12-2"><a href="tool-hotkey.html" data-pjax><span>快捷键</span></a></li>
                         <li class="nav-item" id="nav-12-3"><a href="tool-clipboard.html" data-pjax><span>内容复制</span></a></li>
+                        <li class="nav-item" id="nav-12-4"><a href="tool-fireman.html" data-pjax><span>Fireman</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -539,15 +541,28 @@
                 <!-- column start -->
                 <div class="col-12">
                     <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">所有商品</h3>
-                            <div class="card-header-action">
-                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                        <div class="card-toolbar">
+                            <div class="button-group">
+                                <button class="button button-flat">全部选中</button>
+                                <button class="button button-flat">删除已选</button>
                             </div>
+                            <form class="form">
+                                <fieldset class="form-group">
+                                    <select class="select select-chosen">
+                                        <option>商品名称</option>
+                                        <option>商品编号</option>
+                                        <option>商品分类</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <input class="input" type="text" placeholder="搜索关键字">
+                                </fieldset>
+                                <button type="button" class="button"><i class="icon-search"></i><span>搜索</span></button>
+                            </form>
                         </div>
                         <!-- table start -->
                         <div class="card-table">
-                            <table class="table table-responsive" id="demo-table">
+                            <table class="table table-responsive">
                                 <thead>
                                     <tr>
                                         <th align="left">
@@ -805,6 +820,37 @@
                             </table>
                         </div>
                         <!-- table over -->
+                        <div class="card-footer">
+                            <div class="card-footer-action">
+                                <p class="margin-right-5">每页显示</p>
+                                <!-- select start -->
+                                <fieldset class="form-group">
+                                    <select class="select">
+                                        <option selected>10</option>
+                                        <option>25</option>
+                                        <option>50</option>
+                                    </select>
+                                </fieldset>
+                                <p class="margin-left-5">条数据</p>
+                                <!-- select over -->
+                            </div>
+                            <!-- pagination start -->
+                            <div class="button-group-pagination">
+                                <span class="info">共12条数据</span>
+                                <span>上一页</span>
+                                <div class="pagination">
+                                    <span class="active">1</span>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <span>...</span>
+                                    <a href="#">99</a>
+                                </div>
+                                <a href="#">下一页</a>
+                            </div>
+                            <!-- pagination over -->
+                        </div>
                     </section>
                 </div>
                 <!-- column over -->
@@ -817,43 +863,6 @@
             jQuery(document).ready(function($) {
                 // nav active
                 setNavActive("nav-2-2");
-                // dataTables 初始化
-                dataTableDefaults();
-                // dataTables 执行实例
-                $('#demo-table').DataTable({
-                    // 默认每页显示条数
-                    pageLength: 5,
-                    // 每页显示选项
-                    lengthMenu: [5, 10, 25, 50, 100],
-                    // 定义列的初始属性
-                    columnDefs: [{
-                        // 指定列对象
-                        targets: [0, 2, -1],
-                        // 排序功能
-                        orderable: false
-                    }],
-                    // 禁用列排序必须项
-                    order: [],
-                    // 按钮扩展
-                    buttons: [{
-                        extend: 'excel',
-                        text: '下载Excel文档',
-                        exportOptions: {
-                            columns: [1, 3, 4, 5]
-                        }
-                    },{
-                        extend: 'print',
-                        text: '打印表格',
-                        exportOptions: {
-                            columns: [1, 3, 4, 5]
-                        }
-                    }],
-                    // 自定义布局
-                    dom:"<'card-table-action-bar'lBf>t<'card-table-action-footer'i<'card-table-action-footer-custom'>p>"
-                });
-                // 底部自定义按钮
-                $(".card-table-action-footer-custom").html('<button class="button button-flat">删除已选</button>');
-                //
                 // chosen
                 $(".select-chosen").chosen({
                     disable_search_threshold: 10,

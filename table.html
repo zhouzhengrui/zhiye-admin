@@ -305,8 +305,9 @@
                     <ul class="nav-sub">
                         <li class="nav-item" id="nav-2-1"><a href="demo-eCommerce.html" data-pjax><span>首页</span></a></li>
                         <li class="nav-item" id="nav-2-2"><a href="demo-eCommerce-manage.html" data-pjax><span>商品管理</span></a></li>
-                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品</span></a></li>
-                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品 - 单卡片布局</span></a></li>
+                        <li class="nav-item" id="nav-2-5"><a href="demo-eCommerce-add-2.html" data-pjax><span>添加商品 - 多卡片布局</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -413,6 +414,7 @@
                         <li class="nav-item" id="nav-12-1"><a href="tool-weather.html" data-pjax><span>天气信息</span></a></li>
                         <li class="nav-item" id="nav-12-2"><a href="tool-hotkey.html" data-pjax><span>快捷键</span></a></li>
                         <li class="nav-item" id="nav-12-3"><a href="tool-clipboard.html" data-pjax><span>内容复制</span></a></li>
+                        <li class="nav-item" id="nav-12-4"><a href="tool-fireman.html" data-pjax><span>Fireman</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -458,7 +460,7 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>基础样式<small><code>.card-table</code></small>
+                <h2>基础样式<small><code>.card-table</code> / html部分放在卡片<code>section.card</code>里面</small>
             </div>
             <div class="banner-action">
                 <!-- form start -->
@@ -527,16 +529,13 @@
         <!-- collapse over -->
         <!-- container start -->
         <div class="container-fluid">
-            <ul class="explain">
-                <li>html部分放在卡片<code>section.card</code>里面, 与<code>.card-header</code>同级</li>
-            </ul>
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
                 <div class="col-12">
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">基本表格</h3>
+                            <h3 class="title">基本表格<small><code>.card-header</code>可移除, 节约首屏空间</small></h3>
                             <div class="card-header-action">
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
@@ -668,8 +667,21 @@
                         </div>
                         <!-- table over -->
                         <div class="card-footer">
-                            <div class="button-group">
-                                <button type="button" class="button button-flat">删除已选</button>
+                            <div class="card-footer-action">
+                                <p class="margin-right-5">每页显示</p>
+                                <!-- select start -->
+                                <fieldset class="form-group">
+                                    <select class="select">
+                                        <option selected>10</option>
+                                        <option>25</option>
+                                        <option>50</option>
+                                    </select>
+                                </fieldset>
+                                <p class="margin-left-5 margin-right-15">条数据</p>
+                                <!-- select over -->
+                                <div class="button-group">
+                                    <button type="button" class="button button-flat">删除已选</button>
+                                </div>
                             </div>
                             <!-- pagination start -->
                             <div class="button-group-pagination">
@@ -702,47 +714,87 @@
                         <pre>
                             <code class="language-html">
                                 <script type="text/plain">
-                                <!-- table start -->
-                                <div class="card-table">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>表头居中</th>
-                                                <th align="left">表头/左对齐</th>
-                                                <th align="right">表头/右对齐</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>单元格/居中</td>
-                                                <td align="left">单元格/左对齐</td>
-                                                <td align="right">单元格/右对齐</td>
-                                            </tr>
-                                            <tr>
-                                                <td>普通字段</td>
-                                                <td><a href="#">超链接字段</a></td>
-                                                <td><span class="label">标签</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <!-- 图片单元格 -->
-                                                    <div class="image" style="background-image: url('');"></div>
-                                                </td>
-                                                <td>
-                                                    <!-- 信息组单元格 -->
-                                                    <h6>信息组主信息</h6>
-                                                    <p class="gray">信息组附加信息</p>
-                                                </td>
-                                                <td>
-                                                    <!-- 按钮单元格 -->
-                                                    <a class="button button-small" href="#">超链接</a>
-                                                    <button type="button" class="button button-small">按钮</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- table over -->
+                                    <div class="card-header">
+                                        <h3 class="title">表格</h3>
+                                        <div class="card-header-action">
+                                            <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- table start -->
+                                    <div class="card-table">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>表头居中</th>
+                                                    <th align="left">表头/左对齐</th>
+                                                    <th align="right">表头/右对齐</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>单元格/居中</td>
+                                                    <td align="left">单元格/左对齐</td>
+                                                    <td align="right">单元格/右对齐</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>普通字段</td>
+                                                    <td><a href="#">超链接字段</a></td>
+                                                    <td><span class="label">标签</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- 图片单元格 -->
+                                                        <div class="image" style="background-image: url('');"></div>
+                                                    </td>
+                                                    <td>
+                                                        <!-- 信息组单元格 -->
+                                                        <h6>信息组主信息</h6>
+                                                        <p class="gray">信息组附加信息</p>
+                                                    </td>
+                                                    <td>
+                                                        <!-- 按钮单元格 -->
+                                                        <a class="button button-small" href="#">超链接</a>
+                                                        <button type="button" class="button button-small">按钮</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- table over -->
+                                    <div class="card-footer">
+                                        <div class="card-footer-action">
+                                            <p class="margin-right-5">每页显示</p>
+                                            <!-- select start -->
+                                            <fieldset class="form-group">
+                                                <select class="select">
+                                                    <option selected>10</option>
+                                                    <option>25</option>
+                                                    <option>50</option>
+                                                </select>
+                                            </fieldset>
+                                            <p class="margin-left-5 margin-right-15">条数据</p>
+                                            <!-- select over -->
+                                            <div class="button-group">
+                                                <button type="button" class="button button-flat">删除已选</button>
+                                            </div>
+                                        </div>
+                                        <!-- pagination start -->
+                                        <div class="button-group-pagination">
+                                            <span class="info">共99条数据</span>
+                                            <span>上一页</span>
+                                            <div class="pagination">
+                                                <span class="active">1</span>
+                                                <a href="#">2</a>
+                                                <a href="#">3</a>
+                                                <a href="#">4</a>
+                                                <a href="#">5</a>
+                                                <span>...</span>
+                                                <a href="#">99</a>
+                                            </div>
+                                            <a href="#">下一页</a>
+                                        </div>
+                                        <!-- pagination over -->
+                                    </div>
                                 </script>
                             </code>
                         </pre>

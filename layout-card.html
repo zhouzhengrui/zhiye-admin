@@ -305,8 +305,9 @@
                     <ul class="nav-sub">
                         <li class="nav-item" id="nav-2-1"><a href="demo-eCommerce.html" data-pjax><span>首页</span></a></li>
                         <li class="nav-item" id="nav-2-2"><a href="demo-eCommerce-manage.html" data-pjax><span>商品管理</span></a></li>
-                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品</span></a></li>
-                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品 - 单卡片布局</span></a></li>
+                        <li class="nav-item" id="nav-2-5"><a href="demo-eCommerce-add-2.html" data-pjax><span>添加商品 - 多卡片布局</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -413,6 +414,7 @@
                         <li class="nav-item" id="nav-12-1"><a href="tool-weather.html" data-pjax><span>天气信息</span></a></li>
                         <li class="nav-item" id="nav-12-2"><a href="tool-hotkey.html" data-pjax><span>快捷键</span></a></li>
                         <li class="nav-item" id="nav-12-3"><a href="tool-clipboard.html" data-pjax><span>内容复制</span></a></li>
+                        <li class="nav-item" id="nav-12-4"><a href="tool-fireman.html" data-pjax><span>Fireman</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -519,6 +521,7 @@
                 <div class="col-lg-6">
                     <!-- card start -->
                     <section class="card">
+                        <!-- 卡片头部 - 按钮组件和最大化按钮 -->
                         <div class="card-header">
                             <h3 class="title">卡片示例<small>按钮组件和最大化按钮</small></h3>
                             <div class="card-header-action">
@@ -527,6 +530,7 @@
                                 <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                             </div>
                         </div>
+                        <!-- 卡片头部 - 表单组件 -->
                         <div class="card-header">
                             <h3 class="title">卡片示例<small>表单组件</small></h3>
                             <div class="card-header-action">
@@ -538,37 +542,48 @@
                                 </form>
                             </div>
                         </div>
+                        <!-- 卡片主体 - 工具栏 -->
                         <div class="card-toolbar">
-                            <fieldset class="form-group flex-grow-1">
-                                <input class="input" type="text" placeholder="卡片工具栏">
-                            </fieldset>
-                            <button type="button" class="button button-flat"><i class="icon-plus"></i><span>新建</span></button>
-                            <button type="button" class="button button-flat"><i class="icon-pen"></i><span>编辑</span></button>
-                            <button type="button" class="button button-flat"><i class="icon-trash"></i><span>删除</span></button>
+                            <div class="button-group">
+                                <button type="button" class="button button-flat"><i class="icon-pen"></i><span>编辑</span></button>
+                                <button type="button" class="button button-flat"><i class="icon-trash"></i><span>删除</span></button>
+                            </div>
+                            <form class="form">
+                                <fieldset class="form-group">
+                                    <input class="input" type="text" placeholder="卡片工具栏">
+                                </fieldset>
+                                <button type="button" class="button"><i class="icon-gear"></i><span>按钮</span></button>
+                            </form>
                         </div>
+                        <!-- 卡片主体 - 主容器 -->
                         <div class="card-body">卡片主容器</div>
+                        <!-- 卡片主体 - 分割线 -->
                         <div class="card-divider"></div>
+                        <!-- 卡片主体 - 主容器(滚动容器) -->
                         <div class="card-body card-scrollbar" style="height:95px;">
-                            <h6>卡片主容器 - 滚动条</h6>
+                            <h6>卡片主容器 - 滚动容器</h6>
                             <ul class="explain">
                                 <li>给<code>.card-body</code>或<code>.card-table</code>这些主容器追加类名<code>.card-scrollbar</code></li>
                                 <li><p>设置<code>style="height:*px;"</code>或<code>style="max-height:*px;"</code></p></li>
                                 <li>当容器内元素高度超出时, 可显示滚动条</li>
                             </ul>
                         </div>
+                        <!-- 卡片底部 - 两端对齐 -->
                         <div class="card-footer">
                             <button class="button" type="button">按钮或超链接</button>
                             <a class="button" href="#">默认两端对齐</a>
                         </div>
+                        <!-- 卡片底部 - 按钮组左对齐 -->
                         <div class="card-footer">
                             <div class="button-group">
                                 <button class="button" type="button">按钮或超链接</button>
                                 <a class="button" href="#">左对齐</a>
                             </div>
-                            <div>可添加信息或部分组件</div>
+                            <div class="card-footer-action">卡片底部功能区</div>
                         </div>
+                        <!-- 卡片底部 - 按钮组右对齐 -->
                         <div class="card-footer">
-                            <div>可添加信息或部分组件</div>
+                            <div class="card-footer-action">卡片底部功能区</div>
                             <div class="button-group">
                                 <button class="button" type="button">按钮或超链接</button>
                                 <a class="button" href="#">右对齐</a>
@@ -578,7 +593,6 @@
                     <!-- card over -->
                     <ul class="explain">
                         <li><code>.card-header-action</code>支持直接放按钮和常用表单组件, 支持<code>form.form</code>嵌套</li>
-                        <li><code>.card-footer</code>暂时只支持按钮组件</li>
                         <li><code>.card-header</code>和<code>.card-footer</code>不建议使用多个</li>
                         <li><code>.card-header</code>不宜放过多元素, 需考虑移动端显示效果</li>
                         <li><code>.card-divider</code>可以创建一条是水平分割线</li>
@@ -594,14 +608,16 @@
                                 <script type="text/plain">
                                     <!-- card start -->
                                     <section class="card">
+                                        <!-- 卡片头部 - 按钮组件和最大化按钮 -->
                                         <div class="card-header">
                                             <h3 class="title">卡片示例<small>按钮组件和最大化按钮</small></h3>
                                             <div class="card-header-action">
                                                 <button type="button" class="button button-flat">按钮</button>
                                                 <button type="button" class="button button-flat"><i class="icon-gear"></i><span>图标按钮</span></button>
-                                                <button class="button button-flat" type="button" action="card-fullscreen"><i class="icon-enlarge"></i></button>
+                                                <button type="button" class="button button-flat" action="card-fullscreen"><i class="icon-enlarge"></i></button>
                                             </div>
                                         </div>
+                                        <!-- 卡片头部 - 表单组件 -->
                                         <div class="card-header">
                                             <h3 class="title">卡片示例<small>表单组件</small></h3>
                                             <div class="card-header-action">
@@ -613,30 +629,41 @@
                                                 </form>
                                             </div>
                                         </div>
+                                        <!-- 卡片主体 - 工具栏 -->
                                         <div class="card-toolbar">
-                                            <fieldset class="form-group flex-grow-1">
-                                                <input class="input" type="text" placeholder="卡片工具栏">
-                                            </fieldset>
-                                            <button type="button" class="button button-flat"><i class="icon-plus"></i><span>新建</span></button>
-                                            <button type="button" class="button button-flat"><i class="icon-pen"></i><span>编辑</span></button>
-                                            <button type="button" class="button button-flat"><i class="icon-trash"></i><span>删除</span></button>
+                                            <div class="button-group">
+                                                <button type="button" class="button button-flat"><i class="icon-pen"></i><span>编辑</span></button>
+                                                <button type="button" class="button button-flat"><i class="icon-trash"></i><span>删除</span></button>
+                                            </div>
+                                            <form class="form">
+                                                <fieldset class="form-group">
+                                                    <input class="input" type="text" placeholder="卡片工具栏">
+                                                </fieldset>
+                                                <button type="button" class="button"><i class="icon-gear"></i><span>按钮</span></button>
+                                            </form>
                                         </div>
+                                        <!-- 卡片主体 - 主容器 -->
                                         <div class="card-body">卡片主容器</div>
+                                        <!-- 卡片主体 - 分割线 -->
                                         <div class="card-divider"></div>
-                                        <div class="card-body card-scrollbar" style="height:*px;">卡片主容器 - 滚动条</div>
+                                        <!-- 卡片主体 - 主容器(滚动容器) -->
+                                        <div class="card-body card-scrollbar" style="height:95px;">卡片主容器 - 滚动容器</div>
+                                        <!-- 卡片底部 - 两端对齐 -->
                                         <div class="card-footer">
                                             <button class="button" type="button">按钮或超链接</button>
                                             <a class="button" href="#">默认两端对齐</a>
                                         </div>
+                                        <!-- 卡片底部 - 按钮组左对齐 -->
                                         <div class="card-footer">
                                             <div class="button-group">
                                                 <button class="button" type="button">按钮或超链接</button>
                                                 <a class="button" href="#">左对齐</a>
                                             </div>
-                                            <div>可添加信息或部分组件</div>
+                                            <div class="card-footer-action">卡片底部功能区</div>
                                         </div>
+                                        <!-- 卡片底部 - 按钮组右对齐 -->
                                         <div class="card-footer">
-                                            <div>可添加信息或部分组件</div>
+                                            <div class="card-footer-action">卡片底部功能区</div>
                                             <div class="button-group">
                                                 <button class="button" type="button">按钮或超链接</button>
                                                 <a class="button" href="#">右对齐</a>

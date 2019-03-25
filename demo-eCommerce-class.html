@@ -305,8 +305,9 @@
                     <ul class="nav-sub">
                         <li class="nav-item" id="nav-2-1"><a href="demo-eCommerce.html" data-pjax><span>首页</span></a></li>
                         <li class="nav-item" id="nav-2-2"><a href="demo-eCommerce-manage.html" data-pjax><span>商品管理</span></a></li>
-                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品</span></a></li>
-                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品 - 单卡片布局</span></a></li>
+                        <li class="nav-item" id="nav-2-5"><a href="demo-eCommerce-add-2.html" data-pjax><span>添加商品 - 多卡片布局</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -413,6 +414,7 @@
                         <li class="nav-item" id="nav-12-1"><a href="tool-weather.html" data-pjax><span>天气信息</span></a></li>
                         <li class="nav-item" id="nav-12-2"><a href="tool-hotkey.html" data-pjax><span>快捷键</span></a></li>
                         <li class="nav-item" id="nav-12-3"><a href="tool-clipboard.html" data-pjax><span>内容复制</span></a></li>
+                        <li class="nav-item" id="nav-12-4"><a href="tool-fireman.html" data-pjax><span>Fireman</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -503,17 +505,32 @@
                         <section class="card" style="width:70%;">
                             <div class="card-header">
                                 <h3 class="title">商品信息<small>书籍 - 科幻小说</small></h3>
-                                <div class="card-header-action">
-                                    <button class="button button-flat"><span>删除已选</span></button>
-                                    <button class="button button-flat"><span>更换分类</span></button>
+                            </div>
+                            <div class="card-toolbar">
+                                <div class="button-group">
+                                    <button class="button button-flat">全部选中</button>
+                                    <button class="button button-flat">删除已选</button>
                                 </div>
+                                <form class="form">
+                                    <fieldset class="form-group">
+                                        <select class="select select-chosen">
+                                            <option>商品名称</option>
+                                            <option>商品编号</option>
+                                            <option>商品分类</option>
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <input class="input" type="text" placeholder="搜索关键字">
+                                    </fieldset>
+                                    <button type="button" class="button"><i class="icon-search"></i><span>搜索</span></button>
+                                </form>
                             </div>
                             <!-- table start -->
                             <div class="card-table">
                                 <table class="table table-responsive" id="table">
                                     <thead>
                                         <tr>
-                                            <th align="left" width="1%">
+                                            <th align="left" width="55px">
                                                 <fieldset class="form-group">
                                                     <label class="radiocheckbox-item">
                                                         <input class="radiocheckbox" type="checkbox" action="checkall">
@@ -521,8 +538,8 @@
                                                     </label>
                                                 </fieldset>
                                             </th>
-                                            <th align="left" width="1%" class="details-control"></th>
-                                            <th align="left" width="1%">封面</th>
+                                            <th align="left" width="50px" class="details-control"></th>
+                                            <th align="left" width="85px">封面</th>
                                             <th align="left" width="45%">商品名称</th>
                                             <th align="right">相关操作</th>
                                         </tr>
@@ -619,6 +636,37 @@
                                 </table>
                             </div>
                             <!-- table over -->
+                            <div class="card-footer">
+                                <div class="card-footer-action">
+                                    <p class="margin-right-5">每页显示</p>
+                                    <!-- select start -->
+                                    <fieldset class="form-group">
+                                        <select class="select">
+                                            <option selected>10</option>
+                                            <option>25</option>
+                                            <option>50</option>
+                                        </select>
+                                    </fieldset>
+                                    <p class="margin-left-5">条数据</p>
+                                    <!-- select over -->
+                                </div>
+                                <!-- pagination start -->
+                                <div class="button-group-pagination">
+                                    <span class="info">共999条数据</span>
+                                    <span>上一页</span>
+                                    <div class="pagination">
+                                        <span class="active">1</span>
+                                        <a href="#">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">4</a>
+                                        <a href="#">5</a>
+                                        <span>...</span>
+                                        <a href="#">99</a>
+                                    </div>
+                                    <a href="#">下一页</a>
+                                </div>
+                                <!-- pagination over -->
+                            </div>
                         </section>
                         <!-- card over -->
                     </div>
@@ -699,7 +747,7 @@
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // nav active
-                setNavActive("nav-2-4");
+                setNavActive("nav-2-3");
                 // treeview data
                 var treeviewData = [{
                     text: '食品',
@@ -711,7 +759,7 @@
                 }, {
                     text: '日常用品',
                     nodes: [{
-                        text: '洗漱永平',
+                        text: '洗漱用品',
                     }, {
                         text: '床上用品'
                     }]
@@ -823,32 +871,27 @@
                 function format(d) {
                     return '<table>' +
                         '<tr>' +
-                            '<td width="15%"><b>商品编号:</b></td>' +
+                            '<td width="280px" align="right"><b>商品编号:</b></td>' +
                             '<td>' + '#001' + '</td>' +
                         '</tr>' +
                         '<tr>' +
-                            '<td><b>商品分类:</b></td>' +
+                            '<td width="280px" align="right"><b>商品分类:</b></td>' +
                             '<td>' + '<span class="label label-purple">书籍</span><span class="label label-purple">科幻小说</span>' + '</td>' +
                         '</tr>' +
                         '<tr>' +
-                            '<td><b>库存数量:</b></td>' +
+                            '<td width="280px" align="right"><b>库存数量:</b></td>' +
                             '<td>' + '99' + '</td>' +
                         '</tr>' +
                         '<tr>' +
-                            '<td><b>商品价格:</b></td>' +
+                            '<td width="280px" align="right"><b>商品价格:</b></td>' +
                             '<td>' + '998.00' + '</td>' +
                         '</tr>' +
                     '</table>';
                 }
                 // dataTable 执行实例
                 var table = $('#table').DataTable({
-                    // 定义列的初始属性
-                    columnDefs: [{
-                        targets: [0, 1, 2, 4], // 指定列对象
-                        orderable: false // 排序功能
-                    }],
-                    // 禁用列排序必须项
-                    order: []
+                    ordering: false,
+                    dom:"t"
                 });
                 // 行详细信息显示隐藏
                 $('#table tbody').on('click', 'td.details-control', function() {

@@ -305,8 +305,9 @@
                     <ul class="nav-sub">
                         <li class="nav-item" id="nav-2-1"><a href="demo-eCommerce.html" data-pjax><span>首页</span></a></li>
                         <li class="nav-item" id="nav-2-2"><a href="demo-eCommerce-manage.html" data-pjax><span>商品管理</span></a></li>
-                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品</span></a></li>
-                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-3"><a href="demo-eCommerce-class.html" data-pjax><span>商品分类管理</span></a></li>
+                        <li class="nav-item" id="nav-2-4"><a href="demo-eCommerce-add.html" data-pjax><span>添加商品 - 单卡片布局</span></a></li>
+                        <li class="nav-item" id="nav-2-5"><a href="demo-eCommerce-add-2.html" data-pjax><span>添加商品 - 多卡片布局</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -413,6 +414,7 @@
                         <li class="nav-item" id="nav-12-1"><a href="tool-weather.html" data-pjax><span>天气信息</span></a></li>
                         <li class="nav-item" id="nav-12-2"><a href="tool-hotkey.html" data-pjax><span>快捷键</span></a></li>
                         <li class="nav-item" id="nav-12-3"><a href="tool-clipboard.html" data-pjax><span>内容复制</span></a></li>
+                        <li class="nav-item" id="nav-12-4"><a href="tool-fireman.html" data-pjax><span>Fireman</span></a></li>
                     </ul>
                 </li>
                 <!-- item over -->
@@ -458,7 +460,7 @@
         <!-- banner start -->
         <div class="banner banner-fixed">
             <div class="banner-title">
-                <h2>添加商品</h2>
+                <h2>添加商品<small>单卡片布局</small></h2>
             </div>
             <div class="banner-action">
                 <div class="button-group">
@@ -474,28 +476,10 @@
         <!-- container start -->
         <div class="container-fluid">
             <!-- row start -->
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- column start -->
-                <div class="col-lg-9">
+                <div class="col-lg-8">
                     <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">商品信息</h3>
-                            <div class="card-header-action">
-                                <!-- switch start -->
-                                <fieldset class="form-group">
-                                    <div class="radiocheckbox-switch-item">
-                                        <p class="radiocheckbox-switch-explain" id="sale-explain">上架销售</p>
-                                        <label class="radiocheckbox-switch">
-                                            <input class="radiocheckbox" type="checkbox" checked id="sale-switch">
-                                            <span class="radiocheckbox-replace">
-                                                <span class="slipper"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-                                <!-- switch over -->
-                            </div>
-                        </div>
                         <div class="card-body">
                             <!-- form start -->
                             <form class="form">
@@ -511,7 +495,7 @@
                                 <!-- row over -->
                                 <!-- row start -->
                                 <div class="row-form">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-9">
                                         <fieldset class="form-group">
                                             <legend class="label">商品分类</legend>
                                             <select class="select select-chosen" multiple data-placeholder="请选择">
@@ -533,6 +517,22 @@
                                                 </optgroup>
                                             </select>
                                         </fieldset>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <!-- switch start -->
+                                        <fieldset class="form-group">
+                                            <legend class="label">销售状态</legend>
+                                            <div class="radiocheckbox-switch-item">
+                                                <label class="radiocheckbox-switch">
+                                                    <input class="radiocheckbox" type="checkbox" checked id="sale-switch">
+                                                    <span class="radiocheckbox-replace">
+                                                        <span class="slipper"></span>
+                                                    </span>
+                                                </label>
+                                                <p class="radiocheckbox-switch-explain" id="sale-explain">上架销售</p>
+                                            </div>
+                                        </fieldset>
+                                        <!-- switch over -->
                                     </div>
                                 </div>
                                 <!-- row over -->
@@ -642,6 +642,44 @@
                                 <!-- row over -->
                                 <!-- row start -->
                                 <div class="row-form">
+                                    <div class="col-lg-4">
+                                        <fieldset class="form-group">
+                                            <legend class="label">ISBN编号</legend>
+                                            <input class="input" type="text">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <fieldset class="form-group">
+                                            <legend class="label">作者</legend>
+                                            <input class="input" type="text">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <fieldset class="form-group">
+                                            <legend class="label">出版日期</legend>
+                                            <label class="input-addon">
+                                                <input type="text" class="input" action="date" id="date" autocomplete="off">
+                                                <span class="addon"><i class="icon-calendar"></i></span>
+                                            </label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!-- row over -->
+                                <!-- row start -->
+                                <div class="row-form">
+                                    <div class="col-lg-12">
+                                        <!-- dropzone start -->
+                                        <fieldset class="form-group">
+                                            <legend class="label">商品图片</legend>
+                                            <div class="dropzone" id="dropzone"></div>
+                                            <p class="help gray"><small>上传1-5张图片, 每张不超过512KB</small></p>
+                                        </fieldset>
+                                        <!-- dropzone over -->
+                                    </div>
+                                </div>
+                                <!-- row over -->
+                                <!-- row start -->
+                                <div class="row-form">
                                     <div class="col-lg-12">
                                         <!-- ueditor start -->
                                         <fieldset class="form-group">
@@ -658,56 +696,6 @@
                     </section>
                 </div>
                 <!-- column over -->
-                <!-- column start -->
-                <div class="col-lg-3">
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">封面图片</h3>
-                            <div class="card-header-action">
-                                <button class="button button-flat button-small" id="dropzone-remove-button" hidden>全部删除</button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <form class="form">
-                                <!-- dropzone start -->
-                                <fieldset class="form-group">
-                                    <div class="dropzone align-center" id="dropzone"></div>
-                                    <p class="help gray"><small>上传1-5张图片, 每张不超过512KB</small></p>
-                                </fieldset>
-                                <!-- dropzone over -->
-                            </form>
-                        </div>
-                    </section>
-                    <section class="card">
-                        <div class="card-header">
-                            <h3 class="title">商品参数<small>书籍类</small></h3>
-                        </div>
-                        <div class="card-body">
-                            <form class="form">
-                                <fieldset class="form-group">
-                                    <legend class="label">书名</legend>
-                                    <input class="input" type="text">
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <legend class="label">ISBN编号</legend>
-                                    <input class="input" type="text">
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <legend class="label">作者</legend>
-                                    <input class="input" type="text">
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <legend class="label">出版日期</legend>
-                                    <label class="input-addon">
-                                        <input type="text" class="input" action="date" id="date" autocomplete="off">
-                                        <span class="addon"><i class="icon-calendar"></i></span>
-                                    </label>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </section>
-                </div>
-                <!-- column over -->
             </div>
             <!-- row over -->
         </div>
@@ -716,7 +704,7 @@
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // nav active
-                setNavActive("nav-2-3");
+                setNavActive("nav-2-4");
                 // 提交效果演示
                 $("#submit").on("click", function() {
                     NProgress.start();
@@ -795,14 +783,6 @@
                     addRemoveLinks: true,
                     acceptedFiles: ".jpg, .jpeg, .png",
                     dictDefaultMessage: "点击这里添加图片, 或将图片文件拖放到这里"
-                });
-                // dropzone 全部删除按钮
-                dropzone.on("complete", function(file) {
-                    $("#dropzone-remove-button").removeAttr("hidden");
-                    $("#dropzone-remove-button").on("click", function() {
-                        dropzone.removeFile(file);
-                        $("#dropzone-remove-button").attr("hidden", true);
-                    });
                 });
                 // laydate
                 laydate.render({

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>Banner面板</title>
+    <title>Fireman</title>
     <link rel="icon" href="favicon.ico">
     <!-- CSS icofont -->
     <link rel="stylesheet" href="icofont/style.css">
@@ -22,7 +22,6 @@
     <script src="js/ueditor/utf8-php/ueditor.config.js"></script>
     <script src="js/ueditor/utf8-php/ueditor.all.min.js"></script>
 </head>
-
 
 <body>
     <!-- header start -->
@@ -461,53 +460,282 @@
         <!-- banner start -->
         <div class="banner">
             <div class="banner-title">
-                <h2>Banner面板<small><code>.banner</code> / 显示页面主标题和一个功能区的顶部区域</small></h2>
-            </div>
-            <div class="banner-action">
-                <!-- switch start -->
-                <fieldset class="form-group">
-                    <div class="radiocheckbox-switch-item">
-                        <p class="radiocheckbox-switch-explain" id="fixed-explain">普通模式</p>
-                        <label class="radiocheckbox-switch">
-                            <input class="radiocheckbox" type="checkbox" id="fixed-switch">
-                            <span class="radiocheckbox-replace">
-                                <span class="slipper"></span>
-                            </span>
-                        </label>
-                    </div>
-                </fieldset>
-                <!-- switch over -->
+                <h2>Fireman<small>CSS类</small></h2>
             </div>
         </div>
         <!-- banner over -->
         <!-- container start -->
         <div class="container-fluid">
-            <ul class="explain">
-                <li>Banner面板已包含在初始模板内</li>
-                <li>给<code>.banner</code>追加类名<code>.banner-fixed</code>可以让面板固定于主体容器上部不随页面滚动, 适合在内容较多的页面放置重要的按钮等, 方便点击</li>
-                <li>移动端暂不支持Banner面板顶部固定</li>
-            </ul>
             <!-- row start -->
             <div class="row">
                 <!-- column start -->
                 <div class="col-lg-12">
-                    <!-- card start -->
                     <section class="card">
                         <div class="card-header">
-                            <h3 class="title">Banner顶部固定演示</h3>
+                            <h3 class="title">基础CSS</h3>
                         </div>
                         <div class="card-body">
-                            <p>向下滚动</p>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                            <p>向下滚动</p>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                            <p>向下滚动</p>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                            <p>向下滚动</p>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <ul class="demo-list">
+                                <li>
+                                    <code>.display-block</code>
+                                    <code>display: block;</code>
+                                    <p>显示</p>
+                                </li>
+                                <li>
+                                    <code>.display-none</code>
+                                    <code>display: none;</code>
+                                    <p>隐藏</p>
+                                </li>
+                                <li>
+                                    <code>.pull-left</code>
+                                    <code>float: left;</code>
+                                    <p>左浮动</p>
+                                </li>
+                                <li>
+                                    <code>.pull-right</code>
+                                    <code>float: right;</code>
+                                    <p>右浮动</p>
+                                </li>
+                                <li>
+                                    <code>.align-left</code>
+                                    <code>text-align: left;</code>
+                                    <p>左对齐</p>
+                                </li>
+                                <li>
+                                    <code>.align-right</code>
+                                    <code>text-align: right;</code>
+                                    <p>右对齐</p>
+                                </li>
+                                <li>
+                                    <code>.align-center</code>
+                                    <code>text-align: center;</code>
+                                    <p>居中对齐</p>
+                                </li>
+                                <li>
+                                    <code>.text-overflow</code>
+                                    <code>overflow: hidden; white-space: nowrap; text-overflow: ellipsis;</code>
+                                    <p>单行文字溢出省略</p>
+                                </li>
+                            </ul>
                         </div>
                     </section>
-                    <!-- card over -->
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">文字和文字颜色</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="demo-list">
+                                <li>
+                                    <code>.size-1</code>
+                                    <code>font-size: 20px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.size-2</code>
+                                    <code>font-size: 18px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.size-3</code>
+                                    <code>font-size: 16px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.size-5</code>
+                                    <code>font-size: 12px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.color-1</code>
+                                    <code></code>
+                                    <p>主色1</p>
+                                </li>
+                                <li>
+                                    <code>.color-2</code>
+                                    <code></code>
+                                    <p>主色2</p>
+                                </li>
+                                <li>
+                                    <code>.black</code>
+                                    <code></code>
+                                    <p>#333</p>
+                                </li>
+                                <li>
+                                    <code>.dark</code>
+                                    <code></code>
+                                    <p>#666</p>
+                                </li>
+                                <li>
+                                    <code>.dark-gray</code>
+                                    <code></code>
+                                    <p>#999</p>
+                                </li>
+                                <li>
+                                    <code>.gray</code>
+                                    <code></code>
+                                    <p>#aaa</p>
+                                </li>
+                                <li>
+                                    <code>.red</code>
+                                    <code></code>
+                                    <p>红色</p>
+                                </li>
+                                <li>
+                                    <code>.orange</code>
+                                    <code></code>
+                                    <p>橙色</p>
+                                </li>
+                                <li>
+                                    <code>.yellow</code>
+                                    <code></code>
+                                    <p>黄色</p>
+                                </li>
+                                <li>
+                                    <code>.green</code>
+                                    <code></code>
+                                    <p>绿色</p>
+                                </li>
+                                <li>
+                                    <code>.cyan</code>
+                                    <code></code>
+                                    <p>青色</p>
+                                </li>
+                                <li>
+                                    <code>.blue</code>
+                                    <code></code>
+                                    <p>蓝色</p>
+                                </li>
+                                <li>
+                                    <code>.purple</code>
+                                    <code></code>
+                                    <p>紫色</p>
+                                </li>
+                                <li>
+                                    <code>.pink</code>
+                                    <code></code>
+                                    <p>粉色</p>
+                                </li>
+                                <li>
+                                    <code>.line-through</code>
+                                    <code>text-decoration: line-through;</code>
+                                    <p>文字中划线</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">Flex</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="demo-list">
+                                <li>
+                                    <code>.align-items-center</code>
+                                    <code>align-items: center;</code>
+                                    <p>子元素交叉轴的中点对齐</p>
+                                </li>
+                                <li>
+                                    <code>.align-items-stretch</code>
+                                    <code>align-items: stretch;</code>
+                                    <p>子元素交叉轴等高对齐</p>
+                                </li>
+                                <li>
+                                    <code>.justify-content-center</code>
+                                    <code>justify-content: center;</code>
+                                    <p>子元素主轴中点对齐</p>
+                                </li>
+                                <li>
+                                    <code>.justify-content-end</code>
+                                    <code>justify-content: flex-end;</code>
+                                    <p>子元素主轴终点对齐</p>
+                                </li>
+                                <li>
+                                    <code>.justify-content-space-between</code>
+                                    <code>justify-content: space-between;</code>
+                                    <p>子元素主轴两端对齐</p>
+                                </li>
+                                <li>
+                                    <code>.flex-grow-1</code>
+                                    <code>flex-grow: 1;</code>
+                                    <p>有剩余空间时放大</p>
+                                </li>
+                                <li>
+                                    <code>.flex-shrink-0</code>
+                                    <code>flex-shrink: 0;</code>
+                                    <p>空间不足时不缩小</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">间距控制</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="demo-list">
+                                <li>
+                                    <code>.margin-top-5</code>
+                                    <code>margin-top: 5px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-top-10</code>
+                                    <code>margin-top: 10px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-top-15</code>
+                                    <code>margin-top: 15px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-left-5</code>
+                                    <code>margin-left: 5px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-left-10</code>
+                                    <code>margin-left: 10px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-left-15</code>
+                                    <code>margin-left: 15px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-right-5</code>
+                                    <code>margin-right: 5px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-right-10</code>
+                                    <code>margin-right: 10px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-right-15</code>
+                                    <code>margin-right: 15px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-bottom-5</code>
+                                    <code>margin-bottom: 5px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-bottom-10</code>
+                                    <code>margin-bottom: 10px;</code>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <code>.margin-bottom-15</code>
+                                    <code>margin-bottom: 15px;</code>
+                                    <p></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 </div>
                 <!-- column over -->
             </div>
@@ -518,17 +746,7 @@
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 // nav active
-                setNavActive("nav-4-4");
-                // banner固定开关
-                $('#fixed-switch').on('click', function() {
-                    if (this.checked) {
-                        $('.banner').addClass('banner-fixed');
-                        $('#fixed-explain').text('固定模式');
-                    } else {
-                        $('.banner').removeClass('banner-fixed');
-                        $('#fixed-explain').text('普通模式');
-                    }
-                });
+                setNavActive("nav-12-4");
             });
         </script>
         <!-- page script over -->
