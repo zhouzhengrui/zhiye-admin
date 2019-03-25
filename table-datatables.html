@@ -531,7 +531,7 @@
                             <table class="table table-responsive" id="demo-table-1">
                                 <thead>
                                     <tr>
-                                        <th align="left">
+                                        <th align="left" width="55px">
                                             <fieldset class="form-group">
                                                 <label class="radiocheckbox-item">
                                                     <input class="radiocheckbox" type="checkbox" action="checkall">
@@ -539,9 +539,9 @@
                                                 </label>
                                             </fieldset>
                                         </th>
-                                        <th align="left"></th>
-                                        <th align="left">编号</th>
-                                        <th align="left">图片</th>
+                                        <th align="left" width="50px"></th>
+                                        <th align="left" width="70px">编号</th>
+                                        <th align="left" width="80px">图片</th>
                                         <th align="left">信息组</th>
                                         <th align="left">字段</th>
                                         <th align="left">标签</th>
@@ -884,7 +884,7 @@
                                         <table class="table table-responsive" id="demo-table">
                                             <thead>
                                                 <tr>
-                                                    <th align="left">
+                                                    <th align="left" width="55px">
                                                         <fieldset class="form-group">
                                                             <label class="radiocheckbox-item">
                                                                 <input class="radiocheckbox" type="checkbox" action="checkall">
@@ -892,9 +892,9 @@
                                                             </label>
                                                         </fieldset>
                                                     </th>
-                                                    <th align="left"></th>
-                                                    <th align="left">编号</th>
-                                                    <th align="left">图片</th>
+                                                    <th align="left" width="50px"></th>
+                                                    <th align="left" width="70px">编号</th>
+                                                    <th align="left" width="80px">图片</th>
                                                     <th align="left">信息组</th>
                                                     <th align="left">字段</th>
                                                     <th align="left">标签</th>
@@ -942,7 +942,8 @@
                                     function format(d) {
                                         return '<table>' +
                                             '<tr>' +
-                                                '<td width="15%"><b>标题:</b></td>' +
+                                                '<td width="255px"></td>' +
+                                                '<td width="100px"><b>标题:</b></td>' +
                                                 '<td>' + '详细信息' + '</td>' +
                                             '</tr>' +
                                         '</table>';
@@ -951,6 +952,7 @@
                                     dataTableDefaults();
                                     // dataTable 执行实例
                                     var table = $('#demo-table').DataTable({
+                                        autoWidth: false,
                                         // 定义列的初始属性
                                         columnDefs: [{
                                             // 指定列对象
@@ -1052,6 +1054,7 @@
                                     dataTableDefaults();
                                     // dataTable 执行实例
                                     $('#demo-table').DataTable({
+                                        autoWidth: false,
                                         // 定义列的初始属性
                                         columnDefs: [{
                                             // 指定列对象
@@ -1137,6 +1140,7 @@
                                     dataTableDefaults();
                                     // dataTable 执行实例
                                     $('#demo-table').DataTable({
+                                        autoWidth: false,
                                         // 定义列的初始属性
                                         columnDefs: [{
                                             // 指定列对象
@@ -1184,7 +1188,8 @@
                 function format(d) {
                     return '<table>' +
                         '<tr>' +
-                            '<td width="15%"><b>标题:</b></td>' +
+                            '<td width="255px"></td>' +
+                            '<td width="100px"><b>标题:</b></td>' +
                             '<td>' + '详细信息' + '</td>' +
                         '</tr>' +
                     '</table>';
@@ -1193,6 +1198,7 @@
                 dataTableDefaults();
                 // dataTable 默认布局
                 var table = $('#demo-table-1').DataTable({
+                    autoWidth: false,
                     // 定义列的初始属性
                     columnDefs: [{
                         // 指定列对象
@@ -1220,6 +1226,7 @@
                 });
                 // dataTable 紧凑布局
                 $('#demo-table-2').DataTable({
+                    autoWidth: false,
                     // 定义列的初始属性
                     columnDefs: [{
                         // 指定列对象
@@ -1234,6 +1241,7 @@
                 });
                 // dataTable 功能扩展
                 $('#demo-table-3').DataTable({
+                    autoWidth: false,
                     // 定义列的初始属性
                     columnDefs: [{
                         // 指定列对象

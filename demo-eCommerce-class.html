@@ -539,9 +539,9 @@
                                                 </fieldset>
                                             </th>
                                             <th align="left" width="50px" class="details-control"></th>
-                                            <th align="left" width="85px">封面</th>
-                                            <th align="left" width="45%">商品名称</th>
-                                            <th align="right">相关操作</th>
+                                            <th align="left" width="80px">封面</th>
+                                            <th align="left">商品名称</th>
+                                            <th align="right" width="200px">相关操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -871,25 +871,30 @@
                 function format(d) {
                     return '<table>' +
                         '<tr>' +
-                            '<td width="280px" align="right"><b>商品编号:</b></td>' +
+                            '<td width="185px"></td>' +
+                            '<td width="100px"><b>商品编号:</b></td>' +
                             '<td>' + '#001' + '</td>' +
                         '</tr>' +
                         '<tr>' +
-                            '<td width="280px" align="right"><b>商品分类:</b></td>' +
+                            '<td></td>' +
+                            '<td><b>商品分类:</b></td>' +
                             '<td>' + '<span class="label label-purple">书籍</span><span class="label label-purple">科幻小说</span>' + '</td>' +
                         '</tr>' +
                         '<tr>' +
-                            '<td width="280px" align="right"><b>库存数量:</b></td>' +
+                            '<td></td>' +
+                            '<td><b>库存数量:</b></td>' +
                             '<td>' + '99' + '</td>' +
                         '</tr>' +
                         '<tr>' +
-                            '<td width="280px" align="right"><b>商品价格:</b></td>' +
+                            '<td></td>' +
+                            '<td><b>商品价格:</b></td>' +
                             '<td>' + '998.00' + '</td>' +
                         '</tr>' +
                     '</table>';
                 }
                 // dataTable 执行实例
                 var table = $('#table').DataTable({
+                    autoWidth: false,
                     ordering: false,
                     dom:"t"
                 });
