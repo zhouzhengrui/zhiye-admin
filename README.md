@@ -7,10 +7,14 @@
 - ~~Highcharts更换为ECharts~~
 - ~~主导航插件更换或完善功能, 展开收缩等功能~~
 - ~~浏览器后退js重复绑定, 页面二次进入js重复绑定, 快捷键重复绑定~~
-- 制作数据平台页
+- ~~制作数据平台页~~
 - ~~Toastr弹出动画异常~~
+- treeview插件存在bug, updateNode后子节点消失, 需修改源码 https://blog.csdn.net/hotqin888/article/details/54798737/
 
 ## Update
+
+### 2019/8/6
+- 新增数据平台页
 
 ### 2019/3/25
 - banner和一些元素高度调整

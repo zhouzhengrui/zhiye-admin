@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>大数据平台</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- CSS icofont -->
+    <link rel="stylesheet" href="icofont/style.css">
+    <!-- CSS global -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- jQuery -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- echarts -->
+    <script src="js/jquery-resize/jquery.ba-resize.min.js"></script>
+    <script src="js/echarts/echarts.min.js"></script>
+    <script src="js/echarts/theme/zhiye-admin.js"></script>
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="page-data-platform">
+        <!-- background start -->
+        <div class="background">
+            <video class="video" loop muted></video>
+        </div>
+        <!-- background over -->
+        <!-- container start -->
+        <div class="container-fluid">
+            <!-- header start -->
+            <div class="page-header" style="height:14vh;">
+                <div class="page-header-title">
+                    <h1 class="title">马鞍山市志业软件科技有限公司</h1>
+                    <h4 class="sub-title">大数据平台</h4>
+                </div>
+                <div class="page-header-left">
+                    <div class="page-header-button">
+                        <a class="item" href="index.html" action="tooltip" title="返回首页">
+                            <i class="icon-home"></i>
+                        </a>
+                        <div class="item" action="tooltip" title="全屏">
+                            <button type="button" id="fullscreen-view">
+                                <i class="icon-enlarge"></i>
+                            </button>
+                            <button type="button" id="fullscreen-exit">
+                                <i class="icon-narrow"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-header-right">
+                    <h5 class="date-time" id="date-time"></h5>
+                </div>
+            </div>
+            <!-- header over -->
+            <!-- row start -->
+            <div class="row align-items-stretch" style="height:42vh;">
+                <!-- statistic start -->
+                <div class="col-lg-3">
+                    <div class="row" style="height:100%;">
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="statistic statistic-blue">
+                                    <p class="statistic-name">实时在线人数</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number" id="statistic-1">0</h1>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="statistic">
+                                    <p class="statistic-name">实时注册人数</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number" id="statistic-2">0</h1>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="statistic">
+                                    <p class="statistic-name">会员人数</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number">998</h1>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="statistic statistic-green">
+                                    <p class="statistic-name">高级会员人数</p>
+                                    <div class="statistic-info">
+                                        <h1 class="statistic-number">128</h1>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <div class="col-md-12">
+                            <section class="card">
+                                <div class="statistic statistic-pro">
+                                    <div class="statistic-pro-info">
+                                        <p class="statistic-name">现阶段目标已完成</p>
+                                        <div class="statistic-info">
+                                            <h1 class="statistic-number">58.8<span>%</span></h1>
+                                            <small>目标人数: 1800</small>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 58.8%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                    </div>
+                </div>
+                <!-- statistic over -->
+                <!-- chart start -->
+                <div class="col-lg-6">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">实时访问量<small>统计单位（万）</small></h3>
+                        </div>
+                        <div class="card-chart" style="height:calc(100% - 52px);">
+                            <div class="echarts" id="chart-1"></div>
+                        </div>
+                    </section>
+                </div>
+                <!-- chart over -->
+                <!-- statistic start -->
+                <div class="col-lg-3">
+                    <div class="row" style="height:100%;">
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="card-chart" style="height:100%;">
+                                    <div class="echarts" id="chart-2"></div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="statistic statistic-blue align-items-center">
+                                    <div class="statistic-info-group">
+                                        <p class="statistic-name">数据统计</p>
+                                        <div class="statistic-info justify-content-center">
+                                            <h1 class="statistic-number">32</h1>
+                                        </div>
+                                    </div>
+                                    <div class="statistic-info-group align-items-center">
+                                        <p class="statistic-name">数据统计</p>
+                                        <div class="statistic-info justify-content-center">
+                                            <h1 class="statistic-number">64</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="statistic statistic-green align-items-center">
+                                    <div class="statistic-info-group">
+                                        <p class="statistic-name">数据统计</p>
+                                        <div class="statistic-info justify-content-center">
+                                            <h1 class="statistic-number">128</h1>
+                                        </div>
+                                    </div>
+                                    <div class="statistic-info-group align-items-center">
+                                        <p class="statistic-name">数据统计</p>
+                                        <div class="statistic-info justify-content-center">
+                                            <h1 class="statistic-number">256</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                        <!-- item start -->
+                        <div class="col-md-6">
+                            <section class="card">
+                                <div class="card-chart" style="height:100%;">
+                                    <div class="echarts" id="chart-3"></div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- item over -->
+                    </div>
+                </div>
+                <!-- statistic over -->
+            </div>
+            <!-- row over -->
+            <!-- row start -->
+            <div class="row align-items-stretch" style="height:42vh;">
+                <!-- chart start -->
+                <div class="col-lg-4">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">数据统计<small>折线图</small></h3>
+                        </div>
+                        <div class="card-chart" style="height:calc(100% - 52px);">
+                            <div class="echarts" id="chart-4"></div>
+                        </div>
+                    </section>
+                </div>
+                <!-- chart over -->
+                <!-- chart start -->
+                <div class="col-lg-4">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">数据统计<small>柱形图</small></h3>
+                        </div>
+                        <div class="card-chart" style="height:calc(100% - 52px);">
+                            <div class="echarts" id="chart-5"></div>
+                        </div>
+                    </section>
+                </div>
+                <!-- chart over -->
+                <!-- chart start -->
+                <div class="col-lg-4">
+                    <section class="card">
+                        <div class="card-header">
+                            <h3 class="title">数据统计<small>动态折线图</small></h3>
+                        </div>
+                        <div class="card-chart" style="height:calc(100% - 52px);">
+                            <div class="echarts" id="chart-6"></div>
+                        </div>
+                    </section>
+                </div>
+                <!-- chart over -->
+            </div>
+            <!-- row over -->
+        </div>
+        <!-- container over -->
+        <div class="page-copyright">
+            <p>Powered by © ZhiYe Software Technology Co.,Ltd</p>
+        </div>
+    </div>
+    <!-- page over -->
+    <script src="js/bideo/bideo.js"></script>
+    <script type="text/javascript">
+        // video background
+        var backgroundVideo = new Bideo();
+        backgroundVideo.init({
+            videoEl: document.querySelector('.video'),
+            resize: true,
+            isMobile: window.matchMedia('(max-width: 991px)').matches,
+            src: [{
+                src: 'img/page-data-platform-video.mp4',
+                type: 'video/mp4'
+            }]
+        });
+        // tooltip
+        $('[action="tooltip"]').tooltip();
+        // 页面全屏按钮
+        var viewFullScreen = $("#fullscreen-view");
+        var exitFullScreen = $("#fullscreen-exit");
+        $(exitFullScreen).hide();
+        if (viewFullScreen) {
+            viewFullScreen.on("click", function() {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.webkitRequestFullScreen) {
+                    document.documentElement.webkitRequestFullScreen();
+                }
+                $('#fullscreen-view').hide();
+                $('#fullscreen-exit').show();
+            });
+        }
+        if (exitFullScreen) {
+            exitFullScreen.on("click", function() {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+                $('#fullscreen-exit').hide();
+                $('#fullscreen-view').show();
+            });
+        }
+        // 日期时间
+        function dateTime() {
+            var today = new Date();
+            var day;
+            var date;
+            if(today.getDay()==0) day = "星期日"
+            if(today.getDay()==1) day = "星期一"
+            if(today.getDay()==2) day = "星期二"
+            if(today.getDay()==3) day = "星期三"
+            if(today.getDay()==4) day = "星期四"
+            if(today.getDay()==5) day = "星期五"
+            if(today.getDay()==6) day = "星期六"
+            date = today.getFullYear() + "年" + (today.getMonth() + 1) + "月" + today.getDate() + "日" + " " + day + " " + today.toLocaleTimeString();
+            document.getElementById("date-time").innerHTML = date;
+        }
+        setInterval(dateTime, 1000);
+        // 数字演示
+        var demoNumber1 = 1024;
+        var demoNumber2 = 2048;
+        function demoNumber() {
+            var number1 = document.getElementById('statistic-1');
+            number1.innerHTML = demoNumber1++;
+            var number2 = document.getElementById('statistic-2');
+            number2.innerHTML = demoNumber2++;
+            window.setTimeout('demoNumber()', 1000);
+        }
+        window.setTimeout('demoNumber()', 1000);
+
+        jQuery(document).ready(function($) {
+            // chart-1
+            var chart1 = echarts.init(document.getElementById('chart-1'), 'zhiye-admin');
+            var option1 = {
+                grid: {
+                    top: '10',
+                    left: '20',
+                    right: '30',
+                    bottom: '20'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                    data: (function() {
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
+                            now = new Date(now - 3000);
+                        }
+                        return res;
+                    })()
+                },
+                yAxis: {
+                    type: 'value',
+                    max: 30,
+                    min: 0,
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: 'rgba(255,255,255,0.1)'
+                        }
+                    }
+                },
+                series: {
+                    name: '随机数据',
+                    type: 'line',
+                    smooth: true,
+                    areaStyle: {},
+                    data: (function() {
+                        var res = [];
+                        var len = 0;
+                        while (len < 30) {
+                            res.push((Math.random() * 30).toFixed(1) - 0);
+                            len++;
+                        }
+                        return res;
+                    })()
+                }
+            };
+            chart1.setOption(option1);
+            setInterval(function() {
+                axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+                var data = option1.series.data;
+                data.shift();
+                data.push((Math.random() * 30).toFixed(1) - 0);
+                option1.xAxis.data.shift();
+                option1.xAxis.data.push(axisData);
+                chart1.setOption(option1);
+            }, 3000);
+            // chart-2
+            var chart2 = echarts.init(document.getElementById('chart-2'), 'zhiye-admin');
+            var option2 = {
+                title: {
+                    text: '分类占比',
+                    x: 'center',
+                    top: '10',
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: '14'
+                    }
+                },
+                tooltip: {
+                    confine: true
+                },
+                itemStyle: {
+                    borderColor: 'rgba(255,255,255,.3)'
+                },
+                series: [{
+                    name: '图例',
+                    type: 'pie',
+                    radius: ['35%', '65%'],
+                    center: ['50%', '60%'],
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [{
+                            name: '项目1',
+                            value: 335
+                        },
+                        {
+                            name: '项目2',
+                            value: 310
+                        },
+                        {
+                            name: '项目3',
+                            value: 234
+                        },
+                        {
+                            name: '项目4',
+                            value: 135
+                        }
+                    ]
+                }]
+            };
+            chart2.setOption(option2);
+            // chart-3
+            var chart3 = echarts.init(document.getElementById('chart-3'), 'zhiye-admin');
+            var option3 = {
+                title: {
+                    text: '分类占比',
+                    x: 'center',
+                    top: '10',
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: '14'
+                    }
+                },
+                tooltip: {
+                    confine: true
+                },
+                itemStyle: {
+                    borderColor: 'rgba(255,255,255,.3)'
+                },
+                series: [{
+                    name: '图例',
+                    type: 'pie',
+                    radius: ['0', '60%'],
+                    center: ['50%', '60%'],
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [{
+                            name: '项目1',
+                            value: 335
+                        },
+                        {
+                            name: '项目2',
+                            value: 310
+                        },
+                        {
+                            name: '项目3',
+                            value: 234
+                        },
+                        {
+                            name: '项目4',
+                            value: 135
+                        }
+                    ]
+                }]
+            };
+            chart3.setOption(option3);
+            // chart-4
+            var chart4 = echarts.init(document.getElementById('chart-4'), 'zhiye-admin');
+            var option4 = {
+                grid: {
+                    top: '40',
+                    left: '20',
+                    right: '20',
+                    bottom: '20'
+                },
+                legend: {
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                tooltip: {},
+                xAxis: {
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                    data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                },
+                yAxis: {
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: 'rgba(255,255,255,0.1)'
+                        }
+                    }
+                },
+                series: [{
+                        name: '图例1',
+                        type: 'line',
+                        barWidth: '25%',
+                        data: [507, 231, 635, 203, 362, 890]
+                    },
+                    {
+                        name: '图例2',
+                        type: 'line',
+                        barWidth: '25%',
+                        data: [333, 156, 947, 408, 216, 790]
+                    }
+                ]
+            };
+            chart4.setOption(option4);
+            // chart-5
+            var chart5 = echarts.init(document.getElementById('chart-5'), 'zhiye-admin');
+            var option5 = {
+                grid: {
+                    top: '40',
+                    left: '20',
+                    right: '20',
+                    bottom: '20'
+                },
+                legend: {
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                tooltip: {},
+                xAxis: {
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                    data: ["项目1", "项目2", "项目3", "项目4", "项目5", "项目6"]
+                },
+                yAxis: {
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: 'rgba(255,255,255,0.1)'
+                        }
+                    }
+                },
+                series: [{
+                        name: '图例1',
+                        type: 'bar',
+                        barWidth: '25%',
+                        data: [507, 231, 635, 203, 362, 890]
+                    },
+                    {
+                        name: '图例2',
+                        type: 'bar',
+                        barWidth: '25%',
+                        data: [333, 156, 947, 408, 216, 790]
+                    }
+                ]
+            };
+            chart5.setOption(option5);
+            // chart-6
+            var chart6 = echarts.init(document.getElementById('chart-6'), 'zhiye-admin');
+            function randomData() {
+                chart6now = new Date(+chart6now + chart6oneDay);
+                chart6value = chart6value + Math.random() * 21 - 10;
+                return {
+                    name: chart6now.toString(),
+                    value: [
+                        [chart6now.getFullYear(), chart6now.getMonth() + 1, chart6now.getDate()].join('/'),
+                        Math.round(chart6value)
+                    ]
+                }
+            }
+            var chart6data = [];
+            var chart6now = +new Date(1997, 9, 3);
+            var chart6oneDay = 24 * 3600 * 1000;
+            var chart6value = Math.random() * 1000;
+            for (var i = 0; i < 1000; i++) {
+                chart6data.push(randomData());
+            }
+            var option6 = {
+                grid: {
+                    top: '10',
+                    left: '20',
+                    right: '30',
+                    bottom: '20'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: function (params) {
+                        params = params[0];
+                        var chart6date = new Date(params.name);
+                        return chart6date.getDate() + '/' + (chart6date.getMonth() + 1) + '/' + chart6date.getFullYear() + ' : ' + params.value[1];
+                    },
+                    axisPointer: {
+                        animation: false
+                    }
+                },
+                xAxis: {
+                    type: 'time',
+                    splitLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                },
+                yAxis: {
+                    type: 'value',
+                    boundaryGap: [0, '100%'],
+                    axisLabel: {
+                        textStyle: {
+                            color: 'rgba(255,255,255,0.5)'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: 'rgba(255,255,255,0.1)'
+                        }
+                    }
+                },
+                series: [{
+                    name: '模拟数据',
+                    type: 'line',
+                    showSymbol: false,
+                    hoverAnimation: false,
+                    data: chart6data
+                }]
+            };
+            setInterval(function () {
+                for (var i = 0; i < 5; i++) {
+                    chart6data.shift();
+                    chart6data.push(randomData());
+                }
+                chart6.setOption(option6);
+            }, 1000);
+
+            // echarts 容器尺寸变化时刷新图表尺寸
+            $(".echarts").resize(function() {
+                chart1.resize();
+                chart2.resize();
+                chart3.resize();
+                chart4.resize();
+                chart5.resize();
+                chart6.resize();
+            });
+
+        });
+    </script>
+</body>
+
+</html>
