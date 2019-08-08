@@ -2,7 +2,7 @@
  * zhiye-admin
  * @author  Rui
  * @version 0.1.0
- * @date2019-8-6 17:01:46
+ * @date2019-8-8 15:13:34
  */
 @charset "UTF-8";
 @-ms-viewport {
@@ -13578,26 +13578,26 @@ p.grid-demo {
 
 .page-data-platform .page-header .page-header-button .item {
   margin-right: 5px;
+}
+
+.page-data-platform .page-header .page-header-button .item a, .page-data-platform .page-header .page-header-button .item button {
+  display: block;
   padding: 10px;
   border-radius: 4px;
+}
+
+.page-data-platform .page-header .page-header-button .item a:hover, .page-data-platform .page-header .page-header-button .item button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.page-data-platform .page-header .page-header-button .item a:hover i, .page-data-platform .page-header .page-header-button .item button:hover i {
+  color: #ffffff;
 }
 
 .page-data-platform .page-header .page-header-button .item i {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.75);
-}
-
-.page-data-platform .page-header .page-header-button .item button {
-  display: block;
-}
-
-.page-data-platform .page-header .page-header-button .item:hover {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.page-data-platform .page-header .page-header-button .item:hover i {
-  color: #fff;
 }
 
 .page-data-platform .page-header .date-time {

@@ -41,14 +41,16 @@
                 </div>
                 <div class="page-header-left">
                     <div class="page-header-button">
-                        <a class="item" href="index.html" action="tooltip" title="返回首页">
-                            <i class="icon-home"></i>
-                        </a>
-                        <div class="item" action="tooltip" title="全屏">
-                            <button type="button" id="fullscreen-view">
+                        <div class="item">
+                            <a href="index.html" action="tooltip" title="返回首页">
+                                <i class="icon-home"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <button type="button" id="fullscreen-view" action="tooltip" title="全屏">
                                 <i class="icon-enlarge"></i>
                             </button>
-                            <button type="button" id="fullscreen-exit">
+                            <button type="button" id="fullscreen-exit" action="tooltip" title="退出全屏">
                                 <i class="icon-narrow"></i>
                             </button>
                         </div>
@@ -122,8 +124,10 @@
                                             <h1 class="statistic-number">58.8<span>%</span></h1>
                                             <small>目标人数: 1800</small>
                                         </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" style="width: 58.8%;"></div>
+                                        <div class="progress progress-large">
+                                            <div class="progress-bar" style="width: 58.8%;">
+                                                <div class="progress-bar-stripe"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
